@@ -98,6 +98,9 @@ export default function Home() {
   }, []);
 
   return <main>
+    <div className="club-logo-strip" id="top">
+      <Image src="/media/site/taichung-liming-rotary-logo.png" alt="國際扶輪3462地區・台中黎明扶輪社" width={2048} height={682} priority unoptimized/>
+    </div>
     <header>
       <a className="brand" href="#top"><span className="sun">✦</span><span><b>{content.name}</b><small>HAND IN HAND · LOVE WITHOUT LIMITS</small></span></a>
       <nav className={menu ? "open" : ""}>
@@ -107,7 +110,7 @@ export default function Home() {
       <button className="menu" aria-label="開啟選單" onClick={() => setMenu(!menu)}>☰</button>
     </header>
 
-    <section className="hero" id="top">
+    <section className="hero">
       <div className="hero-copy reveal">
         <p className="eyebrow">HAND IN HAND · 手牽手，愛無限</p>
         <h1>手牽手<br/><em>讓愛無限</em></h1>
