@@ -7,7 +7,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 const content = {
   name: "黎明手牽手 愛無限",
   fullName: "台中黎明扶輪社",
-  slogan: "手牽手，愛無限；一同改變美好的未來！",
+  slogan: "手牽手，愛無限；因為您可以讓世界更美好",
   intro: "串聯社友、眷屬與在地夥伴，從生活照護、教育支持到社區關懷，讓每一份善意真正抵達需要的地方。",
   stats: [
     [3, "項", "年度重點行動"],
