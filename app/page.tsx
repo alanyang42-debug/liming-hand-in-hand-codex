@@ -5,7 +5,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 
 // 日後更新網站，只要修改這份集中資料即可。
 const content = {
-  name: "黎明手牽手",
+  name: "黎明手牽手 愛無限",
   fullName: "台中黎明扶輪社",
   slogan: "手牽手，愛無限",
   intro: "串聯社友、眷屬與在地夥伴，從生活照護、教育支持到社區關懷，讓每一份善意真正抵達需要的地方。",
@@ -24,7 +24,7 @@ const content = {
     title: "114學年度小學生足球賽全國決賽",
     subtitle: "南投雙龍國小女足｜國小女生高年級組",
     result: "全國第七名",
-    text: "從烈日下的每一次奔跑，到場邊的一句加油，孩子們用勇氣、默契與不放棄的精神完成全國賽事。黎明手牽手陪伴孩子走進更大的球場，也把每一份支持化成繼續前進的力量。",
+    text: "從烈日下的每一次奔跑，到場邊的一句加油，孩子們用勇氣、默契與不放棄的精神完成全國賽事。「黎明手牽手 愛無限」陪伴孩子走進更大的球場，也把每一份支持化成繼續前進的力量。",
     video: "/media/football-finals/highlight.mp4",
     poster: "/media/football-finals/15-finals-panorama.jpg",
   },
@@ -99,7 +99,7 @@ export default function Home() {
 
   return <main>
     <div className="club-logo-strip" id="top">
-      <Image src="/media/site/taichung-liming-rotary-logo.png" alt="國際扶輪3462地區・台中黎明扶輪社" width={2048} height={682} priority unoptimized/>
+      <Image src="/media/site/taichung-liming-rotary-logo-web.png" alt="國際扶輪3462地區・台中黎明扶輪社" width={2048} height={682} priority unoptimized/>
     </div>
     <header>
       <a className="brand" href="#top"><span className="sun">✦</span><span><b>{content.name}</b><small>HAND IN HAND · LOVE WITHOUT LIMITS</small></span></a>
