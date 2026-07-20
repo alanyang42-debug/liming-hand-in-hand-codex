@@ -7,7 +7,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 const content = {
   name: "黎明手牽手 愛無限",
   fullName: "台中黎明扶輪社",
-  slogan: "手牽手，愛無限",
+  slogan: "手牽手，愛無限；一同改變美好的未來！",
   intro: "串聯社友、眷屬與在地夥伴，從生活照護、教育支持到社區關懷，讓每一份善意真正抵達需要的地方。",
   stats: [
     [3, "項", "年度重點行動"],
@@ -161,7 +161,7 @@ export default function Home() {
     </section>
 
     <section className="section impact" id="impact">
-      <div className="quote reveal"><span>“</span><h2>{content.slogan}；<br/>一起把善意變成改變。</h2><p>— {content.fullName}</p></div>
+      <div className="quote reveal"><span>“</span><h2>{content.slogan}</h2><p>— {content.fullName}</p></div>
       <div className="partner-head reveal"><p className="eyebrow">TOGETHER, WE GO FURTHER · 合作夥伴</p><h2>一起走，讓愛更有力量。</h2></div>
       <div className="partners reveal">{content.partners.map(p => <article key={p[1]}><span>{p[0]}</span><p>{p[2]}</p><h3>{p[1]}</h3><small>連結專業與資源，讓公益行動走得更穩、更遠。</small></article>)}</div>
     </section>
