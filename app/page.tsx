@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Script from "next/script";
 import { useEffect, useMemo, useRef, useState } from "react";
 
 // 日後更新網站，只要修改這份集中資料即可。
@@ -31,6 +32,7 @@ const content = {
     shortPoster: "/media/football-finals/2026-shuanglong-football-finals-poster.jpg",
     instagramUrl: "https://www.instagram.com/reel/DaQIcd1kmLZ/",
     instagramEmbed: "https://www.instagram.com/reel/DaQIcd1kmLZ/embed/captioned/",
+    threadsUrl: "https://www.threads.com/@alanyang42/post/DaQIuAIDYvs",
   },
   gallery: [
     ["賽事氛圍", "盛夏球場・夢想開踢", "/media/football-finals/01-opening-field.jpg"],
@@ -188,6 +190,25 @@ export default function Home() {
           <a className="btn gold" href={content.event.instagramUrl} target="_blank" rel="noreferrer">在 Instagram 觀看 ↗</a>
         </div>
       </div>
+      <div className="section threads-reel reveal" id="threads-reel">
+        <div className="threads-copy">
+          <p className="eyebrow">MORE MOMENTS · THREADS 影音</p>
+          <p className="event-kicker">Threads Post</p>
+          <h2>讓每一份感動<br/>繼續被看見</h2>
+          <p>透過 Threads 分享球場上的精彩時刻，也讓更多人看見孩子們勇敢追夢的身影。</p>
+          <a className="btn gold" href={content.event.threadsUrl} target="_blank" rel="noreferrer">在 Threads 觀看 ↗</a>
+        </div>
+        <div className="threads-frame">
+          <blockquote
+            className="text-post-media"
+            data-text-post-permalink={content.event.threadsUrl}
+            data-text-post-version="0"
+          >
+            <a href={content.event.threadsUrl} target="_blank" rel="noreferrer">在 Threads 觀看這則影音</a>
+          </blockquote>
+        </div>
+      </div>
+      <Script async src="https://www.threads.com/embed.js" strategy="afterInteractive" />
     </section>
 
     <section className="gallery-section" id="gallery">
