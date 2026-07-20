@@ -29,6 +29,8 @@ const content = {
     poster: "/media/football-finals/15-finals-panorama.jpg",
     shortVideo: "/media/football-finals/2026-shuanglong-football-finals.mp4",
     shortPoster: "/media/football-finals/2026-shuanglong-football-finals-poster.jpg",
+    instagramUrl: "https://www.instagram.com/reel/DaQIcd1kmLZ/",
+    instagramEmbed: "https://www.instagram.com/reel/DaQIcd1kmLZ/embed/captioned/",
   },
   gallery: [
     ["賽事氛圍", "盛夏球場・夢想開踢", "/media/football-finals/01-opening-field.jpg"],
@@ -167,6 +169,23 @@ export default function Home() {
             <source src={content.event.shortVideo} type="video/mp4"/>
             您的瀏覽器目前無法播放這段影片。
           </video>
+        </div>
+      </div>
+      <div className="section instagram-reel reveal" id="instagram-reel">
+        <div className="instagram-frame">
+          <iframe
+            src={content.event.instagramEmbed}
+            title="雙龍國小足球全國賽 Instagram Reel"
+            loading="lazy"
+            allow="clipboard-write; encrypted-media; picture-in-picture; web-share"
+          />
+        </div>
+        <div className="instagram-copy">
+          <p className="eyebrow">FOLLOW THE STORY · IG 影音</p>
+          <p className="event-kicker">Instagram Reel</p>
+          <h2>一起為孩子的<br/>每一步喝采</h2>
+          <p>從公益網站直接觀看最新賽事影音；若您的瀏覽器限制 Instagram 嵌入內容，也可前往原貼文觀看。</p>
+          <a className="btn gold" href={content.event.instagramUrl} target="_blank" rel="noreferrer">在 Instagram 觀看 ↗</a>
         </div>
       </div>
     </section>
