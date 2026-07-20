@@ -16,7 +16,7 @@ const content = {
     [365, "天", "讓善意持續發生"],
   ] as const,
   actions: [
-    { tag: "生活照護", title: "社區家園設備汰舊換新", text: "攜手中華存善慢飛天使關懷協會，協助彰化慈愛教養院改善老舊空調設備，讓照護空間更舒適安心。", result: "改善日常照護環境", image: "https://images.unsplash.com/photo-1559027615-cd4628902d4a?auto=format&fit=crop&w=1400&q=85" },
+    { tag: "生活照護", title: "社區家園設備汰舊換新", text: "攜手中華存善慢飛天使關懷協會，協助彰化慈愛教養院改善老舊空調設備，讓照護空間更舒適安心。", result: "改善日常照護環境", image: "/media/community-care/01-equipment-renewal-presentation.jpg", imageSecondary: "/media/community-care/02-equipment-renewal-group.jpg" },
     { tag: "教育支持", title: "陪伴偏鄉孩子勇敢追夢", text: "支持南投雙龍國小足球隊參與全國賽事，讓孩子在球場上累積自信、團隊精神與更大的夢想。", result: "國小女生高年級組全國第七名", image: "/media/football-finals/14-seventh-place.jpg" },
     { tag: "社區串聯", title: "手牽手・愛無限", text: "集結扶輪社友、夫人與在地夥伴的專業與資源，讓單次捐助延伸為彼此陪伴、長期共好的公益行動。", result: "串聯跨界公益力量", image: "https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?auto=format&fit=crop&w=1400&q=85" },
   ],
@@ -119,8 +119,8 @@ export default function Home() {
         <small><i/> 公益不是一場活動，而是一段長久的陪伴</small>
       </div>
       <div className="hero-art reveal">
-        <figure><Image src={content.actions[0].image} alt="公益活動示意照片" width={900} height={1000} unoptimized/><figcaption>FEATURED ACTION<br/><b>社區家園・生活照護</b></figcaption></figure>
-        <div className="mini"><Image src={content.actions[1].image} alt="南投雙龍國小女足全國賽事紀錄" width={400} height={500} unoptimized/></div>
+        <figure><Image src={content.actions[0].image} alt="社區家園設備汰舊換新活動合影" width={900} height={1000} unoptimized/><figcaption>FEATURED ACTION<br/><b>社區家園・生活照護</b></figcaption></figure>
+        <div className="mini"><Image src={content.actions[0].imageSecondary} alt="台中黎明扶輪社與公益夥伴活動合影" width={400} height={500} unoptimized/></div>
         <div className="stamp">手牽手<br/><b>∞</b><br/>愛無限</div>
       </div>
     </section>
@@ -130,7 +130,7 @@ export default function Home() {
     <section className="section actions-section" id="actions">
       <div className="heading reveal"><p className="eyebrow">OUR ACTIONS · 公益行動</p><h2>把關心，落實在<br/>每一個需要裡。</h2><p>聚焦照護、教育與社區串聯，讓資源精準抵達，也讓故事被更多人看見。</p></div>
       <div className="action-list">{content.actions.map((a,i) => <article className="action-card reveal" key={a.title}>
-        <span>0{i+1}</span><div className="action-img"><Image src={a.image} alt={i === 1 ? "南投雙龍國小女足全國第七名合影" : `${a.title}示意照片`} width={650} height={430} unoptimized/><small>{i === 1 ? "活動實錄" : "示意照片・可替換"}</small></div>
+        <span>0{i+1}</span><div className="action-img"><Image src={a.image} alt={i === 0 ? "社區家園設備汰舊換新活動合影" : i === 1 ? "南投雙龍國小女足全國第七名合影" : `${a.title}示意照片`} width={650} height={430} unoptimized/><small>{i <= 1 ? "活動實錄" : "示意照片・可替換"}</small></div>
         <div><p className="tag">{a.tag}</p><h3>{a.title}</h3><p>{a.text}</p><b>✓ {a.result}</b></div>
       </article>)}</div>
     </section>
