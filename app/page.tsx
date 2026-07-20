@@ -92,6 +92,7 @@ export default function Home() {
   const [photo, setPhoto] = useState<(typeof content.gallery)[number] | null>(null);
   const [guide, setGuide] = useState(false);
   const [menu, setMenu] = useState(false);
+  const [shareStatus, setShareStatus] = useState("");
   const filters = useMemo(() => ["全部", ...new Set(content.gallery.map(x => x[0]))], []);
   const photos = filter === "全部" ? content.gallery : content.gallery.filter(x => x[0] === filter);
 
@@ -102,6 +103,30 @@ export default function Home() {
     window.addEventListener("keydown", key);
     return () => { ob.disconnect(); window.removeEventListener("keydown", key); };
   }, []);
+
+  const shareSite = async () => {
+    const shareData = {
+      title: "黎明手牽手 愛無限",
+      text: "一起看見台中黎明扶輪社的公益行動，讓每一份善意成為改變。",
+      url: window.location.origin,
+    };
+    try {
+      if (navigator.share) {
+        await navigator.share(shareData);
+      } else if (navigator.clipboard) {
+        await navigator.clipboard.writeText(shareData.url);
+        setShareStatus("連結已複製 ✓");
+        window.setTimeout(() => setShareStatus(""), 2400);
+      } else {
+        setShareStatus("請複製網址列");
+        window.setTimeout(() => setShareStatus(""), 2400);
+      }
+    } catch (error) {
+      if (error instanceof DOMException && error.name === "AbortError") return;
+      setShareStatus("請稍後再試");
+      window.setTimeout(() => setShareStatus(""), 2400);
+    }
+  };
 
   return <main>
     <div className="club-logo-strip" id="top">
@@ -121,7 +146,7 @@ export default function Home() {
         <p className="eyebrow">HAND IN HAND · 手牽手，愛無限</p>
         <h1>手牽手<br/><em>讓愛無限</em></h1>
         <p>{content.intro}</p>
-        <div className="actions"><a className="btn gold" href="#actions">看見我們的行動 ↓</a><a className="btn outline" href="#contact">成為合作夥伴 ↗</a></div>
+        <div className="actions"><a className="btn gold" href="#actions">看見我們的行動 ↓</a><a className="btn outline" href="#contact">成為合作夥伴 ↗</a><button className="btn outline share-btn" type="button" onClick={shareSite} aria-live="polite">{shareStatus || "分享公益網站 ↗"}</button></div>
         <small><i/> 公益不是一場活動，而是一段長久的陪伴</small>
       </div>
       <div className="hero-art reveal">

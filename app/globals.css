@@ -67,6 +67,7 @@
 .club-logo-strip{height:110px;background:var(--deep);display:flex;align-items:center;justify-content:center;overflow:hidden}
 .club-logo-strip img{width:min(720px,92%);height:100%;object-fit:cover;object-position:center}
 header{top:110px}
+.share-btn{background:transparent;color:#fff;cursor:pointer}
 
 @media(max-width:700px){
   .club-logo-strip{height:70px}
