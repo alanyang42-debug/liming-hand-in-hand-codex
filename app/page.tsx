@@ -119,8 +119,8 @@ export default function Home() {
         <small><i/> 公益不是一場活動，而是一段長久的陪伴</small>
       </div>
       <div className="hero-art reveal">
-        <figure><Image src={content.actions[0].image} alt="社區家園設備汰舊換新活動合影" width={900} height={1000} unoptimized/><figcaption>FEATURED ACTION<br/><b>社區家園・生活照護</b></figcaption></figure>
-        <div className="mini"><Image src={content.actions[0].imageSecondary} alt="台中黎明扶輪社與公益夥伴活動合影" width={400} height={500} unoptimized/></div>
+        <figure><Image src="https://images.unsplash.com/photo-1559027615-cd4628902d4a?auto=format&fit=crop&w=1400&q=85" alt="公益活動示意照片" width={900} height={1000} unoptimized/><figcaption>FEATURED ACTION<br/><b>社區家園・生活照護</b></figcaption></figure>
+        <div className="mini"><Image src={content.actions[1].image} alt="南投雙龍國小女足全國賽事紀錄" width={400} height={500} unoptimized/></div>
         <div className="stamp">手牽手<br/><b>∞</b><br/>愛無限</div>
       </div>
     </section>
