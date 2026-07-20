@@ -27,6 +27,8 @@ const content = {
     text: "從烈日下的每一次奔跑，到場邊的一句加油，孩子們用勇氣、默契與不放棄的精神完成全國賽事。「黎明手牽手 愛無限」陪伴孩子走進更大的球場，也把每一份支持化成繼續前進的力量。",
     video: "/media/football-finals/highlight.mp4",
     poster: "/media/football-finals/15-finals-panorama.jpg",
+    shortVideo: "/media/football-finals/2026-shuanglong-football-finals.mp4",
+    shortPoster: "/media/football-finals/2026-shuanglong-football-finals-poster.jpg",
   },
   gallery: [
     ["賽事氛圍", "盛夏球場・夢想開踢", "/media/football-finals/01-opening-field.jpg"],
@@ -151,6 +153,20 @@ export default function Home() {
             您的瀏覽器目前無法播放這段影片。
           </video>
           <div><span>EVENT FILM</span><b>奔跑的每一步，都有人在身後加油</b></div>
+        </div>
+      </div>
+      <div className="section football-reel reveal">
+        <div className="reel-copy">
+          <p className="eyebrow">NEW SHORT FILM · 新增影音</p>
+          <p className="event-kicker">13 秒精彩紀錄</p>
+          <h2>2026 雙龍國小<br/>足球全國賽</h2>
+          <p>重溫孩子們在全國賽場上的勇氣、笑容與團隊精神；每一次奔跑，都有滿滿的支持陪伴。</p>
+        </div>
+        <div className="reel-video">
+          <video controls playsInline preload="metadata" poster={content.event.shortPoster} aria-label="2026雙龍國小足球全國賽短影音">
+            <source src={content.event.shortVideo} type="video/mp4"/>
+            您的瀏覽器目前無法播放這段影片。
+          </video>
         </div>
       </div>
     </section>

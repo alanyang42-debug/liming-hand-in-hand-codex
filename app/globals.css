@@ -17,6 +17,11 @@
 .event-video>div{position:absolute;left:0;right:0;bottom:0;padding:45px 25px 21px;background:linear-gradient(transparent,#071d1be8);pointer-events:none;display:flex;flex-direction:column;gap:5px}
 .event-video span{font-size:8px;letter-spacing:.2em;color:#f0cc7b}
 .event-video b{font:18px Georgia}
+.football-reel{margin-top:95px;padding-top:75px;border-top:1px solid #ffffff26;display:grid;grid-template-columns:1fr minmax(280px,430px);gap:9vw;align-items:center}
+.reel-copy h2{font:400 clamp(42px,4.6vw,68px)/1.08 Georgia,serif;letter-spacing:-.045em;margin:14px 0 24px}
+.reel-copy>p:last-child{max-width:560px;color:#ffffffa5;line-height:1.95;font-size:13px}
+.reel-video{justify-self:center;width:min(100%,430px);padding:12px;background:#071d1b;border:1px solid #ffffff22;box-shadow:0 34px 80px #0007}
+.reel-video video{display:block;width:100%;aspect-ratio:3/4;object-fit:contain;background:#000}
 .gallery-head>div:first-child{max-width:720px}
 .gallery-intro{font-size:12px;line-height:1.8;opacity:.6;margin:22px 0 0}
 .filters{justify-content:flex-end}
@@ -26,13 +31,16 @@
 .photo-modal>img{height:min(68vh,700px);object-fit:contain;background:#082522}
 
 @media(max-width:1050px){nav{gap:18px}.football-grid{gap:4vw}}
-@media(max-width:900px){nav{gap:14px;font-size:12px}.football-grid{grid-template-columns:1fr}.event-video{margin-top:20px}}
+@media(max-width:900px){nav{gap:14px;font-size:12px}.football-grid,.football-reel{grid-template-columns:1fr}.event-video{margin-top:20px}.football-reel{gap:35px}.reel-video{justify-self:start}}
 @media(max-width:700px){
   .football-feature{padding:85px 0}
   .football-copy h2{font-size:44px}
   .event-video video{aspect-ratio:4/5}
   .event-video>div{padding:55px 18px 16px}
   .event-video b{font-size:15px}
+  .football-reel{margin-top:70px;padding-top:55px}
+  .reel-copy h2{font-size:42px}
+  .reel-video{justify-self:center;padding:8px}
   .filters{justify-content:flex-start}
   .gallery{grid-auto-rows:360px}
 }
