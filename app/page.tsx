@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Script from "next/script";
 import { useEffect, useMemo, useRef, useState } from "react";
+import type { CSSProperties } from "react";
 
 // 日後更新網站，只要修改這份集中資料即可。
 const content = {
@@ -15,6 +16,35 @@ const content = {
     [2, "所", "服務合作單位"],
     [1, "隊", "支持偏鄉球隊"],
     [365, "天", "讓善意持續發生"],
+  ] as const,
+  timeline: [
+    ["01", "生活照護", "改善照護環境", "攜手公益夥伴汰換社區家園老舊設備，讓陪伴落實在更安心、舒適的日常。"],
+    ["02", "偏鄉關懷", "把資源送到需要的地方", "串聯社友、眷屬與在地力量，讓關懷不只是一次活動，而是一段持續同行的關係。"],
+    ["03", "教育支持", "陪孩子勇敢追夢", "支持南投雙龍國小女足走上全國賽場，把每一份鼓勵化成孩子繼續奔跑的力量。"],
+    ["∞", "未來進行式", "下一個故事，期待有您", "捐助、志工、物資或專業服務，每一種參與都能讓善意繼續向前。"],
+  ] as const,
+  stories: [
+    {
+      eyebrow: "A BETTER EVERYDAY · 生活照護",
+      title: "一台新設備，換來更安心的每一天。",
+      text: "公益不只在遠方，也藏在生活最細微的需要裡。透過設備汰舊換新，我們和照護夥伴一起改善日常環境，讓被照顧的人更舒適，也讓第一線工作者多一份安心。",
+      image: "/media/community-care/01-equipment-renewal-presentation.jpg",
+      alt: "社區家園設備汰舊換新活動紀錄",
+    },
+    {
+      eyebrow: "RUN FOR THE DREAM · 教育支持",
+      title: "孩子向前奔跑，我們在身後守候。",
+      text: "烈日下的每一步都不容易。孩子們用勇氣、默契與不放棄完成全國賽事，而社友與夥伴的陪伴，讓她們知道：追夢的路上，從來不是一個人。",
+      image: "/media/football-finals/17-warm-support.jpg",
+      alt: "陪伴南投雙龍國小女足追夢",
+    },
+    {
+      eyebrow: "SHARE THE JOY · 成果時刻",
+      title: "全國第七名，是努力被看見的笑容。",
+      text: "名次是一份肯定，更珍貴的是孩子在球場上長出的自信與團隊精神。每一張合照、每一次擊掌，都記錄了善意如何變成真實的改變。",
+      image: "/media/football-finals/14-seventh-place.jpg",
+      alt: "南投雙龍國小女足全國第七名成果合影",
+    },
   ] as const,
   actions: [
     { tag: "生活照護", title: "社區家園設備汰舊換新", text: "攜手中華存善慢飛天使關懷協會，協助彰化慈愛教養院改善老舊空調設備，讓照護空間更舒適安心。", result: "改善日常照護環境", image: "/media/community-care/01-equipment-renewal-presentation.jpg", imageSecondary: "/media/community-care/02-equipment-renewal-group.jpg" },
@@ -87,6 +117,26 @@ function Counter({ value, unit }: { value: number; unit: string }) {
   return <span ref={ref} className="counter">{n}<small>{unit}</small></span>;
 }
 
+function WarmParticles({ compact = false }: { compact?: boolean }) {
+  const particles = useMemo(() => Array.from({ length: compact ? 18 : 30 }, (_, i) => ({
+    x: (i * 37 + 9) % 100,
+    y: (i * 53 + 17) % 100,
+    size: 2 + (i % 4) * 1.4,
+    delay: -(i % 12) * .7,
+    duration: 7 + (i % 6) * 1.5,
+  })), [compact]);
+
+  return <div className="warm-particles" aria-hidden="true">
+    {particles.map((p, i) => <i key={i} style={{
+      "--x": `${p.x}%`,
+      "--y": `${p.y}%`,
+      "--size": `${p.size}px`,
+      "--delay": `${p.delay}s`,
+      "--duration": `${p.duration}s`,
+    } as CSSProperties}/>)}
+  </div>;
+}
+
 export default function Home() {
   const [filter, setFilter] = useState("全部");
   const [photo, setPhoto] = useState<(typeof content.gallery)[number] | null>(null);
@@ -135,13 +185,14 @@ export default function Home() {
     <header>
       <a className="brand" href="#top"><span className="sun">✦</span><span><b>{content.name}</b><small>HAND IN HAND · LOVE WITHOUT LIMITS</small></span></a>
       <nav className={menu ? "open" : ""}>
-        <a href="#actions" onClick={() => setMenu(false)}>公益行動</a><a href="#football" onClick={() => setMenu(false)}>足球紀錄</a><a href="#gallery" onClick={() => setMenu(false)}>活動相簿</a><a href="#impact" onClick={() => setMenu(false)}>成果夥伴</a><a href="#contact" onClick={() => setMenu(false)}>聯絡我們</a>
+        <a href="#actions" onClick={() => setMenu(false)}>公益行動</a><a href="#timeline" onClick={() => setMenu(false)}>行動足跡</a><a href="#stories" onClick={() => setMenu(false)}>照片故事</a><a href="#football" onClick={() => setMenu(false)}>足球紀錄</a><a href="#contact" onClick={() => setMenu(false)}>加入行動</a>
       </nav>
       <a className="header-cta" href="#contact">一起行動 ↗</a>
       <button className="menu" aria-label="開啟選單" onClick={() => setMenu(!menu)}>☰</button>
     </header>
 
     <section className="hero">
+      <WarmParticles/>
       <div className="hero-copy reveal">
         <p className="eyebrow">HAND IN HAND · 手牽手，愛無限</p>
         <h1>手牽手<br/><em>讓愛無限</em></h1>
@@ -156,7 +207,7 @@ export default function Home() {
       </div>
     </section>
 
-    <section className="stats" aria-label="成果統計">{content.stats.map(([v,u,l]) => <div key={l}><Counter value={v} unit={u}/><p>{l}</p></div>)}</section>
+    <section className="stats" aria-label="成果統計">{content.stats.map(([v,u,l], i) => <div key={l} style={{"--stat-delay": `${i * 100}ms`} as CSSProperties}><Counter value={v} unit={u}/><p>{l}</p></div>)}</section>
 
     <section className="section actions-section" id="actions">
       <div className="heading reveal"><p className="eyebrow">OUR ACTIONS · 公益行動</p><h2>把關心，落實在<br/>每一個需要裡。</h2><p>聚焦照護、教育與社區串聯，讓資源精準抵達，也讓故事被更多人看見。</p></div>
@@ -164,6 +215,50 @@ export default function Home() {
         <span>0{i+1}</span><div className="action-img"><Image src={a.image} alt={i === 0 ? "社區家園設備汰舊換新活動合影" : i === 1 ? "南投雙龍國小女足全國第七名合影" : `${a.title}示意照片`} width={650} height={430} unoptimized/><small>{i <= 1 ? "活動實錄" : "示意照片・可替換"}</small></div>
         <div><p className="tag">{a.tag}</p><h3>{a.title}</h3><p>{a.text}</p><b>✓ {a.result}</b></div>
       </article>)}</div>
+    </section>
+
+    <section className="timeline-section" id="timeline">
+      <WarmParticles compact/>
+      <div className="section">
+        <div className="timeline-heading reveal">
+          <div><p className="eyebrow">OUR JOURNEY · 行動足跡</p><h2>每一次伸手，<br/>都讓改變向前一步。</h2></div>
+          <p>從生活照護、偏鄉關懷到教育支持，我們把善意串成一條持續前進的時間軸。</p>
+        </div>
+        <div className="timeline">
+          {content.timeline.map((item, i) => <article className="timeline-item reveal" key={item[0]}>
+            <div className="timeline-marker"><span>{item[0]}</span></div>
+            <div className="timeline-copy">
+              <p>{item[1]}</p>
+              <h3>{item[2]}</h3>
+              <small>{item[3]}</small>
+            </div>
+            <b>0{i + 1}</b>
+          </article>)}
+        </div>
+      </div>
+    </section>
+
+    <section className="stories-section" id="stories">
+      <div className="section">
+        <div className="stories-heading reveal">
+          <p className="eyebrow">STORIES BEHIND THE PHOTOS · 照片故事</p>
+          <h2>照片留住一刻，<br/>故事讓感動繼續。</h2>
+        </div>
+        <div className="story-list">
+          {content.stories.map((story, i) => <article className={`story reveal ${i % 2 ? "reverse" : ""}`} key={story.title}>
+            <figure>
+              <Image src={story.image} alt={story.alt} width={1200} height={820} unoptimized/>
+              <span>0{i + 1}</span>
+            </figure>
+            <div>
+              <p className="eyebrow">{story.eyebrow}</p>
+              <h3>{story.title}</h3>
+              <p>{story.text}</p>
+              <a href={i === 0 ? "#actions" : "#gallery"}>{i === 0 ? "看見生活照護行動" : "觀看完整活動紀錄"} ↗</a>
+            </div>
+          </article>)}
+        </div>
+      </div>
     </section>
 
     <section className="football-feature" id="football">
@@ -245,6 +340,20 @@ export default function Home() {
       <div className="quote reveal"><span>“</span><h2>{content.slogan}</h2><p>— {content.fullName}</p></div>
       <div className="partner-head reveal"><p className="eyebrow">TOGETHER, WE GO FURTHER · 合作夥伴</p><h2>一起走，讓愛更有力量。</h2></div>
       <div className="partners reveal">{content.partners.map(p => <article key={p[1]}><span>{p[0]}</span><p>{p[2]}</p><h3>{p[1]}</h3><small>連結專業與資源，讓公益行動走得更穩、更遠。</small></article>)}</div>
+    </section>
+
+    <section className="action-banner" aria-label="捐助或志工行動">
+      <WarmParticles compact/>
+      <div className="action-banner-copy reveal">
+        <p className="eyebrow">TAKE ACTION · 一起行動</p>
+        <h2>您的一份心意，<br/>可以成為下一個改變。</h2>
+        <p>無論是公益捐助、物資支持、專業服務或親自投入志工行動，我們都期待與您並肩同行。</p>
+        <div className="action-banner-buttons">
+          <a className="btn donate" href="tel:+886423227799"><span>♥</span> 我要捐助</a>
+          <a className="btn volunteer" href="#contact"><span>✦</span> 加入志工</a>
+        </div>
+        <small>實際捐助方式與志工活動名額，請與台中黎明扶輪社聯絡確認。</small>
+      </div>
     </section>
 
     <section className="contact" id="contact">
