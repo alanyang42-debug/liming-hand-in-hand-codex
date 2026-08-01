@@ -69,6 +69,33 @@
 header{top:110px}
 .share-btn{background:transparent;color:#fff;cursor:pointer}
 
+/* 最新活動：主網站與中寮中秋公益活動專頁的入口 */
+.latest-event{position:relative;isolation:isolate;overflow:hidden;background:#153532;color:#fff;padding:125px 0;scroll-margin-top:24px}
+.latest-event:before{content:"";position:absolute;z-index:0;inset:0;background:radial-gradient(circle at 14% 18%,#dca94326,transparent 30%),radial-gradient(circle at 90% 82%,#d86e5422,transparent 28%),linear-gradient(120deg,#0c2826,#173a36 62%,#102f2c)}
+.latest-event>*:not(.warm-particles){position:relative;z-index:2}
+.latest-event-grid{display:grid;grid-template-columns:minmax(300px,.72fr) 1.28fr;gap:8vw;align-items:center}
+.latest-event-poster{position:relative;width:min(100%,430px);justify-self:end;padding:12px;background:#fff8ea;box-shadow:0 38px 95px #0008;transform:rotate(-1.2deg)}
+.latest-event-poster:after{content:"";position:absolute;inset:-14px;border:1px solid #dca94370;pointer-events:none}
+.latest-event-poster img{width:100%;height:auto;aspect-ratio:2/3;object-fit:cover}
+.latest-event-poster>span{position:absolute;z-index:3;left:-34px;top:42px;width:104px;height:104px;border-radius:50%;background:var(--coral);display:grid;place-content:center;text-align:center;color:#fff;font:italic 22px/1 Georgia,serif;box-shadow:0 15px 35px #0005;transform:rotate(7deg)}
+.latest-event-poster>span b{font:700 10px/1.2 sans-serif;letter-spacing:.12em;margin-top:7px}
+.latest-event-copy .eyebrow{color:#f0cc7b;margin-bottom:14px}
+.latest-event-copy>.event-kicker{color:#ffffff7d;font-size:10px;letter-spacing:.15em;margin:0 0 18px}
+.latest-event-copy h2{font:400 clamp(48px,5.5vw,82px)/1.02 Georgia,serif;letter-spacing:-.052em;margin:0 0 28px}
+.latest-event-copy h2 em{display:inline-block;color:#f0cc7b;font-size:.58em;letter-spacing:-.02em;margin-top:14px}
+.latest-event-copy>p:not(.eyebrow):not(.event-kicker){max-width:680px;color:#ffffffb0;font-size:13px;line-height:2;margin:0 0 30px}
+.latest-event-facts{display:grid;grid-template-columns:repeat(3,1fr);margin:0 0 27px;border-top:1px solid #ffffff2c;border-bottom:1px solid #ffffff2c}
+.latest-event-facts>div{padding:17px 18px;border-right:1px solid #ffffff24}
+.latest-event-facts>div:first-child{padding-left:0}.latest-event-facts>div:last-child{border:0}
+.latest-event-facts dt{color:#f0cc7b;font-size:8px;letter-spacing:.18em;margin-bottom:7px}
+.latest-event-facts dd{margin:0;font-size:12px;font-weight:700}
+.latest-event-highlights{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-bottom:31px}
+.latest-event-highlights span{display:flex;align-items:center;gap:12px;background:#ffffff0b;border:1px solid #ffffff1c;padding:12px 14px;font-size:11px}
+.latest-event-highlights b{color:#f0cc7b;font:italic 13px Georgia,serif}
+.latest-event-actions{display:flex;align-items:center;gap:24px;flex-wrap:wrap}
+.latest-event-text-link{font-size:11px;border-bottom:1px solid #f0cc7b;padding-bottom:5px;color:#f0cc7b}
+.latest-event-copy>small{display:block;margin-top:22px;color:#ffffff70;font-size:9px;line-height:1.7;letter-spacing:.04em}
+
 @media(max-width:700px){
   .club-logo-strip{height:70px}
   header{top:70px}
@@ -137,11 +164,24 @@ header{top:110px}
 @keyframes stat-rise{from{opacity:0;transform:translateY(13px)}to{opacity:1;transform:none}}
 
 @media(max-width:900px){
+  .latest-event-grid{gap:5vw}.latest-event-poster{justify-self:start}
   .timeline-copy{grid-template-columns:.55fr 1fr}.timeline-copy small{grid-column:1/3}
   .story,.story.reverse{gap:5vw}.story figure{height:460px}
 }
 
 @media(max-width:700px){
+  .latest-event{padding:88px 0}
+  .latest-event-grid{grid-template-columns:1fr;gap:58px}
+  .latest-event-poster{width:min(88%,390px);justify-self:center}
+  .latest-event-poster>span{left:-20px;top:30px;width:88px;height:88px;font-size:19px}
+  .latest-event-copy h2{font-size:48px}
+  .latest-event-facts{grid-template-columns:1fr}
+  .latest-event-facts>div,.latest-event-facts>div:first-child{padding:13px 0;border-right:0;border-bottom:1px solid #ffffff24}
+  .latest-event-facts>div:last-child{border-bottom:0}
+  .latest-event-highlights{grid-template-columns:1fr}
+  .latest-event-actions{align-items:stretch;flex-direction:column}
+  .latest-event-actions .btn{width:100%}
+  .latest-event-text-link{align-self:center}
   .warm-particles i:nth-child(even){display:none}
   .timeline-section,.stories-section{padding:90px 0}
   .timeline-heading{display:block;margin-bottom:50px}

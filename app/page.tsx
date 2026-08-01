@@ -12,7 +12,7 @@ const content = {
   slogan: "手牽手，愛無限；因為有您，我們可以讓世界更美好。",
   intro: "串聯社友、眷屬與在地夥伴，從生活照護、教育支持到社區關懷，讓每一份善意真正抵達需要的地方。",
   stats: [
-    [3, "項", "年度重點行動"],
+    [4, "項", "年度重點行動"],
     [2, "所", "服務合作單位"],
     [1, "隊", "支持偏鄉球隊"],
     [365, "天", "讓善意持續發生"],
@@ -21,8 +21,21 @@ const content = {
     ["01", "生活照護", "改善照護環境", "攜手公益夥伴汰換社區家園老舊設備，讓陪伴落實在更安心、舒適的日常。"],
     ["02", "偏鄉關懷", "把資源送到需要的地方", "串聯社友、眷屬與在地力量，讓關懷不只是一次活動，而是一段持續同行的關係。"],
     ["03", "教育支持", "陪孩子勇敢追夢", "支持南投雙龍國小女足走上全國賽場，把每一份鼓勵化成孩子繼續奔跑的力量。"],
+    ["04", "最新活動", "偏鄉中秋公益音樂節", "2026 年 9 月 19 日相聚中寮國小，讓音樂、公益服務、在地市集與中秋團圓在偏鄉相遇。"],
     ["∞", "未來進行式", "下一個故事，期待有您", "捐助、志工、物資或專業服務，每一種參與都能讓善意繼續向前。"],
   ] as const,
+  latestEvent: {
+    url: "https://hand-in-hand-midautumn.alanyang42.chatgpt.site/",
+    poster: "https://hand-in-hand-midautumn.alanyang42.chatgpt.site/poster-modern.png",
+    eyebrow: "LATEST EVENT · 2026 最新活動",
+    title: "手牽手 愛無限",
+    subtitle: "偏鄉中秋公益音樂節",
+    date: "2026 年 9 月 19 日（六）",
+    time: "15:00－20:30",
+    place: "南投・中寮國小",
+    text: "在中寮的月光下，讓音樂、公益服務與團圓餐會相遇。從午後公益嘉年華到中秋公益晚會，邀請您牽起一雙手，把希望與溫暖送進偏鄉。",
+    highlights: ["月光音樂饗宴", "愛心義診・義剪", "幸福市集", "弱勢家庭關懷"],
+  },
   stories: [
     {
       eyebrow: "A BETTER EVERYDAY · 生活照護",
@@ -185,7 +198,7 @@ export default function Home() {
     <header>
       <a className="brand" href="#top"><span className="sun">✦</span><span><b>{content.name}</b><small>HAND IN HAND · LOVE WITHOUT LIMITS</small></span></a>
       <nav className={menu ? "open" : ""}>
-        <a href="#actions" onClick={() => setMenu(false)}>公益行動</a><a href="#timeline" onClick={() => setMenu(false)}>行動足跡</a><a href="#stories" onClick={() => setMenu(false)}>照片故事</a><a href="#football" onClick={() => setMenu(false)}>足球紀錄</a><a href="#contact" onClick={() => setMenu(false)}>加入行動</a>
+        <a href="#latest-event" onClick={() => setMenu(false)}>最新活動</a><a href="#actions" onClick={() => setMenu(false)}>公益行動</a><a href="#timeline" onClick={() => setMenu(false)}>行動足跡</a><a href="#stories" onClick={() => setMenu(false)}>照片故事</a><a href="#football" onClick={() => setMenu(false)}>足球紀錄</a><a href="#contact" onClick={() => setMenu(false)}>加入行動</a>
       </nav>
       <a className="header-cta" href="#contact">一起行動 ↗</a>
       <button className="menu" aria-label="開啟選單" onClick={() => setMenu(!menu)}>☰</button>
@@ -208,6 +221,35 @@ export default function Home() {
     </section>
 
     <section className="stats" aria-label="成果統計">{content.stats.map(([v,u,l], i) => <div key={l} style={{"--stat-delay": `${i * 100}ms`} as CSSProperties}><Counter value={v} unit={u}/><p>{l}</p></div>)}</section>
+
+    <section className="latest-event" id="latest-event">
+      <WarmParticles compact/>
+      <div className="section latest-event-grid">
+        <div className="latest-event-poster reveal">
+          <span>2026<br/><b>最新活動</b></span>
+          <Image src={content.latestEvent.poster} alt="手牽手愛無限偏鄉中秋公益音樂節活動海報" width={1024} height={1536} unoptimized/>
+        </div>
+        <div className="latest-event-copy reveal">
+          <p className="eyebrow">{content.latestEvent.eyebrow}</p>
+          <p className="event-kicker">台中黎明扶輪社・中寮偏鄉關懷</p>
+          <h2>{content.latestEvent.title}<br/><em>{content.latestEvent.subtitle}</em></h2>
+          <p>{content.latestEvent.text}</p>
+          <dl className="latest-event-facts">
+            <div><dt>日期</dt><dd>{content.latestEvent.date}</dd></div>
+            <div><dt>時間</dt><dd>{content.latestEvent.time}</dd></div>
+            <div><dt>地點</dt><dd>{content.latestEvent.place}</dd></div>
+          </dl>
+          <div className="latest-event-highlights" aria-label="活動亮點">
+            {content.latestEvent.highlights.map((item, i) => <span key={item}><b>0{i + 1}</b>{item}</span>)}
+          </div>
+          <div className="latest-event-actions">
+            <a className="btn gold" href={content.latestEvent.url} target="_blank" rel="noreferrer">進入完整活動專頁 ↗</a>
+            <a className="latest-event-text-link" href={`${content.latestEvent.url}location`} target="_blank" rel="noreferrer">查看地點與交通 →</a>
+          </div>
+          <small>完整流程、主題曲、活動地圖與主／協辦單位介紹，請前往活動專頁查看。</small>
+        </div>
+      </div>
+    </section>
 
     <section className="section actions-section" id="actions">
       <div className="heading reveal"><p className="eyebrow">OUR ACTIONS · 公益行動</p><h2>把關心，落實在<br/>每一個需要裡。</h2><p>聚焦照護、教育與社區串聯，讓資源精準抵達，也讓故事被更多人看見。</p></div>
