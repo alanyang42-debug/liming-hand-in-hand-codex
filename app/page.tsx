@@ -26,7 +26,18 @@ const content = {
   ] as const,
   latestEvent: {
     url: "https://hand-in-hand-midautumn.alanyang42.chatgpt.site/",
-    poster: "https://hand-in-hand-midautumn.alanyang42.chatgpt.site/poster-modern.png",
+    posters: [
+      {
+        src: "/media/latest-event/stage-one-poster.webp",
+        label: "第一階段",
+        alt: "第一階段公益嘉年華活動海報",
+      },
+      {
+        src: "/media/latest-event/stage-two-poster.webp",
+        label: "第二階段",
+        alt: "第二階段中秋公益晚會活動海報",
+      },
+    ],
     eyebrow: "LATEST EVENT · 2026 最新活動",
     title: "手牽手 愛無限",
     subtitle: "偏鄉中秋公益音樂節",
@@ -225,9 +236,14 @@ export default function Home() {
     <section className="latest-event" id="latest-event">
       <WarmParticles compact/>
       <div className="section latest-event-grid">
-        <div className="latest-event-poster reveal">
+        <div className="latest-event-posters reveal" aria-label="第一階段與第二階段活動海報">
           <span>2026<br/><b>最新活動</b></span>
-          <Image src={content.latestEvent.poster} alt="手牽手愛無限偏鄉中秋公益音樂節活動海報" width={1024} height={1536} unoptimized/>
+          {content.latestEvent.posters.map((poster) => (
+            <figure key={poster.label}>
+              <Image src={poster.src} alt={poster.alt} width={1024} height={1536} unoptimized/>
+              <figcaption>{poster.label}</figcaption>
+            </figure>
+          ))}
         </div>
         <div className="latest-event-copy reveal">
           <p className="eyebrow">{content.latestEvent.eyebrow}</p>
