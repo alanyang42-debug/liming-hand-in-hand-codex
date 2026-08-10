@@ -82,7 +82,7 @@ header{top:110px}
 .latest-event-posters figure:hover{transform:translateY(-7px) rotate(0)}
 .latest-event-posters img{width:100%;height:auto;aspect-ratio:2/3;object-fit:cover}
 .latest-event-posters figcaption{left:50%;bottom:13px;transform:translateX(-50%);min-width:max-content;padding:7px 13px;background:#10302de8;border:1px solid #f0cc7b6b;color:#fff;font:700 10px/1 sans-serif;letter-spacing:.16em;text-align:center}
-.latest-event-posters>span{position:absolute;z-index:3;left:-34px;top:42px;width:104px;height:104px;border-radius:50%;background:var(--coral);display:grid;place-content:center;text-align:center;color:#fff;font:italic 22px/1 Georgia,serif;box-shadow:0 15px 35px #0005;transform:rotate(7deg)}
+.latest-event-posters>span{position:absolute;z-index:3;left:50%;top:-66px;width:104px;height:104px;border-radius:50%;background:var(--coral);display:grid;place-content:center;text-align:center;color:#fff;font:italic 22px/1 Georgia,serif;box-shadow:0 15px 35px #0005;transform:translateX(-50%) rotate(4deg)}
 .latest-event-posters>span b{font:700 10px/1.2 sans-serif;letter-spacing:.12em;margin-top:7px}
 .latest-event-copy .eyebrow{color:#f0cc7b;margin-bottom:14px}
 .latest-event-copy>.event-kicker{color:#ffffff7d;font-size:10px;letter-spacing:.15em;margin:0 0 18px}
@@ -180,7 +180,7 @@ header{top:110px}
   .latest-event-posters{width:min(94%,590px);justify-self:center;gap:10px}
   .latest-event-posters figure{padding:5px}
   .latest-event-posters figcaption{bottom:9px;padding:6px 9px;font-size:8px}
-  .latest-event-posters>span{left:-15px;top:22px;width:78px;height:78px;font-size:17px}
+  .latest-event-posters>span{left:50%;top:-76px;width:78px;height:78px;font-size:17px;transform:translateX(-50%) rotate(4deg)}
   .latest-event-copy h2{font-size:48px}
   .latest-event-facts{grid-template-columns:1fr}
   .latest-event-facts>div,.latest-event-facts>div:first-child{padding:13px 0;border-right:0;border-bottom:1px solid #ffffff24}
