@@ -4,6 +4,7 @@ import Image from "next/image";
 import Script from "next/script";
 import { useEffect, useMemo, useRef, useState } from "react";
 import type { CSSProperties } from "react";
+import { languageOptions, translate, type Lang } from "./i18n";
 
 // 日後更新網站，只要修改這份集中資料即可。
 const content = {
@@ -162,6 +163,7 @@ function WarmParticles({ compact = false }: { compact?: boolean }) {
 }
 
 export default function Home() {
+  const [lang, setLang] = useState<Lang>("zh");
   const [filter, setFilter] = useState("全部");
   const [photo, setPhoto] = useState<(typeof content.gallery)[number] | null>(null);
   const [guide, setGuide] = useState(false);
@@ -169,6 +171,18 @@ export default function Home() {
   const [shareStatus, setShareStatus] = useState("");
   const filters = useMemo(() => ["全部", ...new Set(content.gallery.map(x => x[0]))], []);
   const photos = filter === "全部" ? content.gallery : content.gallery.filter(x => x[0] === filter);
+  const t = (value: string) => translate(lang, value);
+
+  useEffect(() => {
+    const saved = window.localStorage.getItem("liming-site-language") as Lang | null;
+    if (saved && languageOptions.some(option => option.code === saved)) setLang(saved);
+  }, []);
+
+  useEffect(() => {
+    const option = languageOptions.find(item => item.code === lang);
+    document.documentElement.lang = option?.htmlLang ?? "zh-Hant";
+    window.localStorage.setItem("liming-site-language", lang);
+  }, [lang]);
 
   useEffect(() => {
     const ob = new IntersectionObserver(es => es.forEach(e => e.isIntersecting && e.target.classList.add("show")), { threshold: .12 });
@@ -180,8 +194,8 @@ export default function Home() {
 
   const shareSite = async () => {
     const shareData = {
-      title: "黎明手牽手 愛無限",
-      text: "一起看見台中黎明扶輪社的公益行動，讓每一份善意成為改變。",
+      title: t("黎明手牽手 愛無限"),
+      text: t("一起看見台中黎明扶輪社的公益行動，讓每一份善意成為改變。"),
       url: window.location.origin,
     };
     try {
@@ -189,89 +203,97 @@ export default function Home() {
         await navigator.share(shareData);
       } else if (navigator.clipboard) {
         await navigator.clipboard.writeText(shareData.url);
-        setShareStatus("連結已複製 ✓");
+        setShareStatus(t("連結已複製 ✓"));
         window.setTimeout(() => setShareStatus(""), 2400);
       } else {
-        setShareStatus("請複製網址列");
+        setShareStatus(t("請複製網址列"));
         window.setTimeout(() => setShareStatus(""), 2400);
       }
     } catch (error) {
       if (error instanceof DOMException && error.name === "AbortError") return;
-      setShareStatus("請稍後再試");
+      setShareStatus(t("請稍後再試"));
       window.setTimeout(() => setShareStatus(""), 2400);
     }
   };
 
-  return <main>
+  return <main data-lang={lang}>
     <div className="club-logo-strip" id="top">
-      <Image src="/media/site/taichung-liming-rotary-logo-web.png" alt="國際扶輪3462地區・台中黎明扶輪社" width={2048} height={682} priority unoptimized/>
+      <Image src="/media/site/taichung-liming-rotary-logo-web.png" alt={t("國際扶輪3462地區・台中黎明扶輪社")} width={2048} height={682} priority unoptimized/>
     </div>
     <header>
-      <a className="brand" href="#top"><span className="sun">✦</span><span><b>{content.name}</b><small>HAND IN HAND · LOVE WITHOUT LIMITS</small></span></a>
+      <a className="brand" href="#top"><span className="sun">✦</span><span><b>{t(content.name)}</b><small>HAND IN HAND · LOVE WITHOUT LIMITS</small></span></a>
       <nav className={menu ? "open" : ""}>
-        <a href="#latest-event" onClick={() => setMenu(false)}>最新活動</a><a href="#actions" onClick={() => setMenu(false)}>公益行動</a><a href="#timeline" onClick={() => setMenu(false)}>行動足跡</a><a href="#stories" onClick={() => setMenu(false)}>照片故事</a><a href="#football" onClick={() => setMenu(false)}>足球紀錄</a><a href="#contact" onClick={() => setMenu(false)}>加入行動</a>
+        <a href="#latest-event" onClick={() => setMenu(false)}>{t("最新活動")}</a><a href="#actions" onClick={() => setMenu(false)}>{t("公益行動")}</a><a href="#timeline" onClick={() => setMenu(false)}>{t("行動足跡")}</a><a href="#stories" onClick={() => setMenu(false)}>{t("照片故事")}</a><a href="#football" onClick={() => setMenu(false)}>{t("足球紀錄")}</a><a href="#contact" onClick={() => setMenu(false)}>{t("加入行動")}</a>
       </nav>
-      <a className="header-cta" href="#contact">一起行動 ↗</a>
-      <button className="menu" aria-label="開啟選單" onClick={() => setMenu(!menu)}>☰</button>
+      <div className="header-tools">
+        <label className="language-switcher">
+          <span>{t("選擇語言")}</span>
+          <select aria-label={t("選擇語言")} value={lang} onChange={event => setLang(event.target.value as Lang)}>
+            {languageOptions.map(option => <option key={option.code} value={option.code}>{option.label}</option>)}
+          </select>
+        </label>
+        <a className="header-cta" href="#contact">{t("一起行動 ↗")}</a>
+        <button className="menu" aria-label={t("開啟選單")} onClick={() => setMenu(!menu)}>☰</button>
+      </div>
     </header>
 
     <section className="hero">
       <WarmParticles/>
       <div className="hero-copy reveal">
-        <p className="eyebrow">HAND IN HAND · 手牽手，愛無限</p>
-        <h1>手牽手<br/><em>讓愛無限</em></h1>
-        <p>{content.intro}</p>
-        <div className="actions"><a className="btn gold" href="#actions">看見我們的行動 ↓</a><a className="btn outline" href="#contact">成為合作夥伴 ↗</a><button className="btn outline share-btn" type="button" onClick={shareSite} aria-live="polite">{shareStatus || "分享公益網站 ↗"}</button></div>
-        <small><i/> 公益不是一場活動，而是一段長久的陪伴</small>
+        <p className="eyebrow">{t("HAND IN HAND · 手牽手，愛無限")}</p>
+        <h1>{t("手牽手")}<br/><em>{t("讓愛無限")}</em></h1>
+        <p>{t(content.intro)}</p>
+        <div className="actions"><a className="btn gold" href="#actions">{t("看見我們的行動 ↓")}</a><a className="btn outline" href="#contact">{t("成為合作夥伴 ↗")}</a><button className="btn outline share-btn" type="button" onClick={shareSite} aria-live="polite">{shareStatus || t("分享公益網站 ↗")}</button></div>
+        <small><i/> {t("公益不是一場活動，而是一段長久的陪伴")}</small>
       </div>
       <div className="hero-art reveal">
-        <figure><Image src="https://images.unsplash.com/photo-1559027615-cd4628902d4a?auto=format&fit=crop&w=1400&q=85" alt="公益活動示意照片" width={900} height={1000} unoptimized/><figcaption>FEATURED ACTION<br/><b>社區家園・生活照護</b></figcaption></figure>
-        <div className="mini"><Image src={content.actions[1].image} alt="南投雙龍國小女足全國賽事紀錄" width={400} height={500} unoptimized/></div>
-        <div className="stamp">手牽手<br/><b>∞</b><br/>愛無限</div>
+        <figure><Image src="https://images.unsplash.com/photo-1559027615-cd4628902d4a?auto=format&fit=crop&w=1400&q=85" alt={t("公益活動示意照片")} width={900} height={1000} unoptimized/><figcaption>FEATURED ACTION<br/><b>{t("社區家園・生活照護")}</b></figcaption></figure>
+        <div className="mini"><Image src={content.actions[1].image} alt={t("南投雙龍國小女足全國賽事紀錄")} width={400} height={500} unoptimized/></div>
+        <div className="stamp">{t("手牽手")}<br/><b>∞</b><br/>{t("愛無限")}</div>
       </div>
     </section>
 
-    <section className="stats" aria-label="成果統計">{content.stats.map(([v,u,l], i) => <div key={l} style={{"--stat-delay": `${i * 100}ms`} as CSSProperties}><Counter value={v} unit={u}/><p>{l}</p></div>)}</section>
+    <section className="stats" aria-label={t("成果統計")}>{content.stats.map(([v,u,l], i) => <div key={l} style={{"--stat-delay": `${i * 100}ms`} as CSSProperties}><Counter value={v} unit={t(u)}/><p>{t(l)}</p></div>)}</section>
 
     <section className="latest-event" id="latest-event">
       <WarmParticles compact/>
       <div className="section latest-event-grid">
-        <div className="latest-event-posters reveal" aria-label="第一階段與第二階段活動海報">
-          <span>2026<br/><b>最新活動</b></span>
+        <div className="latest-event-posters reveal" aria-label={t("第一階段與第二階段活動海報")}>
+          <span>2026<br/><b>{t("最新活動")}</b></span>
           {content.latestEvent.posters.map((poster) => (
             <figure key={poster.label}>
-              <Image src={poster.src} alt={poster.alt} width={1024} height={1536} unoptimized/>
-              <figcaption>{poster.label}</figcaption>
+              <Image src={poster.src} alt={t(poster.alt)} width={1024} height={1536} unoptimized/>
+              <figcaption>{t(poster.label)}</figcaption>
             </figure>
           ))}
         </div>
         <div className="latest-event-copy reveal">
-          <p className="eyebrow">{content.latestEvent.eyebrow}</p>
-          <p className="event-kicker">台中黎明扶輪社・中寮偏鄉關懷</p>
-          <h2>{content.latestEvent.title}<br/><em>{content.latestEvent.subtitle}</em></h2>
-          <p>{content.latestEvent.text}</p>
+          <p className="eyebrow">{t(content.latestEvent.eyebrow)}</p>
+          <p className="event-kicker">{t("台中黎明扶輪社・中寮偏鄉關懷")}</p>
+          <h2>{t(content.latestEvent.title)}<br/><em>{t(content.latestEvent.subtitle)}</em></h2>
+          <p>{t(content.latestEvent.text)}</p>
           <dl className="latest-event-facts">
-            <div><dt>日期</dt><dd>{content.latestEvent.date}</dd></div>
-            <div><dt>時間</dt><dd>{content.latestEvent.time}</dd></div>
-            <div><dt>地點</dt><dd>{content.latestEvent.place}</dd></div>
+            <div><dt>{t("日期")}</dt><dd>{t(content.latestEvent.date)}</dd></div>
+            <div><dt>{t("時間")}</dt><dd>{content.latestEvent.time}</dd></div>
+            <div><dt>{t("地點")}</dt><dd>{t(content.latestEvent.place)}</dd></div>
           </dl>
-          <div className="latest-event-highlights" aria-label="活動亮點">
-            {content.latestEvent.highlights.map((item, i) => <span key={item}><b>0{i + 1}</b>{item}</span>)}
+          <div className="latest-event-highlights" aria-label={t("活動亮點")}>
+            {content.latestEvent.highlights.map((item, i) => <span key={item}><b>0{i + 1}</b>{t(item)}</span>)}
           </div>
           <div className="latest-event-actions">
-            <a className="btn gold" href={content.latestEvent.url} target="_blank" rel="noreferrer">進入完整活動專頁 ↗</a>
-            <a className="latest-event-text-link" href={`${content.latestEvent.url}location`} target="_blank" rel="noreferrer">查看地點與交通 →</a>
+            <a className="btn gold" href={content.latestEvent.url} target="_blank" rel="noreferrer">{t("進入完整活動專頁 ↗")}</a>
+            <a className="latest-event-text-link" href={`${content.latestEvent.url}location`} target="_blank" rel="noreferrer">{t("查看地點與交通 →")}</a>
           </div>
-          <small>完整流程、主題曲、活動地圖與主／協辦單位介紹，請前往活動專頁查看。</small>
+          <small>{t("完整流程、主題曲、活動地圖與主／協辦單位介紹，請前往活動專頁查看。")}</small>
         </div>
       </div>
     </section>
 
     <section className="section actions-section" id="actions">
-      <div className="heading reveal"><p className="eyebrow">OUR ACTIONS · 公益行動</p><h2>把關心，落實在<br/>每一個需要裡。</h2><p>聚焦照護、教育與社區串聯，讓資源精準抵達，也讓故事被更多人看見。</p></div>
+      <div className="heading reveal"><p className="eyebrow">{t("OUR ACTIONS · 公益行動")}</p><h2>{t("把關心，落實在")}<br/>{t("每一個需要裡。")}</h2><p>{t("聚焦照護、教育與社區串聯，讓資源精準抵達，也讓故事被更多人看見。")}</p></div>
       <div className="action-list">{content.actions.map((a,i) => <article className="action-card reveal" key={a.title}>
-        <span>0{i+1}</span><div className="action-img"><Image src={a.image} alt={i === 0 ? "社區家園設備汰舊換新活動合影" : i === 1 ? "南投雙龍國小女足全國第七名合影" : `${a.title}示意照片`} width={650} height={430} unoptimized/><small>{i <= 1 ? "活動實錄" : "示意照片・可替換"}</small></div>
-        <div><p className="tag">{a.tag}</p><h3>{a.title}</h3><p>{a.text}</p><b>✓ {a.result}</b></div>
+        <span>0{i+1}</span><div className="action-img"><Image src={a.image} alt={i === 0 ? t("社區家園設備汰舊換新活動合影") : i === 1 ? t("南投雙龍國小女足全國第七名合影") : `${t(a.title)}${t("示意照片")}`} width={650} height={430} unoptimized/><small>{i <= 1 ? t("活動實錄") : t("示意照片・可替換")}</small></div>
+        <div><p className="tag">{t(a.tag)}</p><h3>{t(a.title)}</h3><p>{t(a.text)}</p><b>✓ {t(a.result)}</b></div>
       </article>)}</div>
     </section>
 
@@ -279,16 +301,16 @@ export default function Home() {
       <WarmParticles compact/>
       <div className="section">
         <div className="timeline-heading reveal">
-          <div><p className="eyebrow">OUR JOURNEY · 行動足跡</p><h2>每一次伸手，<br/>都讓改變向前一步。</h2></div>
-          <p>從生活照護、偏鄉關懷到教育支持，我們把善意串成一條持續前進的時間軸。</p>
+          <div><p className="eyebrow">{t("OUR JOURNEY · 行動足跡")}</p><h2>{t("每一次伸手，")}<br/>{t("都讓改變向前一步。")}</h2></div>
+          <p>{t("從生活照護、偏鄉關懷到教育支持，我們把善意串成一條持續前進的時間軸。")}</p>
         </div>
         <div className="timeline">
           {content.timeline.map((item, i) => <article className="timeline-item reveal" key={item[0]}>
             <div className="timeline-marker"><span>{item[0]}</span></div>
             <div className="timeline-copy">
-              <p>{item[1]}</p>
-              <h3>{item[2]}</h3>
-              <small>{item[3]}</small>
+              <p>{t(item[1])}</p>
+              <h3>{t(item[2])}</h3>
+              <small>{t(item[3])}</small>
             </div>
             <b>0{i + 1}</b>
           </article>)}
@@ -299,20 +321,20 @@ export default function Home() {
     <section className="stories-section" id="stories">
       <div className="section">
         <div className="stories-heading reveal">
-          <p className="eyebrow">STORIES BEHIND THE PHOTOS · 照片故事</p>
-          <h2>照片留住一刻，<br/>故事讓感動繼續。</h2>
+          <p className="eyebrow">{t("STORIES BEHIND THE PHOTOS · 照片故事")}</p>
+          <h2>{t("照片留住一刻，")}<br/>{t("故事讓感動繼續。")}</h2>
         </div>
         <div className="story-list">
           {content.stories.map((story, i) => <article className={`story reveal ${i % 2 ? "reverse" : ""}`} key={story.title}>
             <figure>
-              <Image src={story.image} alt={story.alt} width={1200} height={820} unoptimized/>
+              <Image src={story.image} alt={t(story.alt)} width={1200} height={820} unoptimized/>
               <span>0{i + 1}</span>
             </figure>
             <div>
-              <p className="eyebrow">{story.eyebrow}</p>
-              <h3>{story.title}</h3>
-              <p>{story.text}</p>
-              <a href={i === 0 ? "#actions" : "#gallery"}>{i === 0 ? "看見生活照護行動" : "觀看完整活動紀錄"} ↗</a>
+              <p className="eyebrow">{t(story.eyebrow)}</p>
+              <h3>{t(story.title)}</h3>
+              <p>{t(story.text)}</p>
+              <a href={i === 0 ? "#actions" : "#gallery"}>{i === 0 ? t("看見生活照護行動") : t("觀看完整活動紀錄")} ↗</a>
             </div>
           </article>)}
         </div>
@@ -322,32 +344,32 @@ export default function Home() {
     <section className="football-feature" id="football">
       <div className="section football-grid">
         <div className="football-copy reveal">
-          <p className="eyebrow">FOOTBALL DREAM · 足球公益紀錄</p>
-          <p className="event-kicker">{content.event.subtitle}</p>
-          <h2>{content.event.title}</h2>
-          <div className="result-badge"><span>FINAL RESULT</span><b>{content.event.result}</b></div>
-          <p>{content.event.text}</p>
-          <a className="btn gold" href="#gallery">看完整活動相簿 ↓</a>
+          <p className="eyebrow">{t("FOOTBALL DREAM · 足球公益紀錄")}</p>
+          <p className="event-kicker">{t(content.event.subtitle)}</p>
+          <h2>{t(content.event.title)}</h2>
+          <div className="result-badge"><span>FINAL RESULT</span><b>{t(content.event.result)}</b></div>
+          <p>{t(content.event.text)}</p>
+          <a className="btn gold" href="#gallery">{t("看完整活動相簿 ↓")}</a>
         </div>
         <div className="event-video reveal">
-          <video controls playsInline preload="metadata" poster={content.event.poster} aria-label="114學年度小學生足球賽全國決賽活動影片">
+          <video controls playsInline preload="metadata" poster={content.event.poster} aria-label={t("114學年度小學生足球賽全國決賽活動影片")}>
             <source src={content.event.video} type="video/mp4"/>
-            您的瀏覽器目前無法播放這段影片。
+            {t("您的瀏覽器目前無法播放這段影片。")}
           </video>
-          <div><span>EVENT FILM</span><b>奔跑的每一步，都有人在身後加油</b></div>
+          <div><span>EVENT FILM</span><b>{t("奔跑的每一步，都有人在身後加油")}</b></div>
         </div>
       </div>
       <div className="section football-reel reveal">
         <div className="reel-copy">
-          <p className="eyebrow">NEW SHORT FILM · 新增影音</p>
-          <p className="event-kicker">13 秒精彩紀錄</p>
-          <h2>2026 雙龍國小<br/>足球全國賽</h2>
-          <p>重溫孩子們在全國賽場上的勇氣、笑容與團隊精神；每一次奔跑，都有滿滿的支持陪伴。</p>
+          <p className="eyebrow">{t("NEW SHORT FILM · 新增影音")}</p>
+          <p className="event-kicker">{t("13 秒精彩紀錄")}</p>
+          <h2>{t("2026 雙龍國小")}<br/>{t("足球全國賽")}</h2>
+          <p>{t("重溫孩子們在全國賽場上的勇氣、笑容與團隊精神；每一次奔跑，都有滿滿的支持陪伴。")}</p>
         </div>
         <div className="reel-video">
-          <video controls playsInline preload="metadata" poster={content.event.shortPoster} aria-label="2026雙龍國小足球全國賽短影音">
+          <video controls playsInline preload="metadata" poster={content.event.shortPoster} aria-label={t("2026雙龍國小足球全國賽短影音")}>
             <source src={content.event.shortVideo} type="video/mp4"/>
-            您的瀏覽器目前無法播放這段影片。
+            {t("您的瀏覽器目前無法播放這段影片。")}
           </video>
         </div>
       </div>
@@ -355,26 +377,26 @@ export default function Home() {
         <div className="instagram-frame">
           <iframe
             src={content.event.instagramEmbed}
-            title="雙龍國小足球全國賽 Instagram Reel"
+            title={t("雙龍國小足球全國賽 Instagram Reel")}
             loading="lazy"
             allow="clipboard-write; encrypted-media; picture-in-picture; web-share"
           />
         </div>
         <div className="instagram-copy">
-          <p className="eyebrow">FOLLOW THE STORY · IG 影音</p>
+          <p className="eyebrow">{t("FOLLOW THE STORY · IG 影音")}</p>
           <p className="event-kicker">Instagram Reel</p>
-          <h2>一起為孩子的<br/>每一步喝采</h2>
-          <p>從公益網站直接觀看最新賽事影音；若您的瀏覽器限制 Instagram 嵌入內容，也可前往原貼文觀看。</p>
-          <a className="btn gold" href={content.event.instagramUrl} target="_blank" rel="noreferrer">在 Instagram 觀看 ↗</a>
+          <h2>{t("一起為孩子的")}<br/>{t("每一步喝采")}</h2>
+          <p>{t("從公益網站直接觀看最新賽事影音；若您的瀏覽器限制 Instagram 嵌入內容，也可前往原貼文觀看。")}</p>
+          <a className="btn gold" href={content.event.instagramUrl} target="_blank" rel="noreferrer">{t("在 Instagram 觀看 ↗")}</a>
         </div>
       </div>
       <div className="section threads-reel reveal" id="threads-reel">
         <div className="threads-copy">
-          <p className="eyebrow">MORE MOMENTS · THREADS 影音</p>
+          <p className="eyebrow">{t("MORE MOMENTS · THREADS 影音")}</p>
           <p className="event-kicker">Threads Post</p>
-          <h2>讓每一份感動<br/>繼續被看見</h2>
-          <p>透過 Threads 分享球場上的精彩時刻，也讓更多人看見孩子們勇敢追夢的身影。</p>
-          <a className="btn gold" href={content.event.threadsUrl} target="_blank" rel="noreferrer">在 Threads 觀看 ↗</a>
+          <h2>{t("讓每一份感動")}<br/>{t("繼續被看見")}</h2>
+          <p>{t("透過 Threads 分享球場上的精彩時刻，也讓更多人看見孩子們勇敢追夢的身影。")}</p>
+          <a className="btn gold" href={content.event.threadsUrl} target="_blank" rel="noreferrer">{t("在 Threads 觀看 ↗")}</a>
         </div>
         <div className="threads-frame">
           <blockquote
@@ -382,7 +404,7 @@ export default function Home() {
             data-text-post-permalink={content.event.threadsUrl}
             data-text-post-version="0"
           >
-            <a href={content.event.threadsUrl} target="_blank" rel="noreferrer">在 Threads 觀看這則影音</a>
+            <a href={content.event.threadsUrl} target="_blank" rel="noreferrer">{t("在 Threads 觀看這則影音")}</a>
           </blockquote>
         </div>
       </div>
@@ -390,39 +412,39 @@ export default function Home() {
     </section>
 
     <section className="gallery-section" id="gallery">
-      <div className="section gallery-head reveal"><div><p className="eyebrow">MOMENTS OF COURAGE · 賽事相簿</p><h2>每張照片，都是<br/>勇氣發生的證明。</h2><p className="gallery-intro">共 19 張活動紀錄，依賽事氛圍、場上精彩、團隊時刻與成果紀錄分類整理。</p></div><div className="filters">{filters.map(f => <button className={filter===f?"active":""} onClick={()=>setFilter(f)} key={f}>{f}</button>)}</div></div>
-      <div className="section gallery">{photos.map((p,i) => <button className={`photo p${i%6}`} key={p[2]} onClick={()=>setPhoto(p)} aria-label={`放大查看${p[1]}`}><Image src={p[2]} alt={p[1]} width={1000} height={700} unoptimized/><span><i>{p[0]}</i><b>{p[1]}</b><em>＋</em></span></button>)}</div>
+      <div className="section gallery-head reveal"><div><p className="eyebrow">{t("MOMENTS OF COURAGE · 賽事相簿")}</p><h2>{t("每張照片，都是")}<br/>{t("勇氣發生的證明。")}</h2><p className="gallery-intro">{t("共 19 張活動紀錄，依賽事氛圍、場上精彩、團隊時刻與成果紀錄分類整理。")}</p></div><div className="filters">{filters.map(f => <button className={filter===f?"active":""} onClick={()=>setFilter(f)} key={f}>{t(f)}</button>)}</div></div>
+      <div className="section gallery">{photos.map((p,i) => <button className={`photo p${i%6}`} key={p[2]} onClick={()=>setPhoto(p)} aria-label={`${t("放大查看")}${t(p[1])}`}><Image src={p[2]} alt={t(p[1])} width={1000} height={700} unoptimized/><span><i>{t(p[0])}</i><b>{t(p[1])}</b><em>＋</em></span></button>)}</div>
     </section>
 
     <section className="section impact" id="impact">
-      <div className="quote reveal"><span>“</span><h2>{content.slogan}</h2><p>— {content.fullName}</p></div>
-      <div className="partner-head reveal"><p className="eyebrow">TOGETHER, WE GO FURTHER · 合作夥伴</p><h2>一起走，讓愛更有力量。</h2></div>
-      <div className="partners reveal">{content.partners.map(p => <article key={p[1]}><span>{p[0]}</span><p>{p[2]}</p><h3>{p[1]}</h3><small>連結專業與資源，讓公益行動走得更穩、更遠。</small></article>)}</div>
+      <div className="quote reveal"><span>“</span><h2>{t(content.slogan)}</h2><p>— {t(content.fullName)}</p></div>
+      <div className="partner-head reveal"><p className="eyebrow">{t("TOGETHER, WE GO FURTHER · 合作夥伴")}</p><h2>{t("一起走，讓愛更有力量。")}</h2></div>
+      <div className="partners reveal">{content.partners.map(p => <article key={p[1]}><span>{t(p[0])}</span><p>{t(p[2])}</p><h3>{t(p[1])}</h3><small>{t("連結專業與資源，讓公益行動走得更穩、更遠。")}</small></article>)}</div>
     </section>
 
-    <section className="action-banner" aria-label="捐助或志工行動">
+    <section className="action-banner" aria-label={t("捐助或志工行動")}>
       <WarmParticles compact/>
       <div className="action-banner-copy reveal">
-        <p className="eyebrow">TAKE ACTION · 一起行動</p>
-        <h2>您的一份心意，<br/>可以成為下一個改變。</h2>
-        <p>無論是公益捐助、物資支持、專業服務或親自投入志工行動，我們都期待與您並肩同行。</p>
+        <p className="eyebrow">{t("TAKE ACTION · 一起行動")}</p>
+        <h2>{t("您的一份心意，")}<br/>{t("可以成為下一個改變。")}</h2>
+        <p>{t("無論是公益捐助、物資支持、專業服務或親自投入志工行動，我們都期待與您並肩同行。")}</p>
         <div className="action-banner-buttons">
-          <a className="btn donate" href="tel:+886423227799"><span>♥</span> 我要捐助</a>
-          <a className="btn volunteer" href="#contact"><span>✦</span> 加入志工</a>
+          <a className="btn donate" href="tel:+886423227799"><span>♥</span> {t("我要捐助")}</a>
+          <a className="btn volunteer" href="#contact"><span>✦</span> {t("加入志工")}</a>
         </div>
-        <small>實際捐助方式與志工活動名額，請與台中黎明扶輪社聯絡確認。</small>
+        <small>{t("實際捐助方式與志工活動名額，請與台中黎明扶輪社聯絡確認。")}</small>
       </div>
     </section>
 
     <section className="contact" id="contact">
-      <div className="reveal"><p className="eyebrow">LET’S CREATE IMPACT · 聯絡我們</p><h2>下一個好故事，<br/><em>期待有您同行。</em></h2><p>企業合作、物資支持、專業服務或活動參與，都歡迎與我們聊聊。</p><div className="actions"><a className="btn light" href="tel:+886423227799">立即來電 ↗</a><a className="btn outline" href="https://dawnrotaryclub.tw/" target="_blank">官方網站 ↗</a></div></div>
-      <aside className="contact-card reveal"><p>TAICHUNG DAWN</p><h3>{content.fullName}</h3><dl><div><dt>電話</dt><dd><a href="tel:+886423227799">04-2322-7799</a></dd></div><div><dt>辦公室</dt><dd>台中市南屯區公益路二段 61 號<br/>13 樓之 1</dd></div><div><dt>合作洽詢</dt><dd>歡迎來電洽詢公益合作與活動資訊</dd></div></dl><a href="https://www.facebook.com/groups/376285655902508/" target="_blank">Facebook 社群 ↗</a></aside>
+      <div className="reveal"><p className="eyebrow">{t("LET’S CREATE IMPACT · 聯絡我們")}</p><h2>{t("下一個好故事，")}<br/><em>{t("期待有您同行。")}</em></h2><p>{t("企業合作、物資支持、專業服務或活動參與，都歡迎與我們聊聊。")}</p><div className="actions"><a className="btn light" href="tel:+886423227799">{t("立即來電 ↗")}</a><a className="btn outline" href="https://dawnrotaryclub.tw/" target="_blank">{t("官方網站 ↗")}</a></div></div>
+      <aside className="contact-card reveal"><p>TAICHUNG DAWN</p><h3>{t(content.fullName)}</h3><dl><div><dt>{t("電話")}</dt><dd><a href="tel:+886423227799">04-2322-7799</a></dd></div><div><dt>{t("辦公室")}</dt><dd>{t("台中市南屯區公益路二段 61 號")}<br/>{t("13 樓之 1")}</dd></div><div><dt>{t("合作洽詢")}</dt><dd>{t("歡迎來電洽詢公益合作與活動資訊")}</dd></div></dl><a href="https://www.facebook.com/groups/376285655902508/" target="_blank">{t("Facebook 社群 ↗")}</a></aside>
     </section>
 
-    <footer><a className="brand" href="#top"><span className="sun">✦</span><b>{content.name}</b></a><p>© 2026 {content.fullName} · 讓善意持續發生</p><p>內容更新 2026.07</p></footer>
-    <button className="guide-btn" onClick={()=>setGuide(true)}>✦ 內容更新指南</button>
+    <footer><a className="brand" href="#top"><span className="sun">✦</span><b>{t(content.name)}</b></a><p>© 2026 {t(content.fullName)} · {t("讓善意持續發生")}</p><p>{t("內容更新 2026.07")}</p></footer>
+    <button className="guide-btn" onClick={()=>setGuide(true)}>✦ {t("內容更新指南")}</button>
 
-    {photo && <div className="backdrop" onClick={()=>setPhoto(null)}><div className="photo-modal" onClick={e=>e.stopPropagation()}><button onClick={()=>setPhoto(null)} aria-label="關閉照片">×</button><Image src={photo[2]} alt={photo[1]} width={1500} height={1000} unoptimized/><div><p>{photo[0]}</p><h3>{photo[1]}</h3><small>{content.event.title}・活動實錄</small></div></div></div>}
-    {guide && <div className="backdrop" onClick={()=>setGuide(false)}><aside className="guide" onClick={e=>e.stopPropagation()}><button onClick={()=>setGuide(false)}>×</button><p className="eyebrow">EASY TO UPDATE</p><h2>一處更新，<br/>全站同步。</h2><p>活動、數字、照片與合作夥伴已集中管理；替換內容後，版面與互動會自動保留。</p><ol><li><b>01</b><span><strong>活動資訊</strong><small>新增標題、摘要與成果</small></span></li><li><b>02</b><span><strong>照片相簿</strong><small>替換照片與分類說明</small></span></li><li><b>03</b><span><strong>成果夥伴</strong><small>調整數字與合作單位</small></span></li></ol><a className="btn gold" href="#contact" onClick={()=>setGuide(false)}>準備下一次活動 ↗</a></aside></div>}
+    {photo && <div className="backdrop" onClick={()=>setPhoto(null)}><div className="photo-modal" onClick={e=>e.stopPropagation()}><button onClick={()=>setPhoto(null)} aria-label={t("關閉照片")}>×</button><Image src={photo[2]} alt={t(photo[1])} width={1500} height={1000} unoptimized/><div><p>{t(photo[0])}</p><h3>{t(photo[1])}</h3><small>{t(content.event.title)}・{t("活動實錄")}</small></div></div></div>}
+    {guide && <div className="backdrop" onClick={()=>setGuide(false)}><aside className="guide" onClick={e=>e.stopPropagation()}><button onClick={()=>setGuide(false)}>×</button><p className="eyebrow">EASY TO UPDATE</p><h2>{t("一處更新，")}<br/>{t("全站同步。")}</h2><p>{t("活動、數字、照片與合作夥伴已集中管理；替換內容後，版面與互動會自動保留。")}</p><ol><li><b>01</b><span><strong>{t("活動資訊")}</strong><small>{t("新增標題、摘要與成果")}</small></span></li><li><b>02</b><span><strong>{t("照片相簿")}</strong><small>{t("替換照片與分類說明")}</small></span></li><li><b>03</b><span><strong>{t("成果夥伴")}</strong><small>{t("調整數字與合作單位")}</small></span></li></ol><a className="btn gold" href="#contact" onClick={()=>setGuide(false)}>{t("準備下一次活動 ↗")}</a></aside></div>}
   </main>;
 }
