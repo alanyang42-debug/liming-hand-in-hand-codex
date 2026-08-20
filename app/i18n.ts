@@ -145,6 +145,51 @@ const ko: Record<string, string> = {
   "一起看見台中黎明扶輪社的公益行動，讓每一份善意成為改變。": "타이중 여명 로타리클럽의 공익 활동을 만나고 모든 선의가 변화로 이어지게 해 주세요.", "連結已複製 ✓": "링크를 복사했습니다 ✓", "請複製網址列": "주소를 복사해 주세요", "請稍後再試": "다시 시도해 주세요",
 };
 
+Object.assign(en, {
+  "焦點活動": "Featured Event", "中秋活動": "Mid-Autumn Event", "優先活動": "UP NEXT",
+  "地區獎助金捐贈": "District Grant Donation", "足球築夢・希望啟航": "Football Dreams · A Hopeful Kickoff",
+  "2026 年 9 月 10 日前往雙龍國小，捐贈足球訓練設備、教學資源與生活物資，陪孩子在偏鄉勇敢追夢。": "On September 10, 2026, we will visit Shuanglong Elementary to donate football training equipment, learning resources and daily necessities—helping rural children pursue their dreams.",
+  "FEATURED EVENT · 地區獎助金捐贈": "FEATURED EVENT · DISTRICT GRANT DONATION",
+  "台中黎明扶輪社・雙龍偏鄉公益日": "Rotary Club of Taichung Dawn · Shuanglong Outreach Day",
+  "把設備與愛心送進雙龍偏鄉部落": "Bringing equipment and care to Shuanglong",
+  "115 年 9 月 10 日（四）": "Thursday, September 10, 2026", "南投縣信義鄉・雙龍國小": "Shuanglong Elementary, Xinyi Township, Nantou", "南投縣信義鄉雙龍村光復巷 4 號": "No. 4, Guangfu Ln., Shuanglong Village, Xinyi Township, Nantou",
+  "本計畫協助南投縣信義鄉雙龍國小足球隊發展，透過捐贈足球訓練設備、教學資源及相關物資，改善偏鄉學童的運動學習環境。": "This project supports Shuanglong Elementary's football program by donating training equipment, teaching resources and essential supplies to improve the sports-learning environment for rural students.",
+  "活動內容": "Program", "足球訓練器材設備捐贈儀式": "Football equipment donation ceremony", "生活物資募集・送愛到偏鄉": "Daily-necessities drive for the community", "雙龍部落風味午餐": "Shuanglong community lunch", "雙龍七彩吊橋・雙龍瀑布踏青": "Rainbow Suspension Bridge and Shuanglong Falls walk",
+  "募集生活物資": "DAILY-NECESSITIES DRIVE", "邀請社友將家中用不到的衣物、鞋、帽、包、袋及各項生活用品整理募集，活動當天一起送到雙龍偏鄉部落。感謝大家的愛心！": "Members are invited to collect clean, usable clothing, shoes, hats, bags and other household items. We will deliver them together to the Shuanglong community on the event day. Thank you for your kindness!",
+  "立即報名參加 ↗": "Register Now ↗", "查看雙龍國小地圖 →": "View Shuanglong Elementary Map →", "社長 周哲民 Joe・秘書 吳錦河 Health 敬邀": "President Joe Chou · Secretary Health Wu",
+  "足球築夢・希望啟航地區獎助金捐贈活動海報": "Football Dreams district grant donation event poster",
+});
+
+Object.assign(ja, {
+  "焦點活動": "注目イベント", "中秋活動": "中秋イベント", "優先活動": "次回開催",
+  "地區獎助金捐贈": "地区補助金寄贈", "足球築夢・希望啟航": "サッカーで夢を・希望のキックオフ",
+  "2026 年 9 月 10 日前往雙龍國小，捐贈足球訓練設備、教學資源與生活物資，陪孩子在偏鄉勇敢追夢。": "2026年9月10日、双龍小学校へサッカー練習設備、教材、生活物資を届け、地域の子どもたちの夢を応援します。",
+  "FEATURED EVENT · 地區獎助金捐贈": "FEATURED EVENT · 地区補助金寄贈",
+  "台中黎明扶輪社・雙龍偏鄉公益日": "台中黎明ロータリークラブ・双龍地域支援デー",
+  "把設備與愛心送進雙龍偏鄉部落": "設備とぬくもりを双龍地域へ",
+  "115 年 9 月 10 日（四）": "2026年9月10日（木）", "南投縣信義鄉・雙龍國小": "南投県信義郷・双龍小学校", "南投縣信義鄉雙龍村光復巷 4 號": "南投県信義郷双龍村光復巷4号",
+  "本計畫協助南投縣信義鄉雙龍國小足球隊發展，透過捐贈足球訓練設備、教學資源及相關物資，改善偏鄉學童的運動學習環境。": "サッカー練習設備、教材、関連物資を寄贈し、双龍小学校サッカーチームと地域の子どもたちのスポーツ学習環境を支援します。",
+  "活動內容": "プログラム", "足球訓練器材設備捐贈儀式": "サッカー練習設備寄贈式", "生活物資募集・送愛到偏鄉": "生活物資募集・地域へ愛を", "雙龍部落風味午餐": "双龍集落の郷土ランチ", "雙龍七彩吊橋・雙龍瀑布踏青": "双龍七彩吊橋・双龍滝散策",
+  "募集生活物資": "生活物資を募集", "邀請社友將家中用不到的衣物、鞋、帽、包、袋及各項生活用品整理募集，活動當天一起送到雙龍偏鄉部落。感謝大家的愛心！": "ご家庭で使わなくなった衣類、靴、帽子、バッグ、生活用品を集め、当日に双龍地域へ一緒に届けます。皆さまのご協力に感謝します。",
+  "立即報名參加 ↗": "参加申込 ↗", "查看雙龍國小地圖 →": "双龍小学校の地図 →", "社長 周哲民 Joe・秘書 吳錦河 Health 敬邀": "会長 周哲民 Joe・幹事 吳錦河 Health",
+  "足球築夢・希望啟航地區獎助金捐贈活動海報": "サッカーで夢を・地区補助金寄贈イベントポスター",
+});
+
+Object.assign(ko, {
+  "焦點活動": "주요 행사", "中秋活動": "중추절 행사", "優先活動": "다음 행사",
+  "地區獎助金捐贈": "지구 보조금 기증", "足球築夢・希望啟航": "축구로 꿈을・희망의 킥오프",
+  "2026 年 9 月 10 日前往雙龍國小，捐贈足球訓練設備、教學資源與生活物資，陪孩子在偏鄉勇敢追夢。": "2026년 9월 10일 솽룽초를 찾아 축구 훈련 장비, 교육 자료와 생활물품을 전달하며 농촌 아이들의 꿈을 응원합니다.",
+  "FEATURED EVENT · 地區獎助金捐贈": "FEATURED EVENT · 지구 보조금 기증",
+  "台中黎明扶輪社・雙龍偏鄉公益日": "타이중 여명 로타리클럽・솽룽 나눔의 날",
+  "把設備與愛心送進雙龍偏鄉部落": "장비와 사랑을 솽룽 마을로",
+  "115 年 9 月 10 日（四）": "2026년 9월 10일(목)", "南投縣信義鄉・雙龍國小": "난터우 신이향・솽룽초등학교", "南投縣信義鄉雙龍村光復巷 4 號": "난터우현 신이향 솽룽촌 광푸항 4호",
+  "本計畫協助南投縣信義鄉雙龍國小足球隊發展，透過捐贈足球訓練設備、教學資源及相關物資，改善偏鄉學童的運動學習環境。": "축구 훈련 장비와 교육 자료, 관련 물품을 기증해 솽룽초 축구팀의 성장과 농촌 학생들의 스포츠 학습 환경을 지원합니다.",
+  "活動內容": "프로그램", "足球訓練器材設備捐贈儀式": "축구 훈련 장비 기증식", "生活物資募集・送愛到偏鄉": "생활물품 모금・마을에 사랑 전달", "雙龍部落風味午餐": "솽룽 마을 향토 점심", "雙龍七彩吊橋・雙龍瀑布踏青": "솽룽 무지개 현수교・폭포 산책",
+  "募集生活物資": "생활물품을 모읍니다", "邀請社友將家中用不到的衣物、鞋、帽、包、袋及各項生活用品整理募集，活動當天一起送到雙龍偏鄉部落。感謝大家的愛心！": "사용하지 않는 의류, 신발, 모자, 가방과 생활용품을 모아 행사 당일 솽룽 마을에 함께 전달합니다. 따뜻한 마음에 감사드립니다.",
+  "立即報名參加 ↗": "지금 신청하기 ↗", "查看雙龍國小地圖 →": "솽룽초 지도 보기 →", "社長 周哲民 Joe・秘書 吳錦河 Health 敬邀": "회장 Joe Chou・총무 Health Wu",
+  "足球築夢・希望啟航地區獎助金捐贈活動海報": "축구로 꿈을・지구 보조금 기증 행사 포스터",
+});
+
 const dictionaries = { en, ja, ko };
 
 export function translate(lang: Lang, value: string) {

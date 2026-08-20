@@ -13,7 +13,7 @@ const content = {
   slogan: "手牽手，愛無限；因為有您，我們可以讓世界更美好。",
   intro: "串聯社友、眷屬與在地夥伴，從生活照護、教育支持到社區關懷，讓每一份善意真正抵達需要的地方。",
   stats: [
-    [4, "項", "年度重點行動"],
+    [5, "項", "年度重點行動"],
     [2, "所", "服務合作單位"],
     [1, "隊", "支持偏鄉球隊"],
     [365, "天", "讓善意持續發生"],
@@ -22,9 +22,32 @@ const content = {
     ["01", "生活照護", "改善照護環境", "攜手公益夥伴汰換社區家園老舊設備，讓陪伴落實在更安心、舒適的日常。"],
     ["02", "偏鄉關懷", "把資源送到需要的地方", "串聯社友、眷屬與在地力量，讓關懷不只是一次活動，而是一段持續同行的關係。"],
     ["03", "教育支持", "陪孩子勇敢追夢", "支持南投雙龍國小女足走上全國賽場，把每一份鼓勵化成孩子繼續奔跑的力量。"],
-    ["04", "最新活動", "偏鄉中秋公益音樂節", "2026 年 9 月 19 日相聚中寮國小，讓音樂、公益服務、在地市集與中秋團圓在偏鄉相遇。"],
+    ["04", "地區獎助金捐贈", "足球築夢・希望啟航", "2026 年 9 月 10 日前往雙龍國小，捐贈足球訓練設備、教學資源與生活物資，陪孩子在偏鄉勇敢追夢。"],
+    ["05", "最新活動", "偏鄉中秋公益音樂節", "2026 年 9 月 19 日相聚中寮國小，讓音樂、公益服務、在地市集與中秋團圓在偏鄉相遇。"],
     ["∞", "未來進行式", "下一個故事，期待有您", "捐助、志工、物資或專業服務，每一種參與都能讓善意繼續向前。"],
   ] as const,
+  featuredCampaign: {
+    poster: "/media/football-donation/football-dream-donation-2026.jpg",
+    posterAlt: "足球築夢・希望啟航地區獎助金捐贈活動海報",
+    registrationUrl: "https://reurl.cc/vG6ZZl",
+    mapUrl: "https://www.google.com/maps/search/?api=1&query=%E5%8D%97%E6%8A%95%E7%B8%A3%E4%BF%A1%E7%BE%A9%E9%84%89%E9%9B%99%E9%BE%8D%E6%9D%91%E5%85%89%E5%BE%A9%E5%B7%B74%E8%99%9F",
+    eyebrow: "FEATURED EVENT · 地區獎助金捐贈",
+    title: "足球築夢・希望啟航",
+    subtitle: "把設備與愛心送進雙龍偏鄉部落",
+    date: "115 年 9 月 10 日（四）",
+    time: "10:30－12:00",
+    place: "南投縣信義鄉・雙龍國小",
+    address: "南投縣信義鄉雙龍村光復巷 4 號",
+    text: "本計畫協助南投縣信義鄉雙龍國小足球隊發展，透過捐贈足球訓練設備、教學資源及相關物資，改善偏鄉學童的運動學習環境。",
+    activities: [
+      "足球訓練器材設備捐贈儀式",
+      "生活物資募集・送愛到偏鄉",
+      "雙龍部落風味午餐",
+      "雙龍七彩吊橋・雙龍瀑布踏青",
+    ],
+    collection: "邀請社友將家中用不到的衣物、鞋、帽、包、袋及各項生活用品整理募集，活動當天一起送到雙龍偏鄉部落。感謝大家的愛心！",
+    invitation: "社長 周哲民 Joe・秘書 吳錦河 Health 敬邀",
+  },
   latestEvent: {
     url: "https://hand-in-hand-midautumn.alanyang42.chatgpt.site/",
     posters: [
@@ -223,7 +246,7 @@ export default function Home() {
     <header>
       <a className="brand" href="#top"><span className="sun">✦</span><span><b>{t(content.name)}</b><small>HAND IN HAND · LOVE WITHOUT LIMITS</small></span></a>
       <nav className={menu ? "open" : ""}>
-        <a href="#latest-event" onClick={() => setMenu(false)}>{t("最新活動")}</a><a href="#actions" onClick={() => setMenu(false)}>{t("公益行動")}</a><a href="#timeline" onClick={() => setMenu(false)}>{t("行動足跡")}</a><a href="#stories" onClick={() => setMenu(false)}>{t("照片故事")}</a><a href="#football" onClick={() => setMenu(false)}>{t("足球紀錄")}</a><a href="#contact" onClick={() => setMenu(false)}>{t("加入行動")}</a>
+        <a href="#featured-campaign" onClick={() => setMenu(false)}>{t("焦點活動")}</a><a href="#latest-event" onClick={() => setMenu(false)}>{t("中秋活動")}</a><a href="#actions" onClick={() => setMenu(false)}>{t("公益行動")}</a><a href="#timeline" onClick={() => setMenu(false)}>{t("行動足跡")}</a><a href="#stories" onClick={() => setMenu(false)}>{t("照片故事")}</a><a href="#football" onClick={() => setMenu(false)}>{t("足球紀錄")}</a><a href="#contact" onClick={() => setMenu(false)}>{t("加入行動")}</a>
       </nav>
       <div className="header-tools">
         <label className="language-switcher">
@@ -254,6 +277,39 @@ export default function Home() {
     </section>
 
     <section className="stats" aria-label={t("成果統計")}>{content.stats.map(([v,u,l], i) => <div key={l} style={{"--stat-delay": `${i * 100}ms`} as CSSProperties}><Counter value={v} unit={t(u)}/><p>{t(l)}</p></div>)}</section>
+
+    <section className="featured-campaign" id="featured-campaign">
+      <WarmParticles compact/>
+      <div className="section featured-campaign-grid">
+        <figure className="featured-campaign-poster reveal">
+          <span>{t("優先活動")}</span>
+          <Image src={content.featuredCampaign.poster} alt={t(content.featuredCampaign.posterAlt)} width={1024} height={1536} priority unoptimized/>
+        </figure>
+        <div className="featured-campaign-copy reveal">
+          <p className="eyebrow">{t(content.featuredCampaign.eyebrow)}</p>
+          <p className="event-kicker">{t("台中黎明扶輪社・雙龍偏鄉公益日")}</p>
+          <h2>{t(content.featuredCampaign.title)}<br/><em>{t(content.featuredCampaign.subtitle)}</em></h2>
+          <p>{t(content.featuredCampaign.text)}</p>
+          <dl className="featured-campaign-facts">
+            <div><dt>{t("日期")}</dt><dd>{t(content.featuredCampaign.date)}</dd></div>
+            <div><dt>{t("時間")}</dt><dd>{content.featuredCampaign.time}</dd></div>
+            <div><dt>{t("地點")}</dt><dd>{t(content.featuredCampaign.place)}<small>{t(content.featuredCampaign.address)}</small></dd></div>
+          </dl>
+          <div className="featured-campaign-program" aria-label={t("活動內容")}>
+            {content.featuredCampaign.activities.map((item, i) => <span key={item}><b>0{i + 1}</b>{t(item)}</span>)}
+          </div>
+          <aside className="featured-campaign-collection">
+            <b>{t("募集生活物資")}</b>
+            <p>{t(content.featuredCampaign.collection)}</p>
+          </aside>
+          <div className="featured-campaign-actions">
+            <a className="btn campaign-primary" href={content.featuredCampaign.registrationUrl} target="_blank" rel="noreferrer">{t("立即報名參加 ↗")}</a>
+            <a className="campaign-map-link" href={content.featuredCampaign.mapUrl} target="_blank" rel="noreferrer">{t("查看雙龍國小地圖 →")}</a>
+          </div>
+          <small className="featured-campaign-invitation">{t(content.featuredCampaign.invitation)}</small>
+        </div>
+      </div>
+    </section>
 
     <section className="latest-event" id="latest-event">
       <WarmParticles compact/>
