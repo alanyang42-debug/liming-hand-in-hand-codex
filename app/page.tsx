@@ -187,6 +187,7 @@ function WarmParticles({ compact = false }: { compact?: boolean }) {
 
 export default function Home() {
   const [lang, setLang] = useState<Lang>("zh");
+  const [languageReady, setLanguageReady] = useState(false);
   const [filter, setFilter] = useState("全部");
   const [photo, setPhoto] = useState<(typeof content.gallery)[number] | null>(null);
   const [guide, setGuide] = useState(false);
@@ -197,15 +198,23 @@ export default function Home() {
   const t = (value: string) => translate(lang, value);
 
   useEffect(() => {
+    const requested = new URLSearchParams(window.location.search).get("lang") as Lang | null;
     const saved = window.localStorage.getItem("liming-site-language") as Lang | null;
-    if (saved && languageOptions.some(option => option.code === saved)) setLang(saved);
+    if (requested && languageOptions.some(option => option.code === requested)) setLang(requested);
+    else if (saved && languageOptions.some(option => option.code === saved)) setLang(saved);
+    setLanguageReady(true);
   }, []);
 
   useEffect(() => {
+    if (!languageReady) return;
     const option = languageOptions.find(item => item.code === lang);
     document.documentElement.lang = option?.htmlLang ?? "zh-Hant";
     window.localStorage.setItem("liming-site-language", lang);
-  }, [lang]);
+    const url = new URL(window.location.href);
+    if (lang === "zh") url.searchParams.delete("lang");
+    else url.searchParams.set("lang", lang);
+    window.history.replaceState({}, "", `${url.pathname}${url.search}${url.hash}`);
+  }, [lang, languageReady]);
 
   useEffect(() => {
     const ob = new IntersectionObserver(es => es.forEach(e => e.isIntersecting && e.target.classList.add("show")), { threshold: .12 });
