@@ -29,6 +29,7 @@ const content = {
   featuredCampaign: {
     poster: "/media/football-donation/football-dream-donation-2026.jpg",
     posterAlt: "足球築夢・希望啟航地區獎助金捐贈活動海報",
+    video: "/media/football-donation/shuanglong-school-promo.mp4",
     registrationUrl: "https://reurl.cc/vG6ZZl",
     mapUrl: "https://www.google.com/maps/search/?api=1&query=%E5%8D%97%E6%8A%95%E7%B8%A3%E4%BF%A1%E7%BE%A9%E9%84%89%E9%9B%99%E9%BE%8D%E6%9D%91%E5%85%89%E5%BE%A9%E5%B7%B74%E8%99%9F",
     eyebrow: "FEATURED EVENT · 地區獎助金捐贈",
@@ -316,6 +317,22 @@ export default function Home() {
             <a className="campaign-map-link" href={content.featuredCampaign.mapUrl} target="_blank" rel="noreferrer">{t("查看雙龍國小地圖 →")}</a>
           </div>
           <small className="featured-campaign-invitation">{t(content.featuredCampaign.invitation)}</small>
+        </div>
+      </div>
+      <div className="section featured-campaign-film reveal">
+        <div className="featured-campaign-film-copy">
+          <p className="eyebrow">{t("CAMPAIGN FILM · 活動形象短片")}</p>
+          <p className="event-kicker">{t("10 秒影音預告")}</p>
+          <h3>{t("一支短片，帶您走進雙龍")}</h3>
+          <p>{t("從足球築夢到物資關懷，邀請您先透過影片感受這趟送愛到偏鄉的公益行動。")}</p>
+          <span>{t("點選影片可開啟聲音與全螢幕播放")}</span>
+        </div>
+        <div className="featured-campaign-film-frame">
+          <video autoPlay muted loop controls playsInline preload="metadata" poster={content.featuredCampaign.poster} aria-label={t("雙龍國小足球築夢公益活動形象短片")}>
+            <source src={content.featuredCampaign.video} type="video/mp4"/>
+            {t("您的瀏覽器目前無法播放這段影片。")}
+          </video>
+          <div className="featured-campaign-film-label" aria-hidden="true"><b>SHUANGLONG</b><span>FOOTBALL DREAM · 2026</span></div>
         </div>
       </div>
     </section>

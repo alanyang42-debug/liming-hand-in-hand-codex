@@ -158,6 +158,9 @@ Object.assign(en, {
   "募集生活物資": "DAILY-NECESSITIES DRIVE", "邀請社友將家中用不到的衣物、鞋、帽、包、袋及各項生活用品整理募集，活動當天一起送到雙龍偏鄉部落。感謝大家的愛心！": "Members are invited to collect clean, usable clothing, shoes, hats, bags and other household items. We will deliver them together to the Shuanglong community on the event day. Thank you for your kindness!",
   "立即報名參加 ↗": "Register Now ↗", "查看雙龍國小地圖 →": "View Shuanglong Elementary Map →", "社長 周哲民 Joe・秘書 吳錦河 Health 敬邀": "President Joe Chou · Secretary Health Wu",
   "足球築夢・希望啟航地區獎助金捐贈活動海報": "Football Dreams district grant donation event poster",
+  "CAMPAIGN FILM · 活動形象短片": "CAMPAIGN FILM", "10 秒影音預告": "10-second preview", "一支短片，帶您走進雙龍": "Step into Shuanglong through film",
+  "從足球築夢到物資關懷，邀請您先透過影片感受這趟送愛到偏鄉的公益行動。": "From football dreams to essential supplies, this short film offers a first look at our journey of care to the Shuanglong community.",
+  "點選影片可開啟聲音與全螢幕播放": "Use the player controls for sound and full screen", "雙龍國小足球築夢公益活動形象短片": "Shuanglong Elementary football charity campaign film",
 });
 
 Object.assign(ja, {
@@ -173,6 +176,9 @@ Object.assign(ja, {
   "募集生活物資": "生活物資を募集", "邀請社友將家中用不到的衣物、鞋、帽、包、袋及各項生活用品整理募集，活動當天一起送到雙龍偏鄉部落。感謝大家的愛心！": "ご家庭で使わなくなった衣類、靴、帽子、バッグ、生活用品を集め、当日に双龍地域へ一緒に届けます。皆さまのご協力に感謝します。",
   "立即報名參加 ↗": "参加申込 ↗", "查看雙龍國小地圖 →": "双龍小学校の地図 →", "社長 周哲民 Joe・秘書 吳錦河 Health 敬邀": "会長 周哲民 Joe・幹事 吳錦河 Health",
   "足球築夢・希望啟航地區獎助金捐贈活動海報": "サッカーで夢を・地区補助金寄贈イベントポスター",
+  "CAMPAIGN FILM · 活動形象短片": "CAMPAIGN FILM · イベント映像", "10 秒影音預告": "10秒予告映像", "一支短片，帶您走進雙龍": "映像で訪ねる双龍",
+  "從足球築夢到物資關懷，邀請您先透過影片感受這趟送愛到偏鄉的公益行動。": "サッカーの夢から生活物資の支援まで、双龍地域へ思いを届ける活動を映像でご覧ください。",
+  "點選影片可開啟聲音與全螢幕播放": "プレーヤーで音声・全画面を操作できます", "雙龍國小足球築夢公益活動形象短片": "双龍小学校サッカー公益活動イメージ映像",
 });
 
 Object.assign(ko, {
@@ -188,6 +194,9 @@ Object.assign(ko, {
   "募集生活物資": "생활물품을 모읍니다", "邀請社友將家中用不到的衣物、鞋、帽、包、袋及各項生活用品整理募集，活動當天一起送到雙龍偏鄉部落。感謝大家的愛心！": "사용하지 않는 의류, 신발, 모자, 가방과 생활용품을 모아 행사 당일 솽룽 마을에 함께 전달합니다. 따뜻한 마음에 감사드립니다.",
   "立即報名參加 ↗": "지금 신청하기 ↗", "查看雙龍國小地圖 →": "솽룽초 지도 보기 →", "社長 周哲民 Joe・秘書 吳錦河 Health 敬邀": "회장 Joe Chou・총무 Health Wu",
   "足球築夢・希望啟航地區獎助金捐贈活動海報": "축구로 꿈을・지구 보조금 기증 행사 포스터",
+  "CAMPAIGN FILM · 活動形象短片": "CAMPAIGN FILM · 행사 영상", "10 秒影音預告": "10초 미리보기", "一支短片，帶您走進雙龍": "영상으로 만나는 솽룽",
+  "從足球築夢到物資關懷，邀請您先透過影片感受這趟送愛到偏鄉的公益行動。": "축구의 꿈부터 생활물품 나눔까지, 솽룽 마을에 사랑을 전하는 여정을 영상으로 먼저 만나보세요.",
+  "點選影片可開啟聲音與全螢幕播放": "플레이어에서 소리와 전체 화면을 설정할 수 있습니다", "雙龍國小足球築夢公益活動形象短片": "솽룽초 축구 공익 행사 홍보 영상",
 });
 
 const dictionaries = { en, ja, ko };
