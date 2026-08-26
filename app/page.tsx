@@ -363,8 +363,8 @@ export default function Home() {
             {content.latestEvent.highlights.map((item, i) => <span key={item}><b>0{i + 1}</b>{t(item)}</span>)}
           </div>
           <div className="latest-event-actions">
-            <a className="btn gold" href={content.latestEvent.url} target="_blank" rel="noreferrer">{t("進入完整活動專頁 ↗")}</a>
-            <a className="latest-event-text-link" href={`${content.latestEvent.url}location`} target="_blank" rel="noreferrer">{t("查看地點與交通 →")}</a>
+            <a className="btn gold" href={`${content.latestEvent.url}?utm_source=liming&utm_medium=referral&utm_campaign=2026_midautumn&utm_content=latest_event_cta`} target="_blank" rel="noreferrer">{t("進入完整活動專頁 ↗")}</a>
+            <a className="latest-event-text-link" href={`${content.latestEvent.url}location?utm_source=liming&utm_medium=referral&utm_campaign=2026_midautumn&utm_content=location_link`} target="_blank" rel="noreferrer">{t("查看地點與交通 →")}</a>
           </div>
           <small>{t("完整流程、主題曲、活動地圖與主／協辦單位介紹，請前往活動專頁查看。")}</small>
         </div>
@@ -523,6 +523,13 @@ export default function Home() {
       <aside className="contact-card reveal"><p>TAICHUNG DAWN</p><h3>{t(content.fullName)}</h3><dl><div><dt>{t("電話")}</dt><dd><a href="tel:+886423227799">04-2322-7799</a></dd></div><div><dt>{t("辦公室")}</dt><dd>{t("台中市南屯區公益路二段 61 號")}<br/>{t("13 樓之 1")}</dd></div><div><dt>{t("合作洽詢")}</dt><dd>{t("歡迎來電洽詢公益合作與活動資訊")}</dd></div></dl><a href="https://www.facebook.com/groups/376285655902508/" target="_blank">{t("Facebook 社群 ↗")}</a></aside>
     </section>
 
+    <nav className="alliance-matrix" aria-label={t("黎明公益聯盟數位行動矩陣")}>
+      <strong><span>{t("黎明公益聯盟")}</span><small>{t("活動 × 公益 × 專業 × 企劃")}</small></strong>
+      <a href="https://liming-hand-in-hand.alanyang42.chatgpt.site" aria-current="page"><small>{t("公益行動")}</small><b>{t("黎明公益網")}</b></a>
+      <a href="https://hand-in-hand-midautumn.alanyang42.chatgpt.site/?utm_source=liming&amp;utm_medium=referral&amp;utm_campaign=2026_midautumn&amp;utm_content=alliance_footer" target="_blank" rel="noreferrer"><small>{t("最新活動")}</small><b>{t("手牽手・愛無限")}</b></a>
+      <a href="https://www.smartspeaker.com.tw/?utm_source=liming&amp;utm_medium=referral&amp;utm_campaign=public_good_alliance&amp;utm_content=alliance_footer" target="_blank" rel="noreferrer"><small>{t("專業信任")}</small><b>Health Salon</b></a>
+      <a href="https://www.alanyang.com.tw/?utm_source=liming&amp;utm_medium=referral&amp;utm_campaign=public_good_alliance&amp;utm_content=alliance_footer" target="_blank" rel="noreferrer"><small>{t("企劃紀錄")}</small><b>A+ Project Journal</b></a>
+    </nav>
     <footer><a className="brand" href="#top"><span className="sun">✦</span><b>{t(content.name)}</b></a><p>© 2026 {t(content.fullName)} · {t("讓善意持續發生")}</p><p>{t("內容更新 2026.07")}</p></footer>
     <button className="guide-btn" onClick={()=>setGuide(true)}>✦ {t("內容更新指南")}</button>
 
