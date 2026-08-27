@@ -276,6 +276,24 @@ export default function Home() {
     }
   };
 
+  const shareCampaignToLine = () => {
+    const campaignUrl = new URL(window.location.href);
+    campaignUrl.hash = "featured-campaign";
+    const message = [
+      `⚽【${t("足球築夢・希望啟航")}】`,
+      t("台中黎明扶輪社｜地區獎助金捐贈公益活動"),
+      "",
+      `📅 ${t(content.featuredCampaign.date)} ${content.featuredCampaign.time}`,
+      `📍 ${t(content.featuredCampaign.place)}`,
+      "",
+      t("捐贈足球訓練設備、教學資源與生活物資，陪伴偏鄉孩子勇敢追夢！"),
+      "",
+      `📝 ${t("活動報名")}：${content.featuredCampaign.registrationUrl}`,
+      `🌐 ${t("活動詳情")}：${campaignUrl.toString()}`,
+    ].join("\n");
+    window.open(`https://line.me/R/msg/text/?${encodeURIComponent(message)}`, "_blank", "noopener,noreferrer");
+  };
+
   return <main data-lang={lang}>
     <div className="club-logo-strip" id="top">
       <Image src="/media/site/taichung-liming-rotary-logo-web.png" alt={t("國際扶輪3462地區・台中黎明扶輪社")} width={2048} height={682} priority unoptimized/>
@@ -316,7 +334,6 @@ export default function Home() {
     <section className="stats" aria-label={t("成果統計")}>{content.stats.map(([v,u,l], i) => <div key={l} style={{"--stat-delay": `${i * 100}ms`} as CSSProperties}><Counter value={v} unit={t(u)}/><p>{t(l)}</p></div>)}</section>
 
     <section className="featured-campaign" id="featured-campaign">
-      <WarmParticles compact/>
       <div className="section featured-campaign-grid">
         <figure className="featured-campaign-poster reveal">
           <span>{t("優先活動")}</span>
@@ -343,6 +360,7 @@ export default function Home() {
             <a className="btn campaign-primary" href={content.featuredCampaign.registrationUrl} target="_blank" rel="noreferrer">{t("立即報名參加 ↗")}</a>
             <a className="campaign-map-link" href={content.featuredCampaign.mapUrl} target="_blank" rel="noreferrer">{t("查看雙龍國小地圖 →")}</a>
             <button className="btn campaign-share" type="button" onClick={shareCampaign} aria-live="polite">{campaignShareStatus || t("好康分享（分享活動）")}</button>
+            <button className="btn campaign-line" type="button" onClick={shareCampaignToLine} aria-label={t("使用 LINE 分享活動")}><span aria-hidden="true">LINE</span>{t("LINE 分享")}</button>
           </div>
           <small className="featured-campaign-invitation">{t(content.featuredCampaign.invitation)}</small>
         </div>
