@@ -126,6 +126,15 @@ main[data-lang="ja"] .hero h1,main[data-lang="ko"] .hero h1{font-size:clamp(60px
 .featured-campaign-film-label{position:absolute;left:28px;bottom:25px;display:flex;flex-direction:column;gap:4px;padding:10px 13px;background:#063b77dd;color:#fff;pointer-events:none;box-shadow:0 8px 24px #041f3542}
 .featured-campaign-film-label b{font:700 9px/1 sans-serif;letter-spacing:.17em;color:#ffd238}
 .featured-campaign-film-label span{font:700 8px/1.2 sans-serif;letter-spacing:.11em}
+.featured-campaign-social-film{display:grid;grid-template-columns:minmax(260px,.7fr) minmax(250px,.42fr);gap:7vw;align-items:center;margin-top:82px;padding-top:72px;border-top:1px solid #168edc3a}
+.featured-campaign-social-copy{max-width:650px;justify-self:end}
+.featured-campaign-social-copy .eyebrow{color:#087dc6;margin-bottom:12px}
+.featured-campaign-social-copy .event-kicker{margin:0 0 17px;color:#12355378}
+.featured-campaign-social-copy h3{margin:0 0 19px;color:#083f76;font:400 clamp(32px,3.4vw,50px)/1.15 Georgia,"Noto Serif TC",serif;letter-spacing:-.04em}
+.featured-campaign-social-copy>p:not(.eyebrow):not(.event-kicker){margin:0;color:#123553a8;font-size:12px;line-height:1.95}
+.featured-campaign-social-copy>span{display:block;margin-top:23px;color:#e06b32;font-size:9px;font-weight:700;letter-spacing:.06em}
+.featured-campaign-social-frame{width:min(100%,350px);padding:8px;background:#fff;box-shadow:0 34px 80px #164b6f2b}
+.featured-campaign-social-frame video{display:block;width:100%;aspect-ratio:9/16;object-fit:cover;background:#082b43}
 
 /* 最新活動：主網站與中寮中秋公益活動專頁的入口 */
 .latest-event{position:relative;isolation:isolate;overflow:hidden;background:#153532;color:#fff;padding:125px 0;scroll-margin-top:24px}
@@ -258,6 +267,11 @@ main[data-lang="ja"] .hero h1,main[data-lang="ko"] .hero h1{font-size:clamp(60px
   .featured-campaign-film-frame{padding:6px}
   .featured-campaign-film-frame:before{inset:-8px 10px 10px -8px}
   .featured-campaign-film-label{left:16px;bottom:14px;padding:8px 10px}
+  .featured-campaign-social-film{grid-template-columns:1fr;gap:31px;margin-top:58px;padding-top:58px}
+  .featured-campaign-social-copy{justify-self:auto}
+  .featured-campaign-social-copy h3{font-size:38px}
+  .featured-campaign-social-copy>span{margin-top:16px}
+  .featured-campaign-social-frame{width:min(82%,340px);justify-self:center;padding:6px}
   .latest-event{padding:88px 0}
   .latest-event-grid{grid-template-columns:1fr;gap:58px}
   .latest-event-posters{width:min(94%,590px);justify-self:center;gap:10px}
