@@ -108,6 +108,8 @@ main[data-lang="ja"] .hero h1,main[data-lang="ko"] .hero h1{font-size:clamp(60px
 .featured-campaign-actions{display:flex;align-items:center;gap:24px;flex-wrap:wrap}
 .campaign-primary{background:#087dc6;color:#fff;box-shadow:0 12px 28px #087dc633}
 .campaign-map-link{font-size:11px;border-bottom:1px solid #087dc6;padding-bottom:5px;color:#087dc6;font-weight:700}
+.campaign-share{min-height:48px;padding-inline:18px;border-color:#087dc6;background:#fff9;color:#087dc6;cursor:pointer;box-shadow:0 9px 22px #087dc619}
+.campaign-share:hover{background:#087dc6;color:#fff}
 .featured-campaign-invitation{display:block;margin-top:21px;color:#1235537c;font-size:9px;letter-spacing:.06em}
 .featured-campaign-film{position:relative;z-index:2;margin-top:82px;padding-top:64px;border-top:1px solid #168edc3a;display:grid;grid-template-columns:minmax(240px,.42fr) minmax(0,1fr);gap:5vw;align-items:center}
 .featured-campaign-film-copy .eyebrow{color:#087dc6;margin-bottom:12px}
@@ -245,6 +247,7 @@ main[data-lang="ja"] .hero h1,main[data-lang="ko"] .hero h1{font-size:clamp(60px
   .featured-campaign-actions{align-items:stretch;flex-direction:column}
   .featured-campaign-actions .btn{width:100%}
   .campaign-map-link{align-self:center}
+  .campaign-share{order:3}
   .featured-campaign-film{margin-top:62px;padding-top:50px;grid-template-columns:1fr;gap:31px}
   .featured-campaign-film-copy h3{font-size:38px}
   .featured-campaign-film-copy>span{margin-top:16px}

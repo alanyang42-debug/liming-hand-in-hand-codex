@@ -194,6 +194,7 @@ export default function Home() {
   const [guide, setGuide] = useState(false);
   const [menu, setMenu] = useState(false);
   const [shareStatus, setShareStatus] = useState("");
+  const [campaignShareStatus, setCampaignShareStatus] = useState("");
   const filters = useMemo(() => ["全部", ...new Set(content.gallery.map(x => x[0]))], []);
   const photos = filter === "全部" ? content.gallery : content.gallery.filter(x => x[0] === filter);
   const t = (value: string) => translate(lang, value);
@@ -246,6 +247,32 @@ export default function Home() {
       if (error instanceof DOMException && error.name === "AbortError") return;
       setShareStatus(t("請稍後再試"));
       window.setTimeout(() => setShareStatus(""), 2400);
+    }
+  };
+
+  const shareCampaign = async () => {
+    const campaignUrl = new URL(window.location.href);
+    campaignUrl.hash = "featured-campaign";
+    const shareData = {
+      title: t("足球築夢・希望啟航｜台中黎明扶輪社"),
+      text: t("邀請您一起關注雙龍國小足球設備捐贈與偏鄉生活物資募集活動。"),
+      url: campaignUrl.toString(),
+    };
+    try {
+      if (navigator.share) {
+        await navigator.share(shareData);
+      } else if (navigator.clipboard) {
+        await navigator.clipboard.writeText(shareData.url);
+        setCampaignShareStatus(t("連結已複製 ✓"));
+        window.setTimeout(() => setCampaignShareStatus(""), 2400);
+      } else {
+        setCampaignShareStatus(t("請複製網址列"));
+        window.setTimeout(() => setCampaignShareStatus(""), 2400);
+      }
+    } catch (error) {
+      if (error instanceof DOMException && error.name === "AbortError") return;
+      setCampaignShareStatus(t("請稍後再試"));
+      window.setTimeout(() => setCampaignShareStatus(""), 2400);
     }
   };
 
@@ -315,6 +342,7 @@ export default function Home() {
           <div className="featured-campaign-actions">
             <a className="btn campaign-primary" href={content.featuredCampaign.registrationUrl} target="_blank" rel="noreferrer">{t("立即報名參加 ↗")}</a>
             <a className="campaign-map-link" href={content.featuredCampaign.mapUrl} target="_blank" rel="noreferrer">{t("查看雙龍國小地圖 →")}</a>
+            <button className="btn campaign-share" type="button" onClick={shareCampaign} aria-live="polite">{campaignShareStatus || t("好康分享（分享活動）")}</button>
           </div>
           <small className="featured-campaign-invitation">{t(content.featuredCampaign.invitation)}</small>
         </div>
