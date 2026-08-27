@@ -121,6 +121,9 @@ main[data-lang="ja"] .hero h1,main[data-lang="ko"] .hero h1{font-size:clamp(60px
 .featured-campaign-film-copy>p:not(.eyebrow):not(.event-kicker){margin:0;color:#123553a8;font-size:12px;line-height:1.95}
 .featured-campaign-film-copy>span{display:block;margin-top:23px;color:#087dc6;font-size:9px;font-weight:700;letter-spacing:.06em}
 .featured-campaign-film-frame{position:relative;padding:10px;background:#fff;box-shadow:0 34px 80px #164b6f2b}
+.campaign-date-stamp{position:absolute;z-index:4;left:22px;top:22px;width:112px;height:112px;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:7px;background:#df6f54;color:#fff;box-shadow:0 14px 30px #502a2440;pointer-events:none}
+.campaign-date-stamp b{font:italic 700 18px/1 Georgia,"Times New Roman",serif;letter-spacing:-.02em}
+.campaign-date-stamp span{font-size:10px;font-weight:900;letter-spacing:.08em}
 .featured-campaign-film-frame:before{content:"";position:absolute;z-index:-1;inset:-14px 18px 18px -14px;border:1px solid #168edc5c}
 .featured-campaign-film-frame video{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;background:#082b43}
 .featured-campaign-film-label{position:absolute;left:28px;bottom:25px;display:flex;flex-direction:column;gap:4px;padding:10px 13px;background:#063b77dd;color:#fff;pointer-events:none;box-shadow:0 8px 24px #041f3542}
@@ -133,7 +136,7 @@ main[data-lang="ja"] .hero h1,main[data-lang="ko"] .hero h1{font-size:clamp(60px
 .featured-campaign-social-copy h3{margin:0 0 19px;color:#083f76;font:400 clamp(32px,3.4vw,50px)/1.15 Georgia,"Noto Serif TC",serif;letter-spacing:-.04em}
 .featured-campaign-social-copy>p:not(.eyebrow):not(.event-kicker){margin:0;color:#123553a8;font-size:12px;line-height:1.95}
 .featured-campaign-social-copy>span{display:block;margin-top:23px;color:#e06b32;font-size:9px;font-weight:700;letter-spacing:.06em}
-.featured-campaign-social-frame{width:min(100%,350px);padding:8px;background:#fff;box-shadow:0 34px 80px #164b6f2b}
+.featured-campaign-social-frame{position:relative;width:min(100%,350px);padding:8px;background:#fff;box-shadow:0 34px 80px #164b6f2b}
 .featured-campaign-social-frame video{display:block;width:100%;aspect-ratio:9/16;object-fit:cover;background:#082b43}
 
 /* 最新活動：主網站與中寮中秋公益活動專頁的入口 */
@@ -265,6 +268,9 @@ main[data-lang="ja"] .hero h1,main[data-lang="ko"] .hero h1{font-size:clamp(60px
   .featured-campaign-film-copy h3{font-size:38px}
   .featured-campaign-film-copy>span{margin-top:16px}
   .featured-campaign-film-frame{padding:6px}
+  .campaign-date-stamp{left:14px;top:14px;width:86px;height:86px;gap:5px}
+  .campaign-date-stamp b{font-size:14px}
+  .campaign-date-stamp span{font-size:8px}
   .featured-campaign-film-frame:before{inset:-8px 10px 10px -8px}
   .featured-campaign-film-label{left:16px;bottom:14px;padding:8px 10px}
   .featured-campaign-social-film{grid-template-columns:1fr;gap:31px;margin-top:58px;padding-top:58px}

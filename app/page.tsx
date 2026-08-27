@@ -337,6 +337,7 @@ export default function Home() {
     <section className="featured-campaign" id="featured-campaign">
       <div className="section featured-campaign-film reveal">
         <div className="featured-campaign-film-frame">
+          <div className="campaign-date-stamp" aria-label={t("活動日期 2026 年 9 月 10 日")}><b>2026.9.10</b><span>{t("公益活動")}</span></div>
           <video autoPlay muted loop controls playsInline preload="metadata" poster={content.featuredCampaign.poster} aria-label={t("雙龍國小足球築夢公益活動形象短片")}>
             <source src={content.featuredCampaign.video} type="video/mp4"/>
             {t("您的瀏覽器目前無法播放這段影片。")}
@@ -360,6 +361,7 @@ export default function Home() {
           <span>{t("9 月 3 日首波宣傳建議：影片先行，活動海報接續補充資訊")}</span>
         </div>
         <div className="featured-campaign-social-frame">
+          <div className="campaign-date-stamp" aria-label={t("活動日期 2026 年 9 月 10 日")}><b>2026.9.10</b><span>{t("公益活動")}</span></div>
           <video controls playsInline preload="metadata" aria-label={t("雙龍國小足球公益直式分享短片")}>
             <source src={content.featuredCampaign.socialVideo} type="video/mp4"/>
             {t("您的瀏覽器目前無法播放這段影片。")}
