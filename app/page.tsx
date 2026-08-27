@@ -29,7 +29,7 @@ const content = {
   featuredCampaign: {
     poster: "/media/football-donation/football-dream-donation-2026.jpg",
     posterAlt: "足球築夢・希望啟航地區獎助金捐贈活動海報",
-    video: "/media/football-donation/shuanglong-school-promo.mp4",
+    video: "/media/football-donation/shuanglong-school-promo-starless.mp4",
     registrationUrl: "https://reurl.cc/vG6ZZl",
     mapUrl: "https://www.google.com/maps/search/?api=1&query=%E5%8D%97%E6%8A%95%E7%B8%A3%E4%BF%A1%E7%BE%A9%E9%84%89%E9%9B%99%E9%BE%8D%E6%9D%91%E5%85%89%E5%BE%A9%E5%B7%B74%E8%99%9F",
     eyebrow: "FEATURED EVENT · 地區獎助金捐贈",
