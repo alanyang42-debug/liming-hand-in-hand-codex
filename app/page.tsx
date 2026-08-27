@@ -334,6 +334,22 @@ export default function Home() {
     <section className="stats" aria-label={t("成果統計")}>{content.stats.map(([v,u,l], i) => <div key={l} style={{"--stat-delay": `${i * 100}ms`} as CSSProperties}><Counter value={v} unit={t(u)}/><p>{t(l)}</p></div>)}</section>
 
     <section className="featured-campaign" id="featured-campaign">
+      <div className="section featured-campaign-film reveal">
+        <div className="featured-campaign-film-frame">
+          <video autoPlay muted loop controls playsInline preload="metadata" poster={content.featuredCampaign.poster} aria-label={t("雙龍國小足球築夢公益活動形象短片")}>
+            <source src={content.featuredCampaign.video} type="video/mp4"/>
+            {t("您的瀏覽器目前無法播放這段影片。")}
+          </video>
+          <div className="featured-campaign-film-label" aria-hidden="true"><b>SHUANGLONG</b><span>FOOTBALL DREAM · 2026</span></div>
+        </div>
+        <div className="featured-campaign-film-copy">
+          <p className="eyebrow">{t("CAMPAIGN FILM · 活動形象短片")}</p>
+          <p className="event-kicker">{t("10 秒影音預告")}</p>
+          <h3>{t("一支短片，帶您走進雙龍")}</h3>
+          <p>{t("從足球築夢到物資關懷，邀請您先透過影片感受這趟送愛到偏鄉的公益行動。")}</p>
+          <span>{t("點選影片可開啟聲音與全螢幕播放")}</span>
+        </div>
+      </div>
       <div className="section featured-campaign-grid">
         <figure className="featured-campaign-poster reveal">
           <span>{t("優先活動")}</span>
@@ -363,22 +379,6 @@ export default function Home() {
             <button className="btn campaign-line" type="button" onClick={shareCampaignToLine} aria-label={t("使用 LINE 分享活動")}><span aria-hidden="true">LINE</span>{t("LINE 分享")}</button>
           </div>
           <small className="featured-campaign-invitation">{t(content.featuredCampaign.invitation)}</small>
-        </div>
-      </div>
-      <div className="section featured-campaign-film reveal">
-        <div className="featured-campaign-film-copy">
-          <p className="eyebrow">{t("CAMPAIGN FILM · 活動形象短片")}</p>
-          <p className="event-kicker">{t("10 秒影音預告")}</p>
-          <h3>{t("一支短片，帶您走進雙龍")}</h3>
-          <p>{t("從足球築夢到物資關懷，邀請您先透過影片感受這趟送愛到偏鄉的公益行動。")}</p>
-          <span>{t("點選影片可開啟聲音與全螢幕播放")}</span>
-        </div>
-        <div className="featured-campaign-film-frame">
-          <video autoPlay muted loop controls playsInline preload="metadata" poster={content.featuredCampaign.poster} aria-label={t("雙龍國小足球築夢公益活動形象短片")}>
-            <source src={content.featuredCampaign.video} type="video/mp4"/>
-            {t("您的瀏覽器目前無法播放這段影片。")}
-          </video>
-          <div className="featured-campaign-film-label" aria-hidden="true"><b>SHUANGLONG</b><span>FOOTBALL DREAM · 2026</span></div>
         </div>
       </div>
     </section>
