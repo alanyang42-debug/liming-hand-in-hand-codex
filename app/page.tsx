@@ -370,7 +370,6 @@ export default function Home() {
       </div>
       <div className="section featured-campaign-grid">
         <figure className="featured-campaign-poster reveal">
-          <span>{t("優先活動")}</span>
           <Image src={content.featuredCampaign.poster} alt={t(content.featuredCampaign.posterAlt)} width={1024} height={1536} priority unoptimized/>
         </figure>
         <div className="featured-campaign-copy reveal">
