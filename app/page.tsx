@@ -345,7 +345,7 @@ export default function Home() {
         <div className="featured-campaign-film-copy">
           <p className="eyebrow">{t("CAMPAIGN FILM · 活動形象短片")}</p>
           <p className="event-kicker">{t("10 秒影音預告")}</p>
-          <h3>{t("一支短片，帶您走進雙龍")}</h3>
+          <h3>{t("全國第七名的實力，缺一雙合腳的球鞋")}</h3>
           <p>{t("從足球築夢到物資關懷，邀請您先透過影片感受這趟送愛到偏鄉的公益行動。")}</p>
           <span>{t("點選影片可開啟聲音與全螢幕播放")}</span>
         </div>

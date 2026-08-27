@@ -160,7 +160,7 @@ Object.assign(en, {
   "好康分享（分享活動）": "Share This Event", "足球築夢・希望啟航｜台中黎明扶輪社": "Football Dreams · A Hopeful Kickoff | Rotary Club of Taichung Dawn", "邀請您一起關注雙龍國小足球設備捐贈與偏鄉生活物資募集活動。": "Join us in supporting Shuanglong Elementary through football equipment donations and a daily-necessities drive.",
   "LINE 分享": "Share on LINE", "使用 LINE 分享活動": "Share this event on LINE", "台中黎明扶輪社｜地區獎助金捐贈公益活動": "Rotary Club of Taichung Dawn | District Grant Donation", "捐贈足球訓練設備、教學資源與生活物資，陪伴偏鄉孩子勇敢追夢！": "Donate football training equipment, learning resources and daily necessities to help rural children pursue their dreams!", "活動報名": "Register", "活動詳情": "Event details",
   "足球築夢・希望啟航地區獎助金捐贈活動海報": "Football Dreams district grant donation event poster",
-  "CAMPAIGN FILM · 活動形象短片": "CAMPAIGN FILM", "10 秒影音預告": "10-second preview", "一支短片，帶您走進雙龍": "Step into Shuanglong through film",
+  "CAMPAIGN FILM · 活動形象短片": "CAMPAIGN FILM", "10 秒影音預告": "10-second preview", "全國第七名的實力，缺一雙合腳的球鞋": "National seventh-place talent—still missing a pair of shoes that truly fit",
   "從足球築夢到物資關懷，邀請您先透過影片感受這趟送愛到偏鄉的公益行動。": "From football dreams to essential supplies, this short film offers a first look at our journey of care to the Shuanglong community.",
   "點選影片可開啟聲音與全螢幕播放": "Use the player controls for sound and full screen", "雙龍國小足球築夢公益活動形象短片": "Shuanglong Elementary football charity campaign film",
 });
@@ -180,7 +180,7 @@ Object.assign(ja, {
   "好康分享（分享活動）": "イベントをシェア", "足球築夢・希望啟航｜台中黎明扶輪社": "サッカーで夢を・希望のキックオフ｜台中黎明ロータリークラブ", "邀請您一起關注雙龍國小足球設備捐贈與偏鄉生活物資募集活動。": "双龍小学校へのサッカー設備寄贈と地域の生活物資募集活動をぜひ応援・共有してください。",
   "LINE 分享": "LINEでシェア", "使用 LINE 分享活動": "LINEでイベントをシェア", "台中黎明扶輪社｜地區獎助金捐贈公益活動": "台中黎明ロータリークラブ｜地区補助金寄贈公益活動", "捐贈足球訓練設備、教學資源與生活物資，陪伴偏鄉孩子勇敢追夢！": "サッカー練習設備、教材、生活物資を届け、地域の子どもたちの夢を応援します！", "活動報名": "参加申込", "活動詳情": "イベント詳細",
   "足球築夢・希望啟航地區獎助金捐贈活動海報": "サッカーで夢を・地区補助金寄贈イベントポスター",
-  "CAMPAIGN FILM · 活動形象短片": "CAMPAIGN FILM · イベント映像", "10 秒影音預告": "10秒予告映像", "一支短片，帶您走進雙龍": "映像で訪ねる双龍",
+  "CAMPAIGN FILM · 活動形象短片": "CAMPAIGN FILM · イベント映像", "10 秒影音預告": "10秒予告映像", "全國第七名的實力，缺一雙合腳的球鞋": "全国7位の実力。それでも、足に合う一足が足りない",
   "從足球築夢到物資關懷，邀請您先透過影片感受這趟送愛到偏鄉的公益行動。": "サッカーの夢から生活物資の支援まで、双龍地域へ思いを届ける活動を映像でご覧ください。",
   "點選影片可開啟聲音與全螢幕播放": "プレーヤーで音声・全画面を操作できます", "雙龍國小足球築夢公益活動形象短片": "双龍小学校サッカー公益活動イメージ映像",
 });
@@ -200,7 +200,7 @@ Object.assign(ko, {
   "好康分享（分享活動）": "행사 공유", "足球築夢・希望啟航｜台中黎明扶輪社": "축구로 꿈을・희망의 킥오프 | 타이중 여명 로타리클럽", "邀請您一起關注雙龍國小足球設備捐贈與偏鄉生活物資募集活動。": "솽룽초 축구 장비 기증과 농촌 생활물품 모금 활동에 관심을 갖고 함께 공유해 주세요.",
   "LINE 分享": "LINE 공유", "使用 LINE 分享活動": "LINE으로 행사 공유", "台中黎明扶輪社｜地區獎助金捐贈公益活動": "타이중 여명 로타리클럽｜지구 보조금 기증 공익 행사", "捐贈足球訓練設備、教學資源與生活物資，陪伴偏鄉孩子勇敢追夢！": "축구 훈련 장비, 교육 자료와 생활물품을 기증해 농촌 아이들의 꿈을 응원합니다!", "活動報名": "행사 신청", "活動詳情": "행사 상세",
   "足球築夢・希望啟航地區獎助金捐贈活動海報": "축구로 꿈을・지구 보조금 기증 행사 포스터",
-  "CAMPAIGN FILM · 活動形象短片": "CAMPAIGN FILM · 행사 영상", "10 秒影音預告": "10초 미리보기", "一支短片，帶您走進雙龍": "영상으로 만나는 솽룽",
+  "CAMPAIGN FILM · 活動形象短片": "CAMPAIGN FILM · 행사 영상", "10 秒影音預告": "10초 미리보기", "全國第七名的實力，缺一雙合腳的球鞋": "전국 7위의 실력, 하지만 꼭 맞는 축구화 한 켤레가 부족합니다",
   "從足球築夢到物資關懷，邀請您先透過影片感受這趟送愛到偏鄉的公益行動。": "축구의 꿈부터 생활물품 나눔까지, 솽룽 마을에 사랑을 전하는 여정을 영상으로 먼저 만나보세요.",
   "點選影片可開啟聲音與全螢幕播放": "플레이어에서 소리와 전체 화면을 설정할 수 있습니다", "雙龍國小足球築夢公益活動形象短片": "솽룽초 축구 공익 행사 홍보 영상",
 });
