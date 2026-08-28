@@ -57,11 +57,15 @@ const content = {
         src: "/media/latest-event/stage-one-poster.webp",
         label: "第一階段",
         alt: "第一階段公益嘉年華活動海報",
+        width: 1045,
+        height: 1567,
       },
       {
         src: "/media/latest-event/stage-two-poster.webp",
         label: "第二階段",
         alt: "第二階段中秋公益晚會活動海報",
+        width: 1054,
+        height: 1492,
       },
     ],
     eyebrow: "LATEST EVENT · 2026 最新活動",
@@ -407,7 +411,7 @@ export default function Home() {
           <span>2026<br/><b>{t("最新活動")}</b></span>
           {content.latestEvent.posters.map((poster) => (
             <figure key={poster.label}>
-              <Image src={poster.src} alt={t(poster.alt)} width={1024} height={1536} unoptimized/>
+              <Image src={poster.src} alt={t(poster.alt)} width={poster.width} height={poster.height} unoptimized/>
               <figcaption>{t(poster.label)}</figcaption>
             </figure>
           ))}

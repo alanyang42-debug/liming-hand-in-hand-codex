@@ -149,7 +149,7 @@ main[data-lang="ja"] .hero h1,main[data-lang="ko"] .hero h1{font-size:clamp(60px
 .latest-event-posters figure:first-of-type{transform:rotate(-1.5deg)}
 .latest-event-posters figure:last-of-type{transform:rotate(1.5deg)}
 .latest-event-posters figure:hover{transform:translateY(-7px) rotate(0)}
-.latest-event-posters img{width:100%;height:auto;aspect-ratio:2/3;object-fit:cover}
+.latest-event-posters img{width:100%;height:auto;aspect-ratio:auto;object-fit:contain}
 .latest-event-posters figcaption{left:50%;bottom:13px;transform:translateX(-50%);min-width:max-content;padding:7px 13px;background:#10302de8;border:1px solid #f0cc7b6b;color:#fff;font:700 10px/1 sans-serif;letter-spacing:.16em;text-align:center}
 .latest-event-posters>span{position:absolute;z-index:3;left:50%;top:-66px;width:104px;height:104px;border-radius:50%;background:var(--coral);display:grid;place-content:center;text-align:center;color:#fff;font:italic 22px/1 Georgia,serif;box-shadow:0 15px 35px #0005;transform:translateX(-50%) rotate(4deg)}
 .latest-event-posters>span b{font:700 10px/1.2 sans-serif;letter-spacing:.12em;margin-top:7px}
