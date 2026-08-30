@@ -8,7 +8,7 @@ import { languageOptions, translate, type Lang } from "./i18n";
 
 // 日後更新網站，只要修改這份集中資料即可。
 const content = {
-  name: "黎明手牽手 愛無限",
+  name: "黎明公益網 手牽手愛無限",
   fullName: "台中黎明扶輪社",
   slogan: "手牽手，愛無限；因為有您，我們可以讓世界更美好。",
   intro: "串聯社友、眷屬與在地夥伴，從生活照護、教育支持到社區關懷，讓每一份善意真正抵達需要的地方。",
@@ -233,7 +233,7 @@ export default function Home() {
 
   const shareSite = async () => {
     const shareData = {
-      title: t("黎明手牽手 愛無限"),
+      title: t("黎明公益網 手牽手愛無限"),
       text: t("一起看見台中黎明扶輪社的公益行動，讓每一份善意成為改變。"),
       url: window.location.origin,
     };

@@ -6,7 +6,7 @@ const geist = Geist({ variable: "--font-geist", subsets: ["latin"] });
 const mono = Geist_Mono({ variable: "--font-mono", subsets: ["latin"] });
 export const metadata: Metadata = {
   metadataBase: new URL("https://liming-hand-in-hand.alanyang42.chatgpt.site"),
-  title: "黎明手牽手 愛無限｜台中黎明扶輪社公益網站",
+  title: "黎明公益網 手牽手愛無限｜台中黎明扶輪社",
   description: "台中黎明扶輪社投入偏鄉教育與社區關懷。2026 年 9 月 10 日前往雙龍國小舉辦足球設備捐贈、生活物資募集與部落公益交流。",
   keywords: ["台中黎明扶輪社", "黎明手牽手", "足球築夢", "雙龍國小", "地區獎助金", "公益活動", "偏鄉關懷"],
   alternates: { canonical: "/" },
@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "zh_TW",
     url: "/",
-    siteName: "黎明手牽手 愛無限",
+    siteName: "黎明公益網 手牽手愛無限",
     title: "足球築夢・希望啟航｜台中黎明扶輪社",
     description: "9 月 10 日前往雙龍國小，捐贈足球訓練設備並募集生活物資，把支持與希望送進偏鄉。",
     images: [{ url: "/media/football-finals/15-finals-panorama.jpg", width: 2048, height: 1152, alt: "南投雙龍國小女足全國賽事公益紀錄" }],

@@ -8,7 +8,7 @@ export const languageOptions: { code: Lang; label: string; htmlLang: string }[] 
 ];
 
 const en: Record<string, string> = {
-  "黎明手牽手 愛無限": "Dawn · Hand in Hand",
+  "黎明公益網 手牽手愛無限": "Dawn Charity · Hand in Hand",
   "台中黎明扶輪社": "Rotary Club of Taichung Dawn",
   "手牽手，愛無限；因為有您，我們可以讓世界更美好。": "Hand in hand, love without limits. With you, we can make the world a better place.",
   "串聯社友、眷屬與在地夥伴，從生活照護、教育支持到社區關懷，讓每一份善意真正抵達需要的地方。": "Bringing Rotarians, families and local partners together—from daily care and education to community outreach—so every act of kindness reaches those who need it.",
@@ -55,7 +55,7 @@ const en: Record<string, string> = {
 
 const ja: Record<string, string> = {
   ...en,
-  "黎明手牽手 愛無限": "黎明・手をつなごう 愛は無限",
+  "黎明公益網 手牽手愛無限": "黎明公益ネット・手をつなごう 愛は無限",
   "台中黎明扶輪社": "台中黎明ロータリークラブ",
   "手牽手，愛無限；因為有您，我們可以讓世界更美好。": "手をつなげば、愛は無限に。あなたとともに、世界をもっと素敵な場所へ。",
   "串聯社友、眷屬與在地夥伴，從生活照護、教育支持到社區關懷，讓每一份善意真正抵達需要的地方。": "会員とご家族、地域のパートナーをつなぎ、生活支援・教育支援・地域ケアを通して、すべての善意を必要な場所へ届けます。",
@@ -101,7 +101,7 @@ const ja: Record<string, string> = {
 
 const ko: Record<string, string> = {
   ...en,
-  "黎明手牽手 愛無限": "여명 · 손에 손잡고 무한한 사랑",
+  "黎明公益網 手牽手愛無限": "여명 공익 네트워크 · 손에 손잡고 무한한 사랑",
   "台中黎明扶輪社": "타이중 여명 로타리클럽",
   "手牽手，愛無限；因為有您，我們可以讓世界更美好。": "손에 손잡으면 사랑은 끝없이 이어집니다. 여러분과 함께 더 나은 세상을 만듭니다.",
   "串聯社友、眷屬與在地夥伴，從生活照護、教育支持到社區關懷，讓每一份善意真正抵達需要的地方。": "회원과 가족, 지역 파트너를 연결해 생활 돌봄과 교육 지원, 지역사회 나눔을 이어가며 모든 선의가 꼭 필요한 곳에 닿도록 합니다.",
