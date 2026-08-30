@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://liming-hand-in-hand.alanyang42.chatgpt.site"),
   title: "黎明公益網 手牽手愛無限｜台中黎明扶輪社",
   description: "台中黎明扶輪社投入偏鄉教育與社區關懷。2026 年 9 月 10 日前往雙龍國小舉辦足球設備捐贈、生活物資募集與部落公益交流。",
-  keywords: ["台中黎明扶輪社", "黎明手牽手", "足球築夢", "雙龍國小", "地區獎助金", "公益活動", "偏鄉關懷"],
+  keywords: ["台中黎明扶輪社", "黎明公益網", "手牽手愛無限", "足球築夢", "雙龍國小", "地區獎助金", "公益活動", "偏鄉關懷"],
   alternates: { canonical: "/" },
   openGraph: {
     type: "website",

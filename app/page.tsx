@@ -109,7 +109,7 @@ const content = {
     title: "114學年度小學生足球賽全國決賽",
     subtitle: "南投雙龍國小女足｜國小女生高年級組",
     result: "全國第七名",
-    text: "從烈日下的每一次奔跑，到場邊的一句加油，孩子們用勇氣、默契與不放棄的精神完成全國賽事。「黎明手牽手 愛無限」陪伴孩子走進更大的球場，也把每一份支持化成繼續前進的力量。",
+    text: "從烈日下的每一次奔跑，到場邊的一句加油，孩子們用勇氣、默契與不放棄的精神完成全國賽事。「黎明公益網・手牽手愛無限」陪伴孩子走進更大的球場，也把每一份支持化成繼續前進的力量。",
     video: "/media/football-finals/highlight.mp4",
     poster: "/media/football-finals/15-finals-panorama.jpg",
     shortVideo: "/media/football-finals/2026-shuanglong-football-finals.mp4",
@@ -326,7 +326,7 @@ export default function Home() {
         <p className="eyebrow">{t("HAND IN HAND · 手牽手，愛無限")}</p>
         <h1>{t("手牽手")}<br/><em>{t("讓愛無限")}</em></h1>
         <p>{t(content.intro)}</p>
-        <div className="actions"><a className="btn gold" href="#actions">{t("看見我們的行動 ↓")}</a><a className="btn outline" href="#contact">{t("成為合作夥伴 ↗")}</a><button className="btn outline share-btn" type="button" onClick={shareSite} aria-live="polite">{shareStatus || t("分享公益網站 ↗")}</button></div>
+        <div className="actions"><a className="btn gold" href="#actions">{t("看見我們的行動 ↓")}</a><a className="btn outline" href="#contact">{t("成為合作夥伴 ↗")}</a><button className="btn outline share-btn" type="button" onClick={shareSite} aria-live="polite">{shareStatus || t("分享黎明公益網 ↗")}</button></div>
         <small><i/> {t("公益不是一場活動，而是一段長久的陪伴")}</small>
       </div>
       <div className="hero-art reveal">
@@ -535,7 +535,7 @@ export default function Home() {
           <p className="eyebrow">{t("FOLLOW THE STORY · IG 影音")}</p>
           <p className="event-kicker">Instagram Reel</p>
           <h2>{t("一起為孩子的")}<br/>{t("每一步喝采")}</h2>
-          <p>{t("從公益網站直接觀看最新賽事影音；若您的瀏覽器限制 Instagram 嵌入內容，也可前往原貼文觀看。")}</p>
+          <p>{t("從黎明公益網直接觀看最新賽事影音；若您的瀏覽器限制 Instagram 嵌入內容，也可前往原貼文觀看。")}</p>
           <a className="btn gold" href={content.event.instagramUrl} target="_blank" rel="noreferrer">{t("在 Instagram 觀看 ↗")}</a>
         </div>
       </div>
