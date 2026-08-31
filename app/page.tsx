@@ -306,7 +306,7 @@ export default function Home() {
     <header>
       <a className="brand" href="#top"><span className="sun">✦</span><span><b>{t(content.name)}</b><small>HAND IN HAND · LOVE WITHOUT LIMITS</small></span></a>
       <nav className={menu ? "open" : ""}>
-        <a href="#featured-campaign" onClick={() => setMenu(false)}>{t("焦點活動")}</a><a href="#latest-event" onClick={() => setMenu(false)}>{t("中秋活動")}</a><a href="#actions" onClick={() => setMenu(false)}>{t("公益行動")}</a><a href="#timeline" onClick={() => setMenu(false)}>{t("行動足跡")}</a><a href="#stories" onClick={() => setMenu(false)}>{t("照片故事")}</a><a href="#football" onClick={() => setMenu(false)}>{t("足球紀錄")}</a><a href="#contact" onClick={() => setMenu(false)}>{t("加入行動")}</a>
+        <a href="#featured-campaign" onClick={() => setMenu(false)}>{t("焦點活動")}</a><a href="#latest-event" onClick={() => setMenu(false)}>{t("中秋活動")}</a><a href="#actions" onClick={() => setMenu(false)}>{t("公益行動")}</a><a href="#charity-logo" onClick={() => setMenu(false)}>{t("公益 Logo")}</a><a href="#timeline" onClick={() => setMenu(false)}>{t("行動足跡")}</a><a href="#stories" onClick={() => setMenu(false)}>{t("照片故事")}</a><a href="#contact" onClick={() => setMenu(false)}>{t("加入行動")}</a>
       </nav>
       <div className="header-tools">
         <label className="language-switcher">
@@ -323,7 +323,6 @@ export default function Home() {
     <section className="hero">
       <WarmParticles/>
       <div className="hero-copy reveal">
-        <div className="hero-brand-logo"><Image src="/media/brand/hand-in-hand-brand-logo.webp" alt="HAND IN HAND · LOVE WITHOUT LIMITS 品牌標誌" width={1200} height={680} priority unoptimized/></div>
         <p className="eyebrow">{t("HAND IN HAND · 手牽手，愛無限")}</p>
         <h1>{t("手牽手")}<br/><em>{t("讓愛無限")}</em></h1>
         <p>{t(content.intro)}</p>
@@ -333,7 +332,7 @@ export default function Home() {
       <div className="hero-art reveal">
         <figure><Image src="https://images.unsplash.com/photo-1559027615-cd4628902d4a?auto=format&fit=crop&w=1400&q=85" alt={t("公益活動示意照片")} width={900} height={1000} unoptimized/><figcaption>FEATURED ACTION<br/><b>{t("社區家園・生活照護")}</b></figcaption></figure>
         <div className="mini"><Image src={content.actions[1].image} alt={t("南投雙龍國小女足全國賽事紀錄")} width={400} height={500} unoptimized/></div>
-        <div className="stamp">{t("手牽手")}<br/><b>∞</b><br/>{t("愛無限")}</div>
+        <div className="stamp"><span>{t("手牽手")}</span><Image src="/media/brand/hand-in-hand-mark-transparent.png" alt="手牽手愛無限公益 Logo" width={700} height={288} unoptimized/><span>{t("愛無限")}</span></div>
       </div>
     </section>
 
@@ -591,9 +590,21 @@ export default function Home() {
       <aside className="contact-card reveal"><p>TAICHUNG DAWN</p><h3>{t(content.fullName)}</h3><dl><div><dt>{t("電話")}</dt><dd><a href="tel:+886423227799">04-2322-7799</a></dd></div><div><dt>{t("辦公室")}</dt><dd>{t("台中市南屯區公益路二段 61 號")}<br/>{t("13 樓之 1")}</dd></div><div><dt>{t("合作洽詢")}</dt><dd>{t("歡迎來電洽詢公益合作與活動資訊")}</dd></div></dl><a href="https://www.facebook.com/groups/376285655902508/" target="_blank">{t("Facebook 社群 ↗")}</a></aside>
     </section>
 
-    <section className="brand-identity-band" aria-label={t("手牽手愛無限品牌識別")}>
-      <div className="brand-identity-logo"><Image src="/media/brand/hand-in-hand-brand-logo.webp" alt="HAND IN HAND · LOVE WITHOUT LIMITS" width={1200} height={680} unoptimized/></div>
-      <div className="brand-identity-copy"><p>HAND IN HAND · LOVE WITHOUT LIMITS</p><h2>{t("一雙手，成就更多愛與希望。")}</h2><span>{t("雙手比心，象徵彼此相連；天使翅膀，承載守護與希望。")}</span></div>
+    <section className="charity-logo-section" id="charity-logo" aria-labelledby="charity-logo-title">
+      <div className="section charity-logo-heading reveal"><div><p className="eyebrow">BRAND FOR GOOD · {t("公益識別")}</p><h2 id="charity-logo-title">{t("一雙手，成就更多愛與希望。")}</h2></div><p>{t("「手牽手・愛無限」以一個能被記住、也能被實際使用的公益符號，串聯每一次關懷、陪伴與共同參與。")}</p></div>
+      <div className="section charity-logo-story reveal">
+        <div className="charity-logo-display"><Image src="/media/brand/hand-in-hand-logo-transparent.png" alt="HAND IN HAND · LOVE WITHOUT LIMITS 公益 Logo" width={1672} height={940} unoptimized/></div>
+        <div className="charity-logo-elements">
+          <article><b>01</b><h3>{t("雙手")}</h3><p>{t("雙手相連並合成愛心，代表陪伴、合作，以及把善意化為行動。")}</p></article>
+          <article><b>02</b><h3>{t("愛心")}</h3><p>{t("中央愛心是關懷的核心，象徵每一次公益行動都從理解與溫暖出發。")}</p></article>
+          <article><b>03</b><h3>{t("天使翅膀")}</h3><p>{t("向上展開的翅膀代表守護、希望與前進的力量，陪伴需要的人飛向更好的未來。")}</p></article>
+          <article><b>04</b><h3>{t("紅色 × 白色")}</h3><p>{t("紅色傳達愛、行動與熱情；白色代表純粹、守護與值得信任。")}</p></article>
+        </div>
+      </div>
+      <div className="section charity-logo-extension reveal">
+        <div className="charity-logo-merch"><Image src="/media/brand/hand-in-hand-merchandise.webp" alt={t("公益 Logo 商品與活動應用示意")} width={1600} height={1193} unoptimized/></div>
+        <div className="charity-logo-extension-copy"><p className="eyebrow">FROM MARK TO MOVEMENT · {t("從識別到行動")}</p><h2>{t("讓一致的識別，走進每一個公益現場。")}</h2><p>{t("Logo 可延伸至活動主背板、志工服飾、公益提袋、識別牌、社群圖卡與宣傳海報。無論遠看或縮小，都能快速辨識，讓每一份支持形成共同記憶。")}</p><ul><li>{t("活動主背板與舞台識別")}</li><li>{t("志工服飾與工作證")}</li><li>{t("公益提袋與紀念小物")}</li><li>{t("社群圖卡、海報與影音片尾")}</li></ul></div>
+      </div>
     </section>
 
     <nav className="alliance-matrix" aria-label={t("黎明公益聯盟數位行動矩陣")}>

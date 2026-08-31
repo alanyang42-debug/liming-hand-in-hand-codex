@@ -352,3 +352,29 @@ main[data-lang="ja"] .hero h1,main[data-lang="ko"] .hero h1{font-size:clamp(60px
   .warm-particles i,.stats>div{animation:none}
   .btn,.story figure img,.photo img{transition:none}
 }
+
+/* 公益 Logo 識別單元 */
+.hero-brand-logo,.brand-identity-band{display:none}
+.stamp{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:7px;font-size:9px;font-weight:800}
+.stamp img{width:82px;height:auto;filter:brightness(0) invert(1)}
+.charity-logo-section{padding:125px 0;background:#fffaf3;scroll-margin-top:24px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.charity-logo-heading{display:grid;grid-template-columns:1.1fr .9fr;gap:8vw;align-items:end;margin-bottom:65px}
+.charity-logo-heading h2,.charity-logo-extension-copy h2{font:400 clamp(46px,5.2vw,76px)/1.1 Georgia,serif;letter-spacing:-.05em;margin:0;color:#4b0008}
+.charity-logo-heading>p{margin:0 0 8px;color:#4b0008a8;font-size:13px;line-height:2}
+.charity-logo-story{display:grid;grid-template-columns:.92fr 1.08fr;gap:5vw;align-items:center}
+.charity-logo-display{min-height:460px;border-radius:50%;background:var(--coral);display:grid;place-items:center;padding:11%;box-shadow:0 30px 80px #4b000820}
+.charity-logo-display img{width:100%;height:auto;filter:brightness(0) invert(1)}
+.charity-logo-elements{display:grid;grid-template-columns:repeat(2,1fr);border-top:1px solid #4b000826;border-left:1px solid #4b000826}
+.charity-logo-elements article{min-height:210px;padding:28px;border-right:1px solid #4b000826;border-bottom:1px solid #4b000826}
+.charity-logo-elements b{color:#ef3340;font:italic 20px Georgia}
+.charity-logo-elements h3{margin:20px 0 12px;font:28px Georgia;color:#4b0008}
+.charity-logo-elements p{margin:0;color:#4b00089a;font-size:12px;line-height:1.85}
+.charity-logo-extension{margin-top:90px;display:grid;grid-template-columns:1.1fr .9fr;gap:6vw;align-items:center}
+.charity-logo-merch{overflow:hidden;box-shadow:0 30px 80px #4b00082b}
+.charity-logo-merch img{aspect-ratio:4/3;object-fit:cover}
+.charity-logo-extension-copy h2{font-size:clamp(40px,4.5vw,62px);margin-bottom:22px}
+.charity-logo-extension-copy>p:not(.eyebrow){color:#4b00089a;font-size:13px;line-height:2}
+.charity-logo-extension-copy ul{list-style:none;margin:28px 0 0;padding:0;border-top:1px solid #4b000826}
+.charity-logo-extension-copy li{padding:14px 0;border-bottom:1px solid #4b000826;font-size:12px;font-weight:700}
+.charity-logo-extension-copy li:before{content:"＋";color:#ef3340;margin-right:12px}
+@media(max-width:700px){.stamp img{width:68px}.charity-logo-section{padding:85px 0}.charity-logo-heading,.charity-logo-story,.charity-logo-extension{grid-template-columns:1fr;gap:35px}.charity-logo-heading{margin-bottom:42px}.charity-logo-heading h2,.charity-logo-extension-copy h2{font-size:42px}.charity-logo-display{min-height:0;aspect-ratio:1;padding:13%}.charity-logo-elements{grid-template-columns:1fr}.charity-logo-elements article{min-height:175px}.charity-logo-extension{margin-top:65px}.charity-logo-merch img{aspect-ratio:1/1;object-position:48% center}}
