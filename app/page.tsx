@@ -591,13 +591,33 @@ export default function Home() {
     </section>
 
     <nav className="alliance-matrix" aria-label={t("黎明公益聯盟數位行動矩陣")}>
-      <strong><span>{t("黎明公益聯盟")}</span><small>{t("活動 × 公益 × 專業 × 企劃")}</small></strong>
+      <strong><span>{t("Alan 網頁矩陣")}</span><small>{t("人文 × 科技 × 公益 × 專業")}</small></strong>
       <a href="https://liming-hand-in-hand.alanyang42.chatgpt.site" aria-current="page"><small>{t("公益行動")}</small><b>{t("黎明公益網")}</b></a>
       <a href="https://hand-in-hand-midautumn.alanyang42.chatgpt.site/?utm_source=liming&amp;utm_medium=referral&amp;utm_campaign=2026_midautumn&amp;utm_content=alliance_footer" target="_blank" rel="noreferrer"><small>{t("最新活動")}</small><b>{t("手牽手・愛無限")}</b></a>
       <a href="https://www.smartspeaker.com.tw/?utm_source=liming&amp;utm_medium=referral&amp;utm_campaign=public_good_alliance&amp;utm_content=alliance_footer" target="_blank" rel="noreferrer"><small>{t("專業信任")}</small><b>Health Salon</b></a>
       <a href="https://www.alanyang.com.tw/?utm_source=liming&amp;utm_medium=referral&amp;utm_campaign=public_good_alliance&amp;utm_content=alliance_footer" target="_blank" rel="noreferrer"><small>{t("企劃紀錄")}</small><b>A+ Project Journal</b></a>
     </nav>
-    <footer><a className="brand" href="#top"><span className="sun">✦</span><b>{t(content.name)}</b></a><p>© 2026 {t(content.fullName)} · {t("讓善意持續發生")}</p><p>{t("內容更新 2026.07")}</p></footer>
+    <section className="alan-team-intro" aria-labelledby="alan-team-title">
+      <div className="alan-team-heading">
+        <p>ALAN × AI PROJECT TEAM</p>
+        <h2 id="alan-team-title">{t("讓想法落地，讓公益被看見。")}</h2>
+        <span>{t("由 Alan 統籌方向，結合五位 AI 虛擬專員，協助研究、內容、設計、網站與多媒體整合，讓每一項公益行動都能被清楚記錄與持續分享。")}</span>
+        <a href="https://www.alanyang.com.tw/?utm_source=liming&amp;utm_medium=referral&amp;utm_campaign=alan_ai_team&amp;utm_content=team_footer" target="_blank" rel="noreferrer">{t("認識 Alan 團隊 ↗")}</a>
+      </div>
+      <div className="alan-team-roles">
+        <article className="team-lead"><b>01</b><small>PROJECT LEAD</small><h3>{t("Alan｜總指揮")}</h3><p>{t("方向決策・企劃整合・跨域協作")}</p></article>
+        <article><b>02</b><small>RESEARCH</small><h3>{t("資料研究")}</h3><p>{t("背景整理・資訊查核・策略分析")}</p></article>
+        <article><b>03</b><small>CONTENT</small><h3>{t("內容企劃")}</h3><p>{t("故事轉譯・活動文案・多語內容")}</p></article>
+        <article><b>04</b><small>DESIGN</small><h3>{t("視覺設計")}</h3><p>{t("版面風格・海報圖像・品牌一致")}</p></article>
+        <article><b>05</b><small>WEB</small><h3>{t("網站建置")}</h3><p>{t("互動體驗・手機優化・網站更新")}</p></article>
+        <article><b>06</b><small>MEDIA</small><h3>{t("多媒體整合")}</h3><p>{t("影音內容・社群串聯・成果傳播")}</p></article>
+      </div>
+      <aside className="alan-credit-panel">
+        <p>{t("本站由")} <strong>Alan Yang {t("數位企劃團隊")}</strong> {t("規劃設計，協助品牌定位、內容架構、活動紀錄與網站維護，讓每一次值得被看見的行動，都有一個可信任的數位入口。")}</p>
+        <a href="https://www.alanyang.com.tw/?utm_source=liming&amp;utm_medium=referral&amp;utm_campaign=alan_ai_team&amp;utm_content=credit_footer" target="_blank" rel="noreferrer">{t("認識企劃夥伴 Alan Yang ↗")}</a>
+      </aside>
+    </section>
+    <footer><a className="brand" href="#top"><span className="sun">✦</span><b>{t(content.name)}</b></a><p>© 2026 {t(content.fullName)} · {t("讓善意持續發生")}</p><p>{t("內容更新 2026.08")}</p></footer>
     <button className="guide-btn" onClick={()=>setGuide(true)}>✦ {t("內容更新指南")}</button>
 
     {photo && <div className="backdrop" onClick={()=>setPhoto(null)}><div className="photo-modal" onClick={e=>e.stopPropagation()}><button onClick={()=>setPhoto(null)} aria-label={t("關閉照片")}>×</button><Image src={photo[2]} alt={t(photo[1])} width={1500} height={1000} unoptimized/><div><p>{t(photo[0])}</p><h3>{t(photo[1])}</h3><small>{t(content.event.title)}・{t("活動實錄")}</small></div></div></div>}
