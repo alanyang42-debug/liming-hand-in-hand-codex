@@ -323,6 +323,7 @@ export default function Home() {
     <section className="hero">
       <WarmParticles/>
       <div className="hero-copy reveal">
+        <div className="hero-brand-logo"><Image src="/media/brand/hand-in-hand-brand-logo.webp" alt="HAND IN HAND · LOVE WITHOUT LIMITS 品牌標誌" width={1200} height={680} priority unoptimized/></div>
         <p className="eyebrow">{t("HAND IN HAND · 手牽手，愛無限")}</p>
         <h1>{t("手牽手")}<br/><em>{t("讓愛無限")}</em></h1>
         <p>{t(content.intro)}</p>
@@ -588,6 +589,11 @@ export default function Home() {
     <section className="contact" id="contact">
       <div className="reveal"><p className="eyebrow">{t("LET’S CREATE IMPACT · 聯絡我們")}</p><h2>{t("下一個好故事，")}<br/><em>{t("期待有您同行。")}</em></h2><p>{t("企業合作、物資支持、專業服務或活動參與，都歡迎與我們聊聊。")}</p><div className="actions"><a className="btn light" href="tel:+886423227799">{t("立即來電 ↗")}</a><a className="btn outline" href="https://dawnrotaryclub.tw/" target="_blank">{t("官方網站 ↗")}</a></div></div>
       <aside className="contact-card reveal"><p>TAICHUNG DAWN</p><h3>{t(content.fullName)}</h3><dl><div><dt>{t("電話")}</dt><dd><a href="tel:+886423227799">04-2322-7799</a></dd></div><div><dt>{t("辦公室")}</dt><dd>{t("台中市南屯區公益路二段 61 號")}<br/>{t("13 樓之 1")}</dd></div><div><dt>{t("合作洽詢")}</dt><dd>{t("歡迎來電洽詢公益合作與活動資訊")}</dd></div></dl><a href="https://www.facebook.com/groups/376285655902508/" target="_blank">{t("Facebook 社群 ↗")}</a></aside>
+    </section>
+
+    <section className="brand-identity-band" aria-label={t("手牽手愛無限品牌識別")}>
+      <div className="brand-identity-logo"><Image src="/media/brand/hand-in-hand-brand-logo.webp" alt="HAND IN HAND · LOVE WITHOUT LIMITS" width={1200} height={680} unoptimized/></div>
+      <div className="brand-identity-copy"><p>HAND IN HAND · LOVE WITHOUT LIMITS</p><h2>{t("一雙手，成就更多愛與希望。")}</h2><span>{t("雙手比心，象徵彼此相連；天使翅膀，承載守護與希望。")}</span></div>
     </section>
 
     <nav className="alliance-matrix" aria-label={t("黎明公益聯盟數位行動矩陣")}>
