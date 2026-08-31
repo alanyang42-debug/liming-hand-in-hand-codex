@@ -324,7 +324,7 @@ export default function Home() {
       <WarmParticles/>
       <div className="hero-copy reveal">
         <p className="eyebrow">{t("HAND IN HAND · 手牽手，愛無限")}</p>
-        <div className="hero-title-lockup"><Image src="/media/brand/hand-in-hand-mark-transparent.png" alt="" width={700} height={288} aria-hidden="true" unoptimized/><h1>{t("手牽手")}<br/><em>{t("讓愛無限")}</em></h1></div>
+        <div className="hero-title-lockup"><h1><span className="hero-title-first">{t("手牽手")}<Image src="/media/brand/hand-in-hand-mark-transparent.png" alt="" width={700} height={288} aria-hidden="true" unoptimized/></span><em>{t("讓愛無限")}</em></h1></div>
         <p>{t(content.intro)}</p>
         <div className="actions"><a className="btn gold" href="#actions">{t("看見我們的行動 ↓")}</a><a className="btn outline" href="#contact">{t("成為合作夥伴 ↗")}</a><button className="btn outline share-btn" type="button" onClick={shareSite} aria-live="polite">{shareStatus || t("分享黎明公益網 ↗")}</button></div>
         <small><i/> {t("公益不是一場活動，而是一段長久的陪伴")}</small>
