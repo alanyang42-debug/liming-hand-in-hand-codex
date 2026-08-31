@@ -340,11 +340,3 @@ main[data-lang="ja"] .hero h1,main[data-lang="ko"] .hero h1{font-size:clamp(60px
   .warm-particles i,.stats>div{animation:none}
   .btn,.story figure img,.photo img{transition:none}
 }
-
-/* 首頁標題：讓愛無限・心連心 */
-.hero-love-line{display:flex;align-items:center;gap:clamp(14px,1.7vw,28px);white-space:nowrap}
-.linked-hearts{display:inline-flex;width:clamp(82px,8.5vw,132px);flex:0 0 auto;filter:drop-shadow(0 10px 18px #0004);transform:translateY(.06em);animation:linked-heart-pulse 3.2s ease-in-out infinite;transform-origin:center}
-.linked-hearts img{display:block;width:100%;height:auto;object-fit:contain}
-@keyframes linked-heart-pulse{0%,100%{transform:translateY(.06em) scale(1);opacity:.92}50%{transform:translateY(.06em) scale(1.045);opacity:1}}
-@media(max-width:700px){.hero-love-line{gap:10px}.linked-hearts{width:21vw;max-width:94px}}
-@media(prefers-reduced-motion:reduce){.linked-hearts{animation:none}}
