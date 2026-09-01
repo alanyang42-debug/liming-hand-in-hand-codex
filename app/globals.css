@@ -162,11 +162,8 @@ main[data-lang="ja"] .hero h1,main[data-lang="ko"] .hero h1{font-size:clamp(60px
 .latest-event-posters figure:hover{transform:translateY(-7px) rotate(0)}
 .latest-event-posters img{width:100%;height:auto;aspect-ratio:auto;object-fit:contain}
 .latest-event-posters figcaption{left:50%;bottom:13px;transform:translateX(-50%);min-width:max-content;padding:7px 13px;background:#10302de8;border:1px solid #f0cc7b6b;color:#fff;font:700 10px/1 sans-serif;letter-spacing:.16em;text-align:center}
-.latest-event-posters>span.latest-event-logo-badge{position:absolute;z-index:3;left:50%;top:-62px;width:176px;height:86px;border-radius:0;background:transparent;display:grid;place-items:center;color:#fff;box-shadow:none;transform:translateX(-50%) rotate(-2.5deg);transform-origin:center}
-.latest-event-logo-badge>img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 15px 28px #0005)}
-.latest-event-logo-copy{position:relative;z-index:1;width:78px;margin-top:7px;display:flex;flex-direction:column;align-items:center;gap:5px;text-align:center;text-shadow:0 2px 5px #7b241dbb}
-.latest-event-logo-copy strong{font:850 17px/1 var(--font-geist),Arial,sans-serif;font-variant-numeric:tabular-nums;letter-spacing:.02em}
-.latest-event-posters .latest-event-logo-copy b{margin:0;font:800 9px/1 var(--font-geist),Arial,sans-serif;letter-spacing:.13em}
+.latest-event-posters>span{position:absolute;z-index:3;left:50%;top:-66px;width:104px;height:104px;border-radius:50%;background:var(--coral);display:grid;place-content:center;text-align:center;color:#fff;font:italic 22px/1 Georgia,serif;box-shadow:0 15px 35px #0005;transform:translateX(-50%) rotate(4deg)}
+.latest-event-posters>span b{font:700 10px/1.2 sans-serif;letter-spacing:.12em;margin-top:7px}
 .latest-event-copy .eyebrow{color:#f0cc7b;margin-bottom:14px}
 .latest-event-copy>.event-kicker{color:#ffffff7d;font-size:10px;letter-spacing:.15em;margin:0 0 18px}
 .latest-event-copy h2{font:400 clamp(48px,5.5vw,82px)/1.02 Georgia,serif;letter-spacing:-.052em;margin:0 0 28px}
@@ -304,10 +301,7 @@ main[data-lang="ja"] .hero h1,main[data-lang="ko"] .hero h1{font-size:clamp(60px
   .latest-event-posters{width:min(94%,590px);justify-self:center;gap:10px}
   .latest-event-posters figure{padding:5px}
   .latest-event-posters figcaption{bottom:9px;padding:6px 9px;font-size:8px}
-  .latest-event-posters>span.latest-event-logo-badge{left:50%;top:-58px;width:136px;height:68px;transform:translateX(-50%) rotate(-2.5deg)}
-  .latest-event-logo-copy{width:66px;margin-top:5px;gap:4px}
-  .latest-event-logo-copy strong{font-size:13px}
-  .latest-event-posters .latest-event-logo-copy b{font-size:7px}
+  .latest-event-posters>span{left:50%;top:-76px;width:78px;height:78px;font-size:17px;transform:translateX(-50%) rotate(4deg)}
   .latest-event-copy h2{font-size:48px}
   .latest-event-facts{grid-template-columns:1fr}
   .latest-event-facts>div,.latest-event-facts>div:first-child{padding:13px 0;border-right:0;border-bottom:1px solid #ffffff24}
