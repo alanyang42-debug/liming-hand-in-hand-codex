@@ -408,7 +408,10 @@ export default function Home() {
       <WarmParticles compact/>
       <div className="section latest-event-grid">
         <div className="latest-event-posters reveal" aria-label={t("第一階段與第二階段活動海報")}>
-          <span>2026<br/><b>{t("最新活動")}</b></span>
+          <span className="latest-event-logo-badge">
+            <Image src="/media/brand/hand-in-hand-solid-note-v2.png" alt="" width={700} height={288} aria-hidden="true" unoptimized/>
+            <span className="latest-event-logo-copy"><strong>2026</strong><b>{t("最新活動")}</b></span>
+          </span>
           {content.latestEvent.posters.map((poster) => (
             <figure key={poster.label}>
               <Image src={poster.src} alt={t(poster.alt)} width={poster.width} height={poster.height} unoptimized/>
