@@ -304,7 +304,7 @@ export default function Home() {
       <Image src="/media/site/taichung-liming-rotary-logo-web.png" alt={t("國際扶輪3462地區・台中黎明扶輪社")} width={2048} height={682} priority unoptimized/>
     </div>
     <header>
-      <a className="brand" href="#top"><span className="sun">✦</span><span><b>{t(content.name)}</b><small>HAND IN HAND · LOVE WITHOUT LIMITS</small></span></a>
+      <a className="brand" href="#top"><span className="sun header-charity-logo"><Image src="/media/brand/hand-in-hand-mark-transparent.png" alt="" width={700} height={288} aria-hidden="true" unoptimized/></span><span><b>{t(content.name)}</b><small>HAND IN HAND · LOVE WITHOUT LIMITS</small></span></a>
       <nav className={menu ? "open" : ""}>
         <a href="#featured-campaign" onClick={() => setMenu(false)}>{t("焦點活動")}</a><a href="#latest-event" onClick={() => setMenu(false)}>{t("中秋活動")}</a><a href="#actions" onClick={() => setMenu(false)}>{t("公益行動")}</a><a href="#charity-logo" onClick={() => setMenu(false)}>{t("公益 Logo")}</a><a href="#timeline" onClick={() => setMenu(false)}>{t("行動足跡")}</a><a href="#stories" onClick={() => setMenu(false)}>{t("照片故事")}</a><a href="#contact" onClick={() => setMenu(false)}>{t("加入行動")}</a>
       </nav>
