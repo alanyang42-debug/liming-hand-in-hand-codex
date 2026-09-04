@@ -34,6 +34,7 @@ const en: Record<string, string> = {
   "盛夏球場・夢想開踢": "Summer pitch · Dreams kick off", "烈日下・全力以赴": "Under the sun · Giving it everything", "場邊整備・一起守候": "Sideline preparation · Standing together", "全國決賽・熱血賽場": "National finals · Passion on the pitch", "帶球突破・勇敢向前": "Breaking through · Moving forward bravely", "團隊進攻・默契同行": "Team attack · Moving as one", "禁區守護・全神貫注": "Defending the box · Fully focused", "跌倒再起・永不放棄": "Get back up · Never give up", "關鍵一腳・全力出擊": "The crucial kick · Full commitment", "並肩作戰・迎戰每刻": "Side by side · Ready for every moment", "守住球門・守住信念": "Defend the goal · Hold on to belief", "穩住陣線・彼此支援": "Holding the line · Supporting one another", "教練指導・賽前凝聚": "Coach's briefing · United before kickoff", "全國第七名・汗水有了答案": "Seventh nationwide · Effort rewarded", "全國決賽・為夢奔跑": "National finals · Running for a dream", "場邊補給・笑容滿滿": "Sideline break · Smiles all around", "暖心支持・陪孩子追夢": "Warm support · Beside every dream", "每一份鼓勵・都是前進力量": "Every cheer · Strength to move forward", "努力被看見・開心收下祝福": "Effort recognized · Receiving every blessing",
   "中華存善慢飛天使關懷協會": "Chung Hua Kindness Care Association", "彰化慈愛教養院": "Changhua Ci-Ai Care Center", "南投雙龍國小足球隊": "Shuanglong Elementary Football Team, Nantou", "中寮：偏鄉關懷活動": "Zhongliao Rural Outreach", "關懷服務夥伴": "Care partner", "服務合作單位": "Service partner", "教育支持夥伴": "Education partner", "企業・社團・個人": "Businesses · Groups · Individuals", "存善": "Kindness", "慈愛": "Ci-Ai", "雙龍": "Shuanglong", "偏鄉": "Rural",
   "選擇語言": "Select language", "最新活動": "Latest Event", "公益行動": "Actions", "行動足跡": "Journey", "照片故事": "Stories", "足球紀錄": "Football", "加入行動": "Join Us", "一起行動 ↗": "Take Action ↗", "開啟選單": "Open menu",
+  "台中黎明扶輪社｜公益行動專站": "Rotary Club of Taichung Dawn | Charity Action Site", "前往社務官方網站 ↗": "Club Official Website ↗", "洽詢捐助方式": "Ask About Giving", "洽詢參與方式": "Ask About Participation", "黎明扶輪社官方網站 ↗": "Club Official Website ↗",
   "HAND IN HAND · 手牽手，愛無限": "HAND IN HAND · LOVE WITHOUT LIMITS", "手牽手": "Hand in Hand", "讓愛無限": "Love Without Limits", "看見我們的行動 ↓": "Explore Our Work ↓", "成為合作夥伴 ↗": "Become a Partner ↗", "分享黎明公益網 ↗": "Share Dawn Charity ↗", "公益不是一場活動，而是一段長久的陪伴": "Public service is not a single event—it is a lasting commitment.",
   "公益活動示意照片": "Community service illustration", "社區家園・生活照護": "COMMUNITY HOME · DAILY CARE", "南投雙龍國小女足全國賽事紀錄": "Shuanglong Elementary girls at the national tournament", "愛無限": "Love Without Limits", "成果統計": "Impact statistics",
   "第一階段與第二階段活動海報": "Stage 1 and Stage 2 event posters", "台中黎明扶輪社・中寮偏鄉關懷": "ROTARY CLUB OF TAICHUNG DAWN · ZHONGLIAO OUTREACH", "日期": "DATE", "時間": "TIME", "地點": "LOCATION", "活動亮點": "Event highlights", "進入完整活動專頁 ↗": "Visit Full Event Site ↗", "查看地點與交通 →": "Location & Directions →", "完整流程、主題曲、活動地圖與主／協辦單位介紹，請前往活動專頁查看。": "Visit the event site for the full program, theme song, map and organizer information.",
@@ -55,6 +56,7 @@ const en: Record<string, string> = {
 
 const ja: Record<string, string> = {
   ...en,
+  "台中黎明扶輪社｜公益行動專站": "台中黎明ロータリークラブ｜公益活動専用サイト", "前往社務官方網站 ↗": "クラブ公式サイトへ ↗", "洽詢捐助方式": "寄付方法を相談", "洽詢參與方式": "参加方法を相談", "黎明扶輪社官方網站 ↗": "クラブ公式サイト ↗",
   "黎明公益網 手牽手愛無限": "黎明公益ネット・手をつなごう 愛は無限", "黎明公益網": "黎明公益ネット",
   "台中黎明扶輪社": "台中黎明ロータリークラブ",
   "手牽手，愛無限；因為有您，我們可以讓世界更美好。": "手をつなげば、愛は無限に。あなたとともに、世界をもっと素敵な場所へ。",
@@ -101,6 +103,7 @@ const ja: Record<string, string> = {
 
 const ko: Record<string, string> = {
   ...en,
+  "台中黎明扶輪社｜公益行動專站": "타이중 여명 로타리클럽｜공익 활동 전용 사이트", "前往社務官方網站 ↗": "클럽 공식 사이트 ↗", "洽詢捐助方式": "후원 방법 문의", "洽詢參與方式": "참여 방법 문의", "黎明扶輪社官方網站 ↗": "클럽 공식 사이트 ↗",
   "黎明公益網 手牽手愛無限": "여명 공익 네트워크 · 손에 손잡고 무한한 사랑", "黎明公益網": "여명 공익 네트워크",
   "台中黎明扶輪社": "타이중 여명 로타리클럽",
   "手牽手，愛無限；因為有您，我們可以讓世界更美好。": "손에 손잡으면 사랑은 끝없이 이어집니다. 여러분과 함께 더 나은 세상을 만듭니다.",

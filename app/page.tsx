@@ -323,6 +323,7 @@ export default function Home() {
     <section className="hero">
       <WarmParticles/>
       <div className="hero-copy reveal">
+        <div className="site-role-note"><span>{t("台中黎明扶輪社｜公益行動專站")}</span><a href="https://dawnrotaryclub.tw/" target="_blank" rel="noreferrer">{t("前往社務官方網站 ↗")}</a></div>
         <p className="eyebrow">{t("HAND IN HAND · 手牽手，愛無限")}</p>
         <div className="hero-title-lockup"><h1><span className="hero-title-first">{t("手牽手")}<Image src="/media/brand/hand-in-hand-mark-transparent.png" alt="" width={700} height={288} aria-hidden="true" unoptimized/></span><em>{t("讓愛無限")}</em></h1></div>
         <p>{t(content.intro)}</p>
@@ -578,15 +579,15 @@ export default function Home() {
         <h2>{t("您的一份心意，")}<br/>{t("可以成為下一個改變。")}</h2>
         <p>{t("無論是公益捐助、物資支持、專業服務或親自投入志工行動，我們都期待與您並肩同行。")}</p>
         <div className="action-banner-buttons">
-          <a className="btn donate" href="tel:+886423227799"><span>♥</span> {t("我要捐助")}</a>
-          <a className="btn volunteer" href="#contact"><span>✦</span> {t("加入志工")}</a>
+          <a className="btn donate" href="#contact"><span>♥</span> {t("洽詢捐助方式")}</a>
+          <a className="btn volunteer" href="#contact"><span>✦</span> {t("洽詢參與方式")}</a>
         </div>
         <small>{t("實際捐助方式與志工活動名額，請與台中黎明扶輪社聯絡確認。")}</small>
       </div>
     </section>
 
     <section className="contact" id="contact">
-      <div className="reveal"><p className="eyebrow">{t("LET’S CREATE IMPACT · 聯絡我們")}</p><h2>{t("下一個好故事，")}<br/><em>{t("期待有您同行。")}</em></h2><p>{t("企業合作、物資支持、專業服務或活動參與，都歡迎與我們聊聊。")}</p><div className="actions"><a className="btn light" href="tel:+886423227799">{t("立即來電 ↗")}</a><a className="btn outline" href="https://dawnrotaryclub.tw/" target="_blank">{t("官方網站 ↗")}</a></div></div>
+      <div className="reveal"><p className="eyebrow">{t("LET’S CREATE IMPACT · 聯絡我們")}</p><h2>{t("下一個好故事，")}<br/><em>{t("期待有您同行。")}</em></h2><p>{t("企業合作、物資支持、專業服務或活動參與，都歡迎與我們聊聊。")}</p><div className="actions"><a className="btn light" href="tel:+886423227799">{t("立即來電 ↗")}</a><a className="btn outline" href="https://dawnrotaryclub.tw/" target="_blank" rel="noreferrer">{t("黎明扶輪社官方網站 ↗")}</a></div></div>
       <aside className="contact-card reveal"><p>TAICHUNG DAWN</p><h3>{t(content.fullName)}</h3><dl><div><dt>{t("電話")}</dt><dd><a href="tel:+886423227799">04-2322-7799</a></dd></div><div><dt>{t("辦公室")}</dt><dd>{t("台中市南屯區公益路二段 61 號")}<br/>{t("13 樓之 1")}</dd></div><div><dt>{t("合作洽詢")}</dt><dd>{t("歡迎來電洽詢公益合作與活動資訊")}</dd></div></dl><a href="https://www.facebook.com/groups/376285655902508/" target="_blank">{t("Facebook 社群 ↗")}</a></aside>
     </section>
 
