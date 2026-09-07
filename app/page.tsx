@@ -306,7 +306,7 @@ export default function Home() {
     <header>
       <a className="brand" href="#top"><span className="sun header-charity-logo"><Image src="/media/brand/hand-in-hand-mark-transparent.png" alt="" width={700} height={288} aria-hidden="true" unoptimized/></span><span><b>{t(content.name)}</b><small>HAND IN HAND · LOVE WITHOUT LIMITS</small></span></a>
       <nav className={menu ? "open" : ""}>
-        <a href="#featured-campaign" onClick={() => setMenu(false)}>{t("焦點活動")}</a><a href="#latest-event" onClick={() => setMenu(false)}>{t("中秋活動")}</a><a href="#actions" onClick={() => setMenu(false)}>{t("公益行動")}</a><a href="#charity-logo" onClick={() => setMenu(false)}>{t("公益 Logo")}</a><a href="#timeline" onClick={() => setMenu(false)}>{t("行動足跡")}</a><a href="#stories" onClick={() => setMenu(false)}>{t("照片故事")}</a><a href="#contact" onClick={() => setMenu(false)}>{t("加入行動")}</a>
+        <a href="#ten-years" onClick={() => setMenu(false)}>{t("十年有成")}</a><a href="#featured-campaign" onClick={() => setMenu(false)}>{t("焦點活動")}</a><a href="#latest-event" onClick={() => setMenu(false)}>{t("中秋活動")}</a><a href="#actions" onClick={() => setMenu(false)}>{t("公益行動")}</a><a href="#charity-logo" onClick={() => setMenu(false)}>{t("公益 Logo")}</a><a href="#timeline" onClick={() => setMenu(false)}>{t("行動足跡")}</a><a href="#stories" onClick={() => setMenu(false)}>{t("照片故事")}</a><a href="#contact" onClick={() => setMenu(false)}>{t("加入行動")}</a>
       </nav>
       <div className="header-tools">
         <label className="language-switcher">
@@ -330,14 +330,32 @@ export default function Home() {
         <div className="actions"><a className="btn gold" href="#actions">{t("看見我們的行動 ↓")}</a><a className="btn outline" href="#contact">{t("成為合作夥伴 ↗")}</a><button className="btn outline share-btn" type="button" onClick={shareSite} aria-live="polite">{shareStatus || t("分享黎明公益網 ↗")}</button></div>
         <small><i/> {t("公益不是一場活動，而是一段長久的陪伴")}</small>
       </div>
-      <div className="hero-art reveal">
-        <figure><Image src="https://images.unsplash.com/photo-1559027615-cd4628902d4a?auto=format&fit=crop&w=1400&q=85" alt={t("公益活動示意照片")} width={900} height={1000} unoptimized/><figcaption>FEATURED ACTION<br/><b>{t("社區家園・生活照護")}</b></figcaption></figure>
-        <div className="mini"><Image src={content.actions[1].image} alt={t("南投雙龍國小女足全國賽事紀錄")} width={400} height={500} unoptimized/></div>
+      <div className="hero-art hero-education-art reveal">
+        <figure><Image src="/media/hand-in-hand-10-years/hero-poster.jpg" alt="手牽手十年有成海報" width={505} height={758} priority unoptimized/></figure>
+        <div className="mini"><Image src="/media/hand-in-hand-10-years/hero-group.jpg" alt="台中黎明扶輪社八位社友於太平國小合照" width={1033} height={775} unoptimized/></div>
         <div className="stamp"><span>{t("手牽手")}</span><Image src="/media/brand/hand-in-hand-mark-transparent.png" alt="手牽手愛無限公益 Logo" width={700} height={288} unoptimized/><span>{t("愛無限")}</span></div>
       </div>
     </section>
 
     <section className="stats" aria-label={t("成果統計")}>{content.stats.map(([v,u,l], i) => <div key={l} style={{"--stat-delay": `${i * 100}ms`} as CSSProperties}><Counter value={v} unit={t(u)}/><p>{t(l)}</p></div>)}</section>
+
+    <section className="ten-years-feature" id="ten-years">
+      <div className="section ten-years-grid">
+        <div className="ten-years-collage reveal" aria-label="手牽手十年有成拍攝紀錄">
+          <figure className="ten-years-main"><Image src="/media/hand-in-hand-10-years/01.jpg" alt="台中黎明扶輪社於太平國小拍攝手牽手十年有成紀錄" width={1200} height={800} unoptimized/></figure>
+          <figure className="ten-years-small"><Image src="/media/hand-in-hand-10-years/02.jpg" alt="手牽手教育陪伴十年紀錄拍攝現場" width={900} height={600} unoptimized/></figure>
+          <span className="ten-years-seal"><b>10</b><small>YEARS<br/>TOGETHER</small></span>
+        </div>
+        <div className="ten-years-copy reveal">
+          <p className="eyebrow">MILESTONE STORY · 重點公益紀錄</p>
+          <p className="event-kicker">教育陪伴｜台中市北區太平國小</p>
+          <h2>手牽手<br/><em>十年有成</em></h2>
+          <p>從一堂英語課開始，十年的相遇、學習與陪伴，累積成孩子成長路上的溫暖力量。台中黎明扶輪社與教育夥伴長期投入弱勢學童英語學習，讓公益不只停留在一次活動，而是成為持續同行的承諾。</p>
+          <dl className="ten-years-facts"><div><dt>服務主題</dt><dd>弱勢學童英語教育</dd></div><div><dt>紀錄地點</dt><dd>臺中市北區太平國小</dd></div><div><dt>拍攝紀錄</dt><dd>2024.12.16</dd></div></dl>
+          <div className="ten-years-actions"><a className="btn ten-years-primary" href="/hand-in-hand-10-years">閱讀十年完整紀錄 ↗</a><a className="ten-years-album-link" href="https://dawnrotaryclub.tw/index.php?ID=882&mode=gallery_album" target="_blank" rel="noreferrer">查看原始活動相簿 →</a></div>
+        </div>
+      </div>
+    </section>
 
     <section className="featured-campaign" id="featured-campaign">
       <div className="section featured-campaign-film reveal">
