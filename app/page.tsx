@@ -14,7 +14,7 @@ const content = {
   intro: "串聯社友、眷屬與在地夥伴，從生活照護、教育支持到社區關懷，讓每一份善意真正抵達需要的地方。",
   stats: [
     [5, "項", "年度重點行動"],
-    [2, "所", "服務合作單位"],
+    [7, "所", "合作學校"],
     [1, "隊", "支持偏鄉球隊"],
     [365, "天", "讓善意持續發生"],
   ] as const,
@@ -586,8 +586,29 @@ export default function Home() {
 
     <section className="section impact" id="impact">
       <div className="quote reveal"><span>“</span><h2>{t(content.slogan)}</h2><p>— {t(content.fullName)}</p></div>
-      <div className="partner-head reveal"><p className="eyebrow">{t("TOGETHER, WE GO FURTHER · 合作夥伴")}</p><h2>{t("一起走，讓愛更有力量。")}</h2></div>
-      <div className="partners reveal">{content.partners.map(p => <article key={p[1]}><span>{t(p[0])}</span><p>{t(p[2])}</p><h3>{t(p[1])}</h3><small>{t("連結專業與資源，讓公益行動走得更穩、更遠。")}</small></article>)}</div>
+      <div className="partner-head reveal" id="partners"><p className="eyebrow">{t("TOGETHER, WE GO FURTHER · 合作夥伴")}</p><h2>{t("所有相關合作單位")}</h2></div>
+      <p className="partner-summary">{t("7所合作學校・2個公益與照護單位。感謝每一位教育與公益夥伴，讓陪伴持續發生。")}</p>
+      <p className="partner-note">{t("本區彙整歷年服務與活動合作紀錄，不代表所有單位目前均持續開課或參與同一活動。")}</p>
+      <div className="partner-category">
+        <h3>{t("手牽手英語教學｜歷年合作學校")}</h3>
+        <p>{t("透過英語學習支持弱勢學童；各校本年度開課情形以學校與主辦單位公告為準。")}</p>
+        <div className="partner-directory">{["臺中市東區樂業國小", "臺中市北區太平國小", "臺中市烏日區旭光國小", "臺中市大里區塗城國小", "臺中市大里區瑞城國小"].map(name => <article key={name}><span>{t("歷年英語教學")}</span><h4>{t(name)}</h4><p>{t("手牽手英語教育與學習陪伴")}</p></article>)}</div>
+        <a className="partner-record" href="https://www.dawnrotaryclub.tw/index.php?ID=103&mode=pdf_dl" target="_blank" rel="noreferrer">{t("查看黎明社官方歷年教學紀錄 ↗")}</a>
+      </div>
+      <div className="partner-category">
+        <h3>{t("公益合作學校｜活動與服務")}</h3>
+        <div className="partner-directory">
+          <article><span>{t("教育支持・活動合作")}</span><h4>{t("南投縣信義鄉雙龍國小")}</h4><p>{t("足球隊賽事支持、足球設備與物資捐贈。")}</p><a href="#featured-campaign">{t("查看相關公益行動 →")}</a></article>
+          <article><span>{t("公益活動場地")}</span><h4>{t("南投縣中寮鄉中寮國小")}</h4><p>{t("中寮手牽手愛無限公益活動與中秋共融。")}</p><a href="#latest-event">{t("查看相關公益行動 →")}</a></article>
+        </div>
+      </div>
+      <div className="partner-category">
+        <h3>{t("公益與照護夥伴｜服務紀錄")}</h3>
+        <div className="partner-directory">
+          <article><span>{t("公益協作")}</span><h4>{t("中華存善慢飛天使關懷協會")}</h4><p>{t("串聯關懷服務、公益物資及中寮活動合作。")}</p><a href="#latest-event">{t("查看相關公益行動 →")}</a></article>
+          <article><span>{t("照護服務支持")}</span><h4>{t("彰化慈愛教養院")}</h4><p>{t("協助改善老舊空調設備與日常照護環境。")}</p><a href="#actions">{t("查看相關公益行動 →")}</a></article>
+        </div>
+      </div>
     </section>
 
     <section className="action-banner" aria-label={t("捐助或志工行動")}>
