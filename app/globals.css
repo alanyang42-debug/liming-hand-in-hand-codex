@@ -153,6 +153,24 @@ main[data-lang="ja"] .hero h1,main[data-lang="ko"] .hero h1{font-size:clamp(60px
 .featured-campaign-social-copy>span{display:block;margin-top:23px;color:#e06b32;font-size:9px;font-weight:700;letter-spacing:.06em}
 .featured-campaign-social-frame{position:relative;width:min(100%,350px);padding:8px;background:#fff;box-shadow:0 34px 80px #164b6f2b}
 .featured-campaign-social-frame video{display:block;width:100%;aspect-ratio:9/16;object-fit:cover;background:#082b43}
+.road-closure-alert{position:relative;z-index:2;margin-top:86px;padding:34px;display:grid;grid-template-columns:minmax(0,.9fr) minmax(360px,1.1fr);gap:42px;align-items:center;background:#fff;border:1px solid #d9383e3d;border-top:7px solid #d9383e;box-shadow:0 28px 70px #164b6f22}
+.road-closure-copy .eyebrow{margin:0 0 13px;color:#c82d35}
+.road-closure-copy h3{margin:0 0 18px;color:#083f76;font:400 clamp(30px,3.2vw,48px)/1.18 Georgia,"Noto Serif TC",serif;letter-spacing:-.035em}
+.road-closure-copy>p:not(.eyebrow){margin:0 0 23px;color:#29485f;font-size:14px;line-height:1.9}
+.road-closure-facts{margin:0;border-top:1px solid #12355324;border-bottom:1px solid #12355324}
+.road-closure-facts>div{display:grid;grid-template-columns:115px 1fr;gap:16px;padding:13px 0;border-bottom:1px solid #12355318}
+.road-closure-facts>div:last-child{border-bottom:0}
+.road-closure-facts dt{color:#c82d35;font-size:11px;font-weight:800;letter-spacing:.08em}
+.road-closure-facts dd{margin:0;color:#173b54;font-size:13px;font-weight:700;line-height:1.6}
+.road-closure-route{margin-top:22px;padding:17px 19px;background:#fff5d6;border-left:4px solid #e0a52e}
+.road-closure-route b{color:#9e5d00;font-size:12px;letter-spacing:.08em}
+.road-closure-route p{margin:8px 0 0;color:#5e4d2e;font-size:12px;line-height:1.8}
+.road-closure-links{display:flex;flex-wrap:wrap;gap:12px 24px;margin-top:22px}
+.road-closure-links a{color:#087dc6;font-size:12px;font-weight:800;border-bottom:1px solid currentColor;padding-bottom:4px}
+.road-closure-poster{margin:0;padding:8px;background:#eef5f7;box-shadow:0 18px 46px #164b6f24}
+.road-closure-poster img{width:100%;height:auto}
+@media(max-width:850px){.road-closure-alert{grid-template-columns:1fr}.road-closure-poster{grid-row:2}}
+@media(max-width:700px){.road-closure-alert{width:calc(100% - 32px);margin-top:64px;padding:22px 18px;gap:26px}.road-closure-copy h3{font-size:32px}.road-closure-copy>p:not(.eyebrow){font-size:16px;line-height:1.8}.road-closure-facts>div{grid-template-columns:1fr;gap:5px}.road-closure-facts dt{font-size:13px}.road-closure-facts dd,.road-closure-route p,.road-closure-links a{font-size:14px}.road-closure-route{padding:15px}}
 
 /* 最新活動：主網站與中寮中秋公益活動專頁的入口 */
 .latest-event{position:relative;isolation:isolate;overflow:hidden;background:#153532;color:#fff;padding:125px 0;scroll-margin-top:24px}

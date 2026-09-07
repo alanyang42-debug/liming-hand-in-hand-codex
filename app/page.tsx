@@ -422,6 +422,29 @@ export default function Home() {
           <small className="featured-campaign-invitation">{t(content.featuredCampaign.invitation)}</small>
         </div>
       </div>
+      <aside className="section road-closure-alert reveal" aria-labelledby="road-closure-title">
+        <div className="road-closure-copy">
+          <p className="eyebrow">TRAFFIC NOTICE · {t("重要交通提醒")}</p>
+          <h3 id="road-closure-title">{t("前往雙龍國小，請留意台 16 線施工封閉")}</h3>
+          <p>{t("台 16 線人和至民和路段辦理瀝青刨鋪工程，施工期間道路封閉、禁止通行。參與雙龍國小活動的夥伴，請預留交通時間並依現場人員指揮改道。")}</p>
+          <dl className="road-closure-facts">
+            <div><dt>{t("施工日期")}</dt><dd>2026.09.07－09.11</dd></div>
+            <div><dt>{t("每日封閉時間")}</dt><dd>08:00－17:00</dd></div>
+            <div><dt>{t("封閉路段")}</dt><dd>{t("台 16 線 20K+600（人和）至 25K+900（民和）")}</dd></div>
+          </dl>
+          <div className="road-closure-route">
+            <b>{t("建議改道路線")}</b>
+            <p>{t("台 16 線 20K+600 → 人倫橋 → 人和波石聯絡道 → 寶石橋 → 接回台 16 線 25K+900。請依現場交通人員指揮行駛。")}</p>
+          </div>
+          <div className="road-closure-links">
+            <a href="https://168.thb.gov.tw/" target="_blank" rel="noreferrer">{t("查詢即時路況 ↗")}</a>
+            <a href="tel:+886492791510">{t("道路工程洽詢：049-2791510")}</a>
+          </div>
+        </div>
+        <figure className="road-closure-poster">
+          <Image src="/media/football-donation/ta16-road-closure-20260907.jpg" alt={t("台 16 線人和至民和路段施工封閉及改道路線公告")} width={1536} height={1536} unoptimized/>
+        </figure>
+      </aside>
     </section>
 
     <section className="latest-event" id="latest-event">
