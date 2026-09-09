@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import OutreachVisit from "./components/OutreachVisit";
+import PreparationRecord from "./components/PreparationRecord";
 import Script from "next/script";
 import { useEffect, useMemo, useRef, useState } from "react";
 import type { CSSProperties } from "react";
@@ -482,6 +483,7 @@ export default function Home() {
     </section>
 
     <OutreachVisit lang={lang} />
+    <PreparationRecord lang={lang} />
 
     <section className="section actions-section" id="actions">
       <div className="heading reveal"><p className="eyebrow">{t("OUR ACTIONS · 公益行動")}</p><h2>{t("把關心，落實在")}<br/>{t("每一個需要裡。")}</h2><p>{t("聚焦照護、教育與社區串聯，讓資源精準抵達，也讓故事被更多人看見。")}</p></div>
