@@ -8,10 +8,10 @@ const copy = {
 } as const;
 
 const attendanceNote: Record<Lang, string> = {
-  zh: "當日共有十多位理事與會；照片為過程紀錄，未能拍齊全體與會者，敬請海涵。",
-  en: "More than ten board members attended. These photos document moments from the meeting and do not include every attendee; thank you for your understanding.",
-  ja: "当日は10名を超える理事が出席しました。写真は会議中の記録で、出席者全員を撮影できておりません。何卒ご了承ください。",
-  ko: "당일 10여 명이 넘는 이사님이 참석했습니다. 사진은 회의 과정의 일부 기록으로 모든 참석자를 담지 못한 점 너른 양해 부탁드립니다.",
+  zh: "當日共有十多位理監事與會；照片為過程紀錄，未能拍齊全體與會者，敬請海涵。",
+  en: "More than ten directors and supervisors attended. These photos document moments from the meeting and do not include every attendee; thank you for your understanding.",
+  ja: "当日は10名を超える理事・監事が出席しました。写真は会議中の記録で、出席者全員を撮影できておりません。何卒ご了承ください。",
+  ko: "당일 10여 명이 넘는 이사·감사님이 참석했습니다. 사진은 회의 과정의 일부 기록으로 모든 참석자를 담지 못한 점 너른 양해 부탁드립니다.",
 };
 
 export default function PreparationRecord({ lang = "zh" }: { lang?: Lang }) {
