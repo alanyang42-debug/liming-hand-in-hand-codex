@@ -9,7 +9,7 @@ const photos = ["1000094025.jpg", "1000094053.jpg", "1000094011.jpg", "100009401
 export default function ShuanglongRecord({lang = "zh"}: {lang?: Lang}) {
   const t = copy[lang];
   return <section className="preparation-record" id="shuanglong-20260910" aria-labelledby="shuanglong-title"><div className="preparation-inner">
-    <header className="preparation-heading"><span>2026.09.10 · {t[0]}</span><h2 id="shuanglong-title">{t[1]}</h2><p>{t[2]}</p><p>{t[3]}</p><p><a className="btn" href="https://www.ctee.com.tw/news/20260910701521-431208" target="_blank" rel="noopener noreferrer">{t[4]}</a></p></header>
+    <header className="preparation-heading"><div className="shuanglong-meta"><time dateTime="2026-09-10">2026.09.10</time><span>{t[0]}</span></div><h2 id="shuanglong-title" className={lang === "zh" ? "shuanglong-title-zh" : ""}>{lang === "zh" ? <><strong>足球築夢</strong><em>希望啟航</em></> : t[1]}</h2><p>{t[2]}</p><p>{t[3]}</p><p><a className="btn" href="https://www.ctee.com.tw/news/20260910701521-431208" target="_blank" rel="noopener noreferrer">{t[4]}</a></p></header>
     <figure><a href={`/media/shuanglong-20260910/${photos[0]}`} target="_blank" rel="noopener noreferrer"><img src={`/media/shuanglong-20260910/${photos[0]}`} alt={t[5]} width="1536" height="1152" loading="lazy" /></a><figcaption>{t[5]}</figcaption></figure>
     <div className="preparation-gallery">{photos.slice(1).map((file,i)=><figure key={file}><a href={`/media/shuanglong-20260910/${file}`} target="_blank" rel="noopener noreferrer"><img src={`/media/shuanglong-20260910/${file}`} alt={`${t[7]} ${i+2}`} loading="lazy" /></a><figcaption>{t[7]} · {String(i+2).padStart(2,"0")}</figcaption></figure>)}</div>
     <footer className="preparation-thanks"><p>{t[6]}</p></footer>
