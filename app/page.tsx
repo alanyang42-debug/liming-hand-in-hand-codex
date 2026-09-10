@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import OutreachVisit from "./components/OutreachVisit";
+import ShuanglongRecord from "./components/ShuanglongRecord";
 import PreparationRecord from "./components/PreparationRecord";
 import Script from "next/script";
 import { useEffect, useMemo, useRef, useState } from "react";
@@ -359,6 +360,8 @@ export default function Home() {
       </div>
     </section>
 
+    <ShuanglongRecord lang={lang} />
+
     <section className="featured-campaign" id="featured-campaign">
       <div className="section featured-campaign-film reveal">
         <div className="featured-campaign-film-frame">
@@ -415,7 +418,7 @@ export default function Home() {
             <p>{t(content.featuredCampaign.collection)}</p>
           </aside>
           <div className="featured-campaign-actions">
-            <a className="btn campaign-primary" href={content.featuredCampaign.registrationUrl} target="_blank" rel="noreferrer">{t("立即報名參加 ↗")}</a>
+            <a className="btn campaign-primary" href="#shuanglong-20260910">{({zh:"查看活動成果 →",en:"View event record →",ja:"活動記録を見る →",ko:"행사 기록 보기 →"})[lang]}</a>
             <a className="campaign-map-link" href={content.featuredCampaign.mapUrl} target="_blank" rel="noreferrer">{t("查看雙龍國小地圖 →")}</a>
             <button className="btn campaign-share" type="button" onClick={shareCampaign} aria-live="polite">{campaignShareStatus || t("好康分享（分享活動）")}</button>
             <button className="btn campaign-line" type="button" onClick={shareCampaignToLine} aria-label={t("使用 LINE 分享活動")}><span aria-hidden="true">LINE</span>{t("LINE 分享")}</button>
