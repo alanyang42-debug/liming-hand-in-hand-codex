@@ -233,6 +233,28 @@ Object.assign(ko, {
   "本站由": "이 웹사이트는", "數位企劃團隊": "디지털 기획팀", "規劃設計，協助品牌定位、內容架構、活動紀錄與網站維護，讓每一次值得被看見的行動，都有一個可信任的數位入口。": "이 기획·디자인하고 브랜드 포지셔닝, 콘텐츠 구조, 행사 기록과 웹사이트 운영을 지원합니다.", "認識企劃夥伴 Alan Yang ↗": "기획 파트너 Alan Yang 알아보기 ↗",
 });
 
+Object.assign(en, {
+  "攜手愛無限": "Together, Love Without Limits", "偏鄉弱勢關懷公益中秋活動": "Rural Community Care Mid-Autumn Charity Event",
+  "公益義剪": "Free haircuts", "農產品展售・幸福市集": "Farm products & community market",
+  "UPDATED PROGRAM · 最新活動流程": "UPDATED PROGRAM", "9／19 完整活動流程": "September 19 Full Program", "下午場流程": "Afternoon Program", "晚會流程": "Evening Program",
+  "市集表演團體報到": "Market and performance groups check in", "音樂饗宴": "Live music", "義剪／農產品展售／市集": "Free haircuts, farm products and market", "貴賓致詞／大合影": "Guest remarks and group photo",
+  "魔術師趣味互動": "Interactive magic show", "歌手藝人演唱": "Guest singer performance", "中寮國小非洲鼓／舞蹈表演": "Zhongliao Elementary African drums and dance", "玫瑰啟能訓練中心「慢兔兔」表演": "Slow Bunny performance by Rose Training Center",
+  "輕盈樂團薩克斯風演奏": "Light Music Band saxophone performance", "慢兔兔啦啦隊演出": "Slow Bunny cheerleading performance", "主辦單位／貴賓致詞": "Organizer and guest remarks", "愛心捐贈儀式": "Charity donation ceremony",
+  "超級魔術秀": "Super magic show", "獎落誰家": "Prize draw", "藝人小璇演唱": "Singer Xiao-Xuan", "賓果大挑戰": "Bingo challenge", "卡拉 OK・中秋佳節快樂，明年再見": "Karaoke · Happy Mid-Autumn Festival and see you next year",
+});
+Object.assign(ja, {
+  "攜手愛無限": "手を取り合い、愛は無限", "偏鄉弱勢關懷公益中秋活動": "地域・生活困窮者支援 中秋チャリティーイベント", "公益義剪": "無料ヘアカット", "農產品展售・幸福市集": "農産物販売・しあわせ市場",
+  "UPDATED PROGRAM · 最新活動流程": "UPDATED PROGRAM · 最新プログラム", "9／19 完整活動流程": "9月19日 全プログラム", "下午場流程": "午後の部", "晚會流程": "夜の部",
+  "市集表演團體報到": "市場・出演団体受付", "音樂饗宴": "音楽ステージ", "義剪／農產品展售／市集": "無料ヘアカット・農産物販売・市場", "貴賓致詞／大合影": "来賓挨拶・集合写真", "魔術師趣味互動": "参加型マジックショー", "歌手藝人演唱": "ゲスト歌手ステージ", "中寮國小非洲鼓／舞蹈表演": "中寮小学校 アフリカンドラム・ダンス", "玫瑰啟能訓練中心「慢兔兔」表演": "玫瑰啟能訓練センター「慢兔兔」ステージ",
+  "輕盈樂團薩克斯風演奏": "輕盈楽団 サックス演奏", "慢兔兔啦啦隊演出": "慢兔兔チアリーディング", "主辦單位／貴賓致詞": "主催者・来賓挨拶", "愛心捐贈儀式": "寄贈式", "超級魔術秀": "スーパーマジックショー", "獎落誰家": "抽選会", "藝人小璇演唱": "歌手・小璇ステージ", "賓果大挑戰": "ビンゴ大会", "卡拉 OK・中秋佳節快樂，明年再見": "カラオケ・中秋節を祝い、また来年",
+});
+Object.assign(ko, {
+  "攜手愛無限": "함께하는 끝없는 사랑", "偏鄉弱勢關懷公益中秋活動": "농촌 취약계층 돌봄 추석 나눔 행사", "公益義剪": "무료 이발", "農產品展售・幸福市集": "농산물 판매・행복 장터",
+  "UPDATED PROGRAM · 最新活動流程": "UPDATED PROGRAM · 최신 일정", "9／19 完整活動流程": "9월 19일 전체 일정", "下午場流程": "오후 프로그램", "晚會流程": "저녁 프로그램",
+  "市集表演團體報到": "장터・공연팀 접수", "音樂饗宴": "음악 공연", "義剪／農產品展售／市集": "무료 이발・농산물 판매・장터", "貴賓致詞／大合影": "내빈 인사・단체 사진", "魔術師趣味互動": "마술사 참여 공연", "歌手藝人演唱": "초청 가수 공연", "中寮國小非洲鼓／舞蹈表演": "중랴오초 아프리카 북・댄스", "玫瑰啟能訓練中心「慢兔兔」表演": "장미훈련센터 ‘느린 토끼’ 공연",
+  "輕盈樂團薩克斯風演奏": "경쾌한 악단 색소폰 연주", "慢兔兔啦啦隊演出": "느린 토끼 치어리딩", "主辦單位／貴賓致詞": "주최 측・내빈 인사", "愛心捐贈儀式": "사랑의 기부식", "超級魔術秀": "슈퍼 마술쇼", "獎落誰家": "경품 추첨", "藝人小璇演唱": "가수 샤오쉬안 공연", "賓果大挑戰": "빙고 챌린지", "卡拉 OK・中秋佳節快樂，明年再見": "노래자랑・즐거운 추석, 내년에 만나요",
+});
+
 const dictionaries = { en, ja, ko };
 
 export function translate(lang: Lang, value: string) {

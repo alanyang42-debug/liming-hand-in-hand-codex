@@ -72,13 +72,45 @@ const content = {
       },
     ],
     eyebrow: "LATEST EVENT · 2026 最新活動",
-    title: "手牽手 愛無限",
-    subtitle: "偏鄉中秋公益音樂節",
+    title: "攜手愛無限",
+    subtitle: "偏鄉弱勢關懷公益中秋活動",
     date: "2026 年 9 月 19 日（六）",
-    time: "下午場 15:30－17:30｜晚間場 18:00－20:30",
+    time: "團體報到 15:00｜活動 15:30－20:30",
     place: "南投・中寮國小",
     text: "在中寮的月光下，讓音樂、公益服務與團圓餐會相遇。從午後公益嘉年華到中秋公益晚會，邀請您牽起一雙手，把希望與溫暖送進偏鄉。",
-    highlights: ["月光音樂饗宴", "愛心義診・義剪", "幸福市集", "弱勢家庭關懷"],
+    highlights: ["月光音樂饗宴", "公益義剪", "農產品展售・幸福市集", "弱勢家庭關懷"],
+    schedule: [
+      {
+        phase: "下午場流程",
+        hours: "15:00－17:30",
+        items: [
+          ["15:00－15:30", "市集表演團體報到"],
+          ["15:30－16:00", "音樂饗宴"],
+          ["15:30－17:30", "義剪／農產品展售／市集"],
+          ["16:00－16:15", "貴賓致詞／大合影"],
+          ["16:15－16:40", "魔術師趣味互動"],
+          ["16:40－17:00", "歌手藝人演唱"],
+          ["17:00－17:10", "中寮國小非洲鼓／舞蹈表演"],
+          ["17:10－17:30", "玫瑰啟能訓練中心「慢兔兔」表演"],
+        ],
+      },
+      {
+        phase: "晚會流程",
+        hours: "17:30－20:30",
+        items: [
+          ["17:30－17:50", "輕盈樂團薩克斯風演奏"],
+          ["17:50－18:00", "慢兔兔啦啦隊演出"],
+          ["18:00－18:15", "主辦單位／貴賓致詞"],
+          ["18:15－18:20", "愛心捐贈儀式"],
+          ["18:20－19:00", "音樂饗宴"],
+          ["19:00－19:20", "超級魔術秀"],
+          ["19:20－19:40", "獎落誰家"],
+          ["19:40－20:00", "藝人小璇演唱"],
+          ["20:00－20:10", "賓果大挑戰"],
+          ["20:10－20:30", "卡拉 OK・中秋佳節快樂，明年再見"],
+        ],
+      },
+    ],
   },
   stories: [
     {
@@ -475,6 +507,27 @@ export default function Home() {
           </dl>
           <div className="latest-event-highlights" aria-label={t("活動亮點")}>
             {content.latestEvent.highlights.map((item, i) => <span key={item}><b>0{i + 1}</b>{t(item)}</span>)}
+          </div>
+          <div className="latest-event-schedule" aria-labelledby="latest-event-schedule-title">
+            <div className="latest-event-schedule-heading">
+              <p>{t("UPDATED PROGRAM · 最新活動流程")}</p>
+              <h3 id="latest-event-schedule-title">{t("9／19 完整活動流程")}</h3>
+            </div>
+            <div className="latest-event-schedule-grid">
+              {content.latestEvent.schedule.map((block) => (
+                <article key={block.phase}>
+                  <header>
+                    <h4>{t(block.phase)}</h4>
+                    <span>{block.hours}</span>
+                  </header>
+                  <ol>
+                    {block.items.map(([time, item]) => (
+                      <li key={`${time}-${item}`}><time>{time}</time><span>{t(item)}</span></li>
+                    ))}
+                  </ol>
+                </article>
+              ))}
+            </div>
           </div>
           <div className="latest-event-actions">
             <a className="btn gold" href={`${content.latestEvent.url}?utm_source=liming&utm_medium=referral&utm_campaign=2026_midautumn&utm_content=latest_event_cta`} target="_blank" rel="noreferrer">{t("進入完整活動專頁 ↗")}</a>
