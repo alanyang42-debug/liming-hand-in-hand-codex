@@ -54,7 +54,7 @@ const content = {
     invitation: "社長 周哲民 Joe・秘書 吳錦河 Health 敬邀",
   },
   latestEvent: {
-    url: "https://hand-in-hand-midautumn.alanyang42.chatgpt.site/",
+    url: "https://hand-in-hand.pages.dev/",
     posters: [
       {
         src: "/media/latest-event/stage-one-poster.webp",
@@ -734,7 +734,7 @@ export default function Home() {
     <nav className="alliance-matrix" aria-label={t("黎明公益聯盟數位行動矩陣")}>
       <strong><span>{t("Alan 網頁矩陣")}</span><small>{t("人文 × 科技 × 公益 × 專業")}</small></strong>
       <a href="https://liming-hand-in-hand.alanyang42.chatgpt.site" aria-current="page"><small>{t("公益行動")}</small><b>{t("黎明公益網")}</b></a>
-      <a href="https://hand-in-hand-midautumn.alanyang42.chatgpt.site/?utm_source=liming&amp;utm_medium=referral&amp;utm_campaign=2026_midautumn&amp;utm_content=alliance_footer" target="_blank" rel="noreferrer"><small>{t("最新活動")}</small><b>{t("手牽手・愛無限")}</b></a>
+      <a href="https://hand-in-hand.pages.dev/?utm_source=liming&amp;utm_medium=referral&amp;utm_campaign=2026_midautumn&amp;utm_content=alliance_footer" target="_blank" rel="noreferrer"><small>{t("最新活動")}</small><b>{t("手牽手・愛無限")}</b></a>
       <a href="https://www.smartspeaker.com.tw/?utm_source=liming&amp;utm_medium=referral&amp;utm_campaign=public_good_alliance&amp;utm_content=alliance_footer" target="_blank" rel="noreferrer"><small>{t("專業信任")}</small><b>Health Salon</b></a>
       <a href="https://www.alanyang.com.tw/?utm_source=liming&amp;utm_medium=referral&amp;utm_campaign=public_good_alliance&amp;utm_content=alliance_footer" target="_blank" rel="noreferrer"><small>{t("企劃紀錄")}</small><b>A+ Project Journal</b></a>
     </nav>
@@ -758,7 +758,7 @@ export default function Home() {
         <a href="https://www.alanyang.com.tw/?utm_source=liming&amp;utm_medium=referral&amp;utm_campaign=alan_ai_team&amp;utm_content=credit_footer" target="_blank" rel="noreferrer">{t("認識企劃夥伴 Alan Yang ↗")}</a>
       </aside>
     </section>
-    <footer><a className="brand" href="#top"><span className="sun">✦</span><b>{t(content.name)}</b></a><p>© 2026 {t(content.fullName)} · {t("讓善意持續發生")}</p><p>{t("內容更新 2026.08")}</p></footer>
+    <footer><a className="brand" href="#top"><span className="sun">✦</span><b>{t(content.name)}</b></a><p>© 2026 {t(content.fullName)} · {t("讓善意持續發生")}</p><p>{t("內容更新 2026.09")}</p></footer>
     <button className="guide-btn" onClick={()=>setGuide(true)}>✦ {t("內容更新指南")}</button>
 
     {photo && <div className="backdrop" onClick={()=>setPhoto(null)}><div className="photo-modal" onClick={e=>e.stopPropagation()}><button onClick={()=>setPhoto(null)} aria-label={t("關閉照片")}>×</button><Image src={photo[2]} alt={t(photo[1])} width={1500} height={1000} unoptimized/><div><p>{t(photo[0])}</p><h3>{t(photo[1])}</h3><small>{t(content.event.title)}・{t("活動實錄")}</small></div></div></div>}
