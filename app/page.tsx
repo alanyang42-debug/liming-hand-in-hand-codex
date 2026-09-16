@@ -360,15 +360,16 @@ export default function Home() {
       <div className="hero-copy reveal">
         <div className="site-role-note"><span>{t("台中黎明扶輪社｜公益行動專站")}</span><a href="https://dawnrotaryclub.tw/" target="_blank" rel="noreferrer">{t("前往社務官方網站 ↗")}</a></div>
         <p className="eyebrow">{t("HAND IN HAND · 手牽手，愛無限")}</p>
-        <div className="hero-title-lockup"><h1><span className="hero-title-first">{t("手牽手")}<Image src="/media/brand/hand-in-hand-mark-transparent.png" alt="" width={700} height={288} aria-hidden="true" unoptimized/></span><em>{t("讓愛無限")}</em></h1></div>
-        <p>{t(content.intro)}</p>
-        <div className="actions"><a className="btn gold" href="#actions">{t("看見我們的行動 ↓")}</a><a className="btn outline" href="#contact">{t("成為合作夥伴 ↗")}</a><button className="btn outline share-btn" type="button" onClick={shareSite} aria-live="polite">{shareStatus || t("分享黎明公益網 ↗")}</button></div>
-        <small><i/> {t("公益不是一場活動，而是一段長久的陪伴")}</small>
+        <div className="hero-title-lockup"><h1><span className="hero-title-first">{t("手牽手")}<Image src="/media/brand/hand-in-hand-mark-transparent.png" alt="" width={700} height={288} aria-hidden="true" unoptimized/></span><em>{t("愛無限")}</em></h1></div>
+        <div className="hero-latest-meta"><span>2026.09.19</span><b>15:00－20:30</b><em>{t("南投・中寮國小")}</em></div>
+        <p>{t("從午後公益嘉年華到中秋公益晚會，音樂、義剪、市集、魔術、演唱、公益捐贈與賓果精彩接力。")}</p>
+        <div className="actions"><a className="btn gold" href="#latest-event">{t("查看完整活動流程 ↓")}</a><a className="btn outline" href="https://hand-in-hand.pages.dev/" target="_blank" rel="noreferrer">{t("進入活動專頁 ↗")}</a><button className="btn outline share-btn" type="button" onClick={shareSite} aria-live="polite">{shareStatus || t("分享黎明公益網 ↗")}</button></div>
+        <small><i/> {t("9 月 19 日，相聚中寮，把希望與溫暖送進偏鄉")}</small>
       </div>
       <div className="hero-art hero-education-art reveal">
-        <figure><Image src="/media/hand-in-hand-10-years/hero-poster.jpg" alt="手牽手十年有成海報" width={505} height={758} priority unoptimized/></figure>
-        <div className="mini"><Image src="/media/hand-in-hand-10-years/hero-group.jpg" alt="台中黎明扶輪社八位社友於太平國小合照" width={1033} height={775} unoptimized/></div>
-        <div className="stamp"><span>{t("手牽手")}</span><Image src="/media/brand/hand-in-hand-mark-transparent.png" alt="手牽手愛無限公益 Logo" width={700} height={288} unoptimized/><span>{t("愛無限")}</span></div>
+        <figure><Image src="/media/latest-event/stage-one-poster.webp" alt={t("第一階段公益嘉年華活動海報")} width={768} height={1152} priority unoptimized/></figure>
+        <div className="mini"><Image src="/media/latest-event/stage-two-poster.webp" alt={t("第二階段中秋公益晚會活動海報")} width={768} height={1152} unoptimized/></div>
+        <div className="stamp"><span>2026</span><b>9/19</b><span>{t("中寮國小")}</span></div>
       </div>
     </section>
 
