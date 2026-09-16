@@ -334,7 +334,7 @@ export default function Home() {
     <header>
       <a className="brand" href="#top"><span className="sun header-charity-logo"><Image src="/media/brand/hand-in-hand-mark-transparent.png" alt="" width={700} height={288} aria-hidden="true" unoptimized/></span><span><b>{t(content.name)}</b><small>HAND IN HAND · LOVE WITHOUT LIMITS</small></span></a>
       <nav className={menu ? "open" : ""}>
-        <a href="#ten-years" onClick={() => setMenu(false)}>{t("十年有成")}</a><a href="#featured-campaign" onClick={() => setMenu(false)}>{t("焦點活動")}</a><a href="#latest-event" onClick={() => setMenu(false)}>{t("中秋活動")}</a><a href="#actions" onClick={() => setMenu(false)}>{t("公益行動")}</a><a href="#charity-logo" onClick={() => setMenu(false)}>{t("公益 Logo")}</a><a href="#timeline" onClick={() => setMenu(false)}>{t("行動足跡")}</a><a href="#stories" onClick={() => setMenu(false)}>{t("照片故事")}</a><a href="#contact" onClick={() => setMenu(false)}>{t("加入行動")}</a>
+        <a href="#ten-years" onClick={() => setMenu(false)}>{t("十年有成")}</a><a href="#latest-event" onClick={() => setMenu(false)}>{t("中秋活動")}</a><a href="#shuanglong-20260910" onClick={() => setMenu(false)}>{t("活動成果")}</a><a href="#actions" onClick={() => setMenu(false)}>{t("公益行動")}</a><a href="#charity-logo" onClick={() => setMenu(false)}>{t("公益 Logo")}</a><a href="#timeline" onClick={() => setMenu(false)}>{t("行動足跡")}</a><a href="#stories" onClick={() => setMenu(false)}>{t("照片故事")}</a><a href="#contact" onClick={() => setMenu(false)}>{t("加入行動")}</a>
       </nav>
       <div className="header-tools">
         <label className="language-switcher">
@@ -384,8 +384,6 @@ export default function Home() {
         </div>
       </div>
     </section>
-
-    <ShuanglongRecord lang={lang} />
 
     <section className="featured-campaign" id="featured-campaign">
       <div className="section featured-campaign-film reveal">
@@ -530,6 +528,8 @@ export default function Home() {
         </div>
       </div>
     </section>
+
+    <ShuanglongRecord lang={lang} />
 
     <OutreachVisit lang={lang} />
     <PreparationRecord lang={lang} />

@@ -155,7 +155,7 @@ const ko: Record<string, string> = {
 };
 
 Object.assign(en, {
-  "焦點活動": "Featured Event", "中秋活動": "Mid-Autumn Event", "優先活動": "UP NEXT",
+  "焦點活動": "Featured Event", "中秋活動": "Mid-Autumn Event", "活動成果": "Event Results", "優先活動": "UP NEXT",
   "地區獎助金捐贈": "District Grant Donation", "足球築夢・希望啟航": "Football Dreams · A Hopeful Kickoff",
   "2026 年 9 月 10 日前往雙龍國小，捐贈足球訓練設備、教學資源與生活物資，陪孩子在偏鄉勇敢追夢。": "On September 10, 2026, we will visit Shuanglong Elementary to donate football training equipment, learning resources and daily necessities—helping rural children pursue their dreams.",
   "FEATURED EVENT · 地區獎助金捐贈": "FEATURED EVENT · DISTRICT GRANT DONATION",
@@ -175,7 +175,7 @@ Object.assign(en, {
 });
 
 Object.assign(ja, {
-  "焦點活動": "注目イベント", "中秋活動": "中秋イベント", "優先活動": "次回開催",
+  "焦點活動": "注目イベント", "中秋活動": "中秋イベント", "活動成果": "活動成果", "優先活動": "次回開催",
   "地區獎助金捐贈": "地区補助金寄贈", "足球築夢・希望啟航": "サッカーで夢を・希望のキックオフ",
   "2026 年 9 月 10 日前往雙龍國小，捐贈足球訓練設備、教學資源與生活物資，陪孩子在偏鄉勇敢追夢。": "2026年9月10日、双龍小学校へサッカー練習設備、教材、生活物資を届け、地域の子どもたちの夢を応援します。",
   "FEATURED EVENT · 地區獎助金捐贈": "FEATURED EVENT · 地区補助金寄贈",
@@ -195,7 +195,7 @@ Object.assign(ja, {
 });
 
 Object.assign(ko, {
-  "焦點活動": "주요 행사", "中秋活動": "중추절 행사", "優先活動": "다음 행사",
+  "焦點活動": "주요 행사", "中秋活動": "중추절 행사", "活動成果": "행사 성과", "優先活動": "다음 행사",
   "地區獎助金捐贈": "지구 보조금 기증", "足球築夢・希望啟航": "축구로 꿈을・희망의 킥오프",
   "2026 年 9 月 10 日前往雙龍國小，捐贈足球訓練設備、教學資源與生活物資，陪孩子在偏鄉勇敢追夢。": "2026년 9월 10일 솽룽초를 찾아 축구 훈련 장비, 교육 자료와 생활물품을 전달하며 농촌 아이들의 꿈을 응원합니다.",
   "FEATURED EVENT · 地區獎助金捐贈": "FEATURED EVENT · 지구 보조금 기증",
