@@ -178,6 +178,7 @@ main[data-lang="ja"] .hero h1,main[data-lang="ko"] .hero h1{font-size:clamp(60px
 .latest-event>*:not(.warm-particles){position:relative;z-index:2}
 .latest-event-grid{display:grid;grid-template-columns:minmax(420px,.92fr) 1.08fr;gap:6vw;align-items:center}
 .latest-event-posters{position:relative;width:min(100%,590px);justify-self:end;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;align-items:center}
+.latest-event-posters:has(figure:only-of-type){width:min(100%,430px);grid-template-columns:1fr}
 .latest-event-posters:after{content:"";position:absolute;inset:-18px;border:1px solid #dca94370;pointer-events:none}
 .latest-event-posters figure{position:relative;margin:0;padding:8px;background:#fff8ea;box-shadow:0 34px 75px #0008;transition:transform .35s ease}
 .latest-event-posters figure:first-of-type{transform:rotate(-1.5deg)}
@@ -447,13 +448,13 @@ main[data-lang="ja"] .hero h1,main[data-lang="ko"] .hero h1{font-size:clamp(60px
 @media(max-width:700px){.hero-title-lockup h1{font-size:17vw}.hero-title-first{gap:11px}.hero-title-first>img{width:80px;transform:translateY(3px) rotate(-6deg)}.hero-latest-meta{margin-top:20px}.hero-latest-meta em{width:100%}.campaign-date-stamp.logo-date-badge{left:-24px;top:-44px;width:142px;height:74px}.logo-date-copy{width:76px;margin-top:6px;gap:3px}.logo-date-copy b{font-size:11px}.logo-date-copy small{font-size:7px}}
 
 .hero-education-art{height:740px}
-.hero-education-art figure{width:76%;max-width:440px;height:auto;aspect-ratio:505/758;right:0;top:0;transform:rotate(1deg);background:#fff}
+.hero-education-art figure{width:88%;max-width:500px;height:auto;aspect-ratio:2/3;right:4%;top:0;transform:rotate(1deg);background:#fff}
 .hero-education-art figure img{height:auto;object-fit:contain}
 .hero-education-art figure:after{display:none}
 .hero-education-art .mini{width:64%;max-width:350px;height:auto;aspect-ratio:1033/775;left:-12px;bottom:0;transform:rotate(-2deg);border:7px solid var(--deep)}
 .hero-education-art .mini img{height:auto;object-fit:contain}
 .hero-education-art .stamp{right:-10px;bottom:8px;width:100px;height:100px}
-@media(max-width:700px){.hero-education-art{height:auto;aspect-ratio:360/620}.hero-education-art figure{width:82%;max-width:none}.hero-education-art .mini{left:0;width:72%;max-width:none}.hero-education-art .stamp{right:-4px;bottom:0;width:78px;height:78px;font-size:8px}}
+@media(max-width:700px){.hero-education-art{height:auto;aspect-ratio:360/560}.hero-education-art figure{width:92%;max-width:none;right:4%}.hero-education-art .mini{left:0;width:72%;max-width:none}.hero-education-art .stamp{right:-4px;bottom:0;width:78px;height:78px;font-size:8px}}
 .sun.header-charity-logo{width:66px;height:44px;border:0;border-radius:0;padding:0;background:transparent}
 .sun.header-charity-logo img{width:100%;height:auto;filter:brightness(0) saturate(100%) invert(79%) sepia(55%) saturate(611%) hue-rotate(353deg) brightness(101%) contrast(91%)}
 @media(max-width:700px){header>.brand .sun.header-charity-logo{width:48px;height:32px;padding:0}.sun.header-charity-logo img{width:100%;height:auto}}

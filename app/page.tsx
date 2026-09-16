@@ -57,18 +57,11 @@ const content = {
     url: "https://hand-in-hand.pages.dev/",
     posters: [
       {
-        src: "/media/latest-event/stage-one-poster.webp",
-        label: "第一階段",
-        alt: "第一階段公益嘉年華活動海報",
-        width: 768,
-        height: 1152,
-      },
-      {
-        src: "/media/latest-event/stage-two-poster.webp",
-        label: "第二階段",
-        alt: "第二階段中秋公益晚會活動海報",
-        width: 768,
-        height: 1152,
+        src: "/media/latest-event/event-poster-latest.jpg",
+        label: "最新活動海報",
+        alt: "攜手愛無限偏鄉弱勢關懷公益中秋活動最新海報",
+        width: 1024,
+        height: 1536,
       },
     ],
     eyebrow: "LATEST EVENT · 2026 最新活動",
@@ -367,8 +360,7 @@ export default function Home() {
         <small><i/> {t("9 月 19 日，相聚中寮，把希望與溫暖送進偏鄉")}</small>
       </div>
       <div className="hero-art hero-education-art reveal">
-        <figure><Image src="/media/latest-event/stage-one-poster.webp" alt={t("第一階段公益嘉年華活動海報")} width={768} height={1152} priority unoptimized/></figure>
-        <div className="mini"><Image src="/media/latest-event/stage-two-poster.webp" alt={t("第二階段中秋公益晚會活動海報")} width={768} height={1152} unoptimized/></div>
+        <figure><Image src="/media/latest-event/event-poster-latest.jpg" alt={t("攜手愛無限偏鄉弱勢關懷公益中秋活動最新海報")} width={1024} height={1536} priority unoptimized/></figure>
         <div className="stamp"><span>2026</span><b>9/19</b><span>{t("中寮國小")}</span></div>
       </div>
     </section>
@@ -487,7 +479,7 @@ export default function Home() {
     <section className="latest-event" id="latest-event">
       <WarmParticles compact/>
       <div className="section latest-event-grid">
-        <div className="latest-event-posters reveal" aria-label={t("第一階段與第二階段活動海報")}>
+        <div className="latest-event-posters reveal" aria-label={t("最新活動海報")}>
           <span>2026<br/><b>{t("最新活動")}</b></span>
           {content.latestEvent.posters.map((poster) => (
             <figure key={poster.label}>
