@@ -726,7 +726,7 @@ export default function Home() {
 
     <nav className="alliance-matrix" aria-label={t("黎明公益聯盟數位行動矩陣")}>
       <strong><span>{t("Alan 網頁矩陣")}</span><small>{t("人文 × 科技 × 公益 × 專業")}</small></strong>
-      <a href="https://liming-hand-in-hand.alanyang42.chatgpt.site" aria-current="page"><small>{t("公益行動")}</small><b>{t("黎明公益網")}</b></a>
+      <a href="https://dawn-7dq.pages.dev" aria-current="page"><small>{t("公益行動")}</small><b>{t("黎明公益網")}</b></a>
       <a href="https://hand-in-hand.pages.dev/?utm_source=liming&amp;utm_medium=referral&amp;utm_campaign=2026_midautumn&amp;utm_content=alliance_footer" target="_blank" rel="noreferrer"><small>{t("最新活動")}</small><b>{t("手牽手・愛無限")}</b></a>
       <a href="https://www.smartspeaker.com.tw/?utm_source=liming&amp;utm_medium=referral&amp;utm_campaign=public_good_alliance&amp;utm_content=alliance_footer" target="_blank" rel="noreferrer"><small>{t("專業信任")}</small><b>Health Salon</b></a>
       <a href="https://www.alanyang.com.tw/?utm_source=liming&amp;utm_medium=referral&amp;utm_campaign=public_good_alliance&amp;utm_content=alliance_footer" target="_blank" rel="noreferrer"><small>{t("企劃紀錄")}</small><b>A+ Project Journal</b></a>
