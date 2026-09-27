@@ -504,6 +504,7 @@ export default function Home() {
           </div>
           <div className="latest-event-actions">
             <a className="btn gold" href={`${content.latestEvent.url}?utm_source=liming&utm_medium=referral&utm_campaign=2026_midautumn&utm_content=latest_event_cta`} target="_blank" rel="noreferrer">{t("進入完整活動專頁 ↗")}</a>
+            <a className="latest-event-text-link" href="https://hand-in-hand.pages.dev/en/?utm_source=liming&amp;utm_medium=referral&amp;utm_campaign=2026_midautumn&amp;utm_content=english_record" target="_blank" rel="noreferrer" hrefLang="en">English event record →</a>
             <a className="latest-event-text-link" href={`${content.latestEvent.url}location?utm_source=liming&utm_medium=referral&utm_campaign=2026_midautumn&utm_content=location_link`} target="_blank" rel="noreferrer">{t("查看地點與交通 →")}</a>
           </div>
           <small>{t("完整流程、主題曲、活動地圖與主／協辦單位介紹，請前往活動專頁查看。")}</small>
