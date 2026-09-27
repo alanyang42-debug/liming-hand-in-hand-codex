@@ -12,9 +12,8 @@ const structuredData = {
       "@type": "Organization",
       "@id": `${siteUrl}/#organization`,
       name: "台中黎明扶輪社",
-      alternateName: "Rotary Club of Taichung Dawn",
       url: siteUrl,
-      logo: `${siteUrl}/media/brand/hand-in-hand-logo-transparent.png`,
+      logo: `${siteUrl}/media/site/taichung-liming-rotary-logo-web.png`,
       telephone: "+886-4-2322-7799",
       address: {
         "@type": "PostalAddress",
@@ -26,7 +25,6 @@ const structuredData = {
       sameAs: [
         "https://dawnrotaryclub.tw/",
         "https://www.facebook.com/groups/376285655902508/",
-        "https://hand-in-hand.pages.dev/",
       ],
     },
     {
@@ -44,7 +42,6 @@ const structuredData = {
       description: "台中黎明扶輪社前往雙龍國小捐贈足球訓練設備、募集生活物資並進行部落公益交流。",
       startDate: "2026-09-10T10:30:00+08:00",
       endDate: "2026-09-10T12:00:00+08:00",
-      eventStatus: "https://schema.org/EventCompleted",
       eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
       location: { "@type": "Place", name: "南投縣雙龍國民小學", address: { "@type": "PostalAddress", streetAddress: "雙龍村光復巷4號", addressLocality: "信義鄉", addressRegion: "南投縣", addressCountry: "TW" } },
       organizer: { "@id": `${siteUrl}/#organization` },
@@ -58,6 +55,7 @@ export const metadata: Metadata = {
   title: "黎明公益網｜台中黎明扶輪社・手牽手愛無限公益行動",
   description: "黎明公益網記錄台中黎明扶輪社「手牽手愛無限」公益行動，包含中寮偏鄉關懷、雙龍國小教育支持、十年英語陪伴與社區照護成果。",
   keywords: ["台中黎明扶輪社", "黎明公益網", "手牽手愛無限", "足球築夢", "雙龍國小", "地區獎助金", "公益活動", "偏鄉關懷"],
+  verification: { google: "49Kjbm2s-tx5ydR7bdH4jIwrbcSOpsHNOgIr8KmcUOI" },
   alternates: { canonical: "/", languages: { "zh-Hant-TW": "/" } },
   openGraph: {
     type: "website",
