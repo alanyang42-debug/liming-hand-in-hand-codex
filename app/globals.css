@@ -172,6 +172,44 @@ main[data-lang="ja"] .hero h1,main[data-lang="ko"] .hero h1{font-size:clamp(60px
 @media(max-width:850px){.road-closure-alert{grid-template-columns:1fr}.road-closure-poster{grid-row:2}}
 @media(max-width:700px){.road-closure-alert{width:calc(100% - 32px);margin-top:64px;padding:22px 18px;gap:26px}.road-closure-copy h3{font-size:32px}.road-closure-copy>p:not(.eyebrow){font-size:16px;line-height:1.8}.road-closure-facts>div{grid-template-columns:1fr;gap:5px}.road-closure-facts dt{font-size:13px}.road-closure-facts dd,.road-closure-route p,.road-closure-links a{font-size:14px}.road-closure-route{padding:15px}}
 
+/* 首頁以中寮成果網站作為最新活動成果展示 */
+.hero-results-art{height:620px;display:flex;align-items:center}
+.hero-impact-visual{position:relative;width:100%;height:590px;overflow:hidden;border:1px solid #f0cc7b55;background:radial-gradient(circle at 74% 25%,#f5c96924,transparent 29%),linear-gradient(150deg,#071f2e 0%,#082837 57%,#071e25 100%);box-shadow:0 38px 90px #0007}
+.hero-impact-visual:before,.hero-impact-visual:after{content:"";position:absolute;z-index:1;pointer-events:none}.hero-impact-visual:before{inset:18px;border:1px solid #f0cc7b45}.hero-impact-visual:after{left:-12%;right:-8%;top:43%;height:1px;background:linear-gradient(90deg,transparent,#f0cc7b75,transparent);transform:rotate(-7deg)}
+.hero-impact-orbit{position:absolute;z-index:1;right:3%;top:7%;width:51%;height:36%;border:1px solid #f0cc7b42;border-radius:50%;transform:rotate(-10deg)}
+.hero-impact-moon{position:absolute;z-index:2;right:8%;top:7%;width:190px;height:190px;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#6d4d22;background:radial-gradient(circle at 34% 30%,#fff9db 0%,#f8dc8b 43%,#dda54c 74%,#b9782c 100%);box-shadow:0 0 75px #f6d88255,inset -20px -24px 35px #b5752838}
+.hero-impact-moon:before{content:"";position:absolute;left:29%;top:27%;width:34px;height:17px;border-radius:50%;background:#aa74321f;transform:rotate(-17deg);box-shadow:45px 25px 0 #aa743217,14px 57px 0 #aa743219}
+.hero-impact-moon span{position:relative;font:400 17px/1.2 Georgia,"Noto Serif TC",serif;letter-spacing:.12em}.hero-impact-moon small{position:relative;margin-top:7px;font-size:7px;letter-spacing:.24em}
+.hero-impact-map{position:absolute;z-index:3;right:4%;top:38%;width:135px;height:155px;color:#f0cc7b}.hero-impact-map b,.hero-impact-map strong{position:absolute;right:0;display:block}.hero-impact-map b{top:18px;color:#ffffff7d;font-size:7px;letter-spacing:.25em}.hero-impact-map strong{top:35px;padding:6px 8px;border:1px solid #f0cc7b55;color:#fff;font-size:9px;letter-spacing:.08em}
+.hero-taiwan-island{position:absolute;left:4px;top:0;width:64px;height:142px;clip-path:polygon(59% 0,71% 7%,73% 18%,67% 27%,71% 38%,63% 49%,59% 60%,49% 73%,43% 84%,31% 97%,24% 100%,19% 91%,20% 81%,13% 71%,18% 59%,23% 48%,27% 36%,35% 25%,42% 14%,48% 4%);background:linear-gradient(145deg,#fff1bd,#d4a04a 55%,#76501f);filter:drop-shadow(0 8px 13px #0007)}
+.hero-taiwan-island:after{content:"";position:absolute;inset:9% 25% 10% 34%;border-left:1px solid #704b2780;transform:rotate(8deg)}.hero-taiwan-island i{position:absolute;z-index:2;left:18px;top:65px;width:10px;height:10px;border-radius:50%;background:#e7584f;box-shadow:0 0 0 5px #e7584f29,0 0 15px #ff746e}
+.hero-impact-title{position:absolute;z-index:4;left:4%;top:28%;width:72%;height:auto;filter:drop-shadow(0 12px 22px #0008)}
+.hero-impact-theme{position:absolute;z-index:4;left:8%;top:55%;margin:0;color:#f0cc7b;font:400 16px/1.4 Georgia,"Noto Serif TC",serif;letter-spacing:.12em}
+.hero-impact-photo{position:absolute!important;z-index:3;left:4%!important;right:4%!important;bottom:4%!important;width:auto!important;height:37%!important;margin:0;border:1px solid #f0cc7b75;box-shadow:0 18px 35px #0007!important}.hero-impact-photo img{object-fit:cover;object-position:center 42%}.hero-impact-photo:after{inset:20% 0 0!important;background:linear-gradient(transparent,#071f25e8)!important}
+.hero-impact-photo figcaption{left:20px;bottom:18px;display:flex;flex-direction:column;gap:5px}.hero-impact-photo figcaption span{font-size:7px;letter-spacing:.2em;color:#f0cc7b}.hero-impact-photo figcaption b{font:400 17px/1.2 Georgia,"Noto Serif TC",serif;color:#fff}
+.hero-impact-badge{position:absolute;z-index:5;right:7%;bottom:8%;width:94px;height:94px;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;background:#d86e54;color:#fff;box-shadow:0 16px 32px #0006}.hero-impact-badge b{font:italic 31px/1 Georgia,serif}.hero-impact-badge span{margin-top:5px;font-size:7px;font-weight:800;letter-spacing:.08em}
+.hero-impact-link{position:absolute;z-index:6;right:7%;top:66%;padding:10px 13px;background:#dca943;color:#17302e;font-size:9px;font-weight:900;letter-spacing:.04em;transition:.25s}.hero-impact-link:hover{transform:translateY(-3px);background:#f0cc7b}
+.hero-opening-card{position:relative;isolation:isolate;width:100%;min-height:590px;padding:62px 64px 52px;overflow:hidden;border:1px solid #f0cc7b66;background:radial-gradient(circle at 83% 16%,#f5c9692b,transparent 28%),linear-gradient(150deg,#071f2e 0%,#082837 57%,#071e25 100%);box-shadow:0 38px 90px #0007;color:#fff;display:flex;flex-direction:column;justify-content:center}
+.hero-opening-card:before{content:"";position:absolute;z-index:-1;inset:18px;border:1px solid #f0cc7b3d;pointer-events:none}.hero-opening-card:after{content:"01";position:absolute;z-index:-1;right:2%;bottom:-10%;color:#ffffff08;font:italic 260px/1 Georgia,serif;letter-spacing:-.1em}
+.hero-opening-orbit{position:absolute;z-index:-1;right:-8%;top:-5%;width:58%;height:43%;border:1px solid #f0cc7b3d;border-radius:50%;transform:rotate(-12deg)}
+.hero-opening-chapter{position:absolute;right:56px;top:48px;display:flex;align-items:flex-end;gap:10px;color:#f0cc7b}.hero-opening-chapter span{padding-bottom:5px;font-size:8px;font-weight:800;letter-spacing:.28em}.hero-opening-chapter b{font:italic 46px/.85 Georgia,serif}
+.hero-opening-kicker{margin:0 0 24px;color:#f0cc7b;font-size:9px;font-weight:800;letter-spacing:.24em}
+.hero-opening-card h2{max-width:520px;margin:0;font:400 clamp(48px,5.2vw,76px)/.98 Georgia,"Noto Serif TC",serif;letter-spacing:-.055em}.hero-opening-card h2 em{display:inline-block;margin-top:13px;color:#f0cc7b;font-size:.68em;font-style:normal;letter-spacing:-.02em}
+.hero-opening-rule{width:100%;margin:34px 0 27px;height:1px;background:linear-gradient(90deg,#f0cc7ba6,#f0cc7b24,transparent)}.hero-opening-rule span{display:block;width:42px;height:3px;transform:translateY(-1px);background:#d86e54}
+.hero-opening-lead{max-width:620px;margin:0;color:#ffffffbd;font:400 14px/2 Georgia,"Noto Serif TC",serif;letter-spacing:.035em}
+.hero-opening-card blockquote{max-width:560px;margin:25px 0 35px;padding-left:18px;border-left:2px solid #d86e54;color:#f0cc7b;font:400 14px/1.8 Georgia,"Noto Serif TC",serif}
+.hero-opening-footer{display:flex;align-items:center;gap:25px;border-top:1px solid #ffffff21;padding-top:23px}.hero-opening-footer span{display:flex;align-items:baseline;gap:6px;color:#ffffff8f;font-size:9px;font-weight:800;letter-spacing:.08em}.hero-opening-footer span b{color:#fff;font:italic 28px/1 Georgia,serif}.hero-opening-footer a{margin-left:auto;color:#17302e;background:#dca943;padding:11px 15px;font-size:9px;font-weight:900;letter-spacing:.05em;transition:.25s}.hero-opening-footer a:hover{background:#f0cc7b;transform:translateY(-2px)}
+.latest-impact-strip{position:relative;z-index:3;display:grid;grid-template-columns:minmax(220px,.75fr) 2.25fr;background:#e3ad3e;color:#17302e;border-top:1px solid #f4d987;border-bottom:1px solid #17302e26}
+.latest-impact-heading{padding:28px 3.5vw;display:flex;flex-direction:column;justify-content:center;gap:7px;background:#0d302d;color:#fff}
+.latest-impact-heading span{color:#f0cc7b;font-size:8px;font-weight:900;letter-spacing:.18em}
+.latest-impact-heading strong{font:400 23px/1.25 Georgia,"Noto Serif TC",serif;letter-spacing:-.025em}
+.latest-impact-grid{display:grid;grid-template-columns:repeat(4,1fr)}
+.latest-impact-grid article{min-height:150px;padding:24px 2.3vw;display:flex;flex-direction:column;justify-content:center;border-right:1px solid #17302e2a}
+.latest-impact-grid article:last-child{border-right:0}
+.latest-impact-grid b{font:italic 42px/1 Georgia,"Noto Serif TC",serif;letter-spacing:-.04em}
+.latest-impact-grid b small{margin-left:5px;font:800 12px/1 sans-serif;letter-spacing:.04em}
+.latest-impact-grid p{margin:12px 0 0;font-size:10px;font-weight:800;letter-spacing:.08em;opacity:.75}
+
 /* 最新活動：主網站與中寮中秋公益活動專頁的入口 */
 .latest-event{position:relative;isolation:isolate;overflow:hidden;background:#153532;color:#fff;padding:125px 0;scroll-margin-top:24px}
 .latest-event:before{content:"";position:absolute;z-index:0;inset:0;background:radial-gradient(circle at 14% 18%,#dca94326,transparent 30%),radial-gradient(circle at 90% 82%,#d86e5422,transparent 28%),linear-gradient(120deg,#0c2826,#173a36 62%,#102f2c)}
@@ -201,6 +239,18 @@ main[data-lang="ja"] .hero h1,main[data-lang="ko"] .hero h1{font-size:clamp(60px
 .latest-event-highlights{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-bottom:31px}
 .latest-event-highlights span{display:flex;align-items:center;gap:12px;background:#ffffff0b;border:1px solid #ffffff1c;padding:12px 14px;font-size:11px}
 .latest-event-highlights b{color:#f0cc7b;font:italic 13px Georgia,serif}
+.latest-event-results{margin:0 0 34px;padding:28px;border:1px solid #f0cc7b80;background:linear-gradient(135deg,#f0cc7b16,#ffffff08);box-shadow:0 22px 55px #061c1a52}
+.latest-event-results-heading p{margin:0 0 8px;color:#f0cc7b;font-size:9px;font-weight:800;letter-spacing:.16em}
+.latest-event-results-heading h3{margin:0;color:#fff;font:400 28px/1.35 Georgia,"Noto Serif TC",serif;letter-spacing:-.025em}
+.latest-event-results dl{display:grid;grid-template-columns:repeat(4,1fr);margin:24px 0 18px;border-top:1px solid #ffffff24;border-bottom:1px solid #ffffff24}
+.latest-event-results dl>div{padding:18px 14px;border-right:1px solid #ffffff20}
+.latest-event-results dl>div:first-child{padding-left:0}.latest-event-results dl>div:last-child{border-right:0}
+.latest-event-results dt{color:#f0cc7b;font:italic 36px/1 Georgia,serif}
+.latest-event-results dt span{margin-left:2px;font:700 9px/1 sans-serif;letter-spacing:.06em}
+.latest-event-results dd{margin:8px 0 0;color:#ffffffe0;font-size:10px;font-weight:800;letter-spacing:.08em}
+.latest-event-results>p{margin:0 0 22px;color:#ffffffb0;font-size:12px;line-height:1.85}
+.latest-event-results-actions{display:flex;align-items:center;gap:22px;flex-wrap:wrap}
+.latest-event-results-actions>a:not(.btn){color:#f0cc7b;font-size:11px;border-bottom:1px solid;padding-bottom:5px}
 .latest-event-schedule{margin:0 0 34px;padding:24px;border:1px solid #f0cc7b55;background:#071c1a73;box-shadow:0 18px 45px #061c1a44}
 .latest-event-schedule-heading{display:flex;align-items:end;justify-content:space-between;gap:18px;margin-bottom:20px;padding-bottom:15px;border-bottom:1px solid #ffffff20}
 .latest-event-schedule-heading p{margin:0;color:#f0cc7b;font-size:9px;font-weight:800;letter-spacing:.16em}
@@ -217,6 +267,49 @@ main[data-lang="ja"] .hero h1,main[data-lang="ko"] .hero h1{font-size:clamp(60px
 .latest-event-actions{display:flex;align-items:center;gap:24px;flex-wrap:wrap}
 .latest-event-text-link{font-size:11px;border-bottom:1px solid #f0cc7b;padding-bottom:5px;color:#f0cc7b}
 .latest-event-copy>small{display:block;margin-top:22px;color:#ffffff70;font-size:9px;line-height:1.7;letter-spacing:.04em}
+.full-impact-report{position:relative;z-index:2}
+.report-intro{position:relative;isolation:isolate;width:100%;padding:43px 46px;display:grid;grid-template-columns:210px minmax(0,1fr);gap:50px;align-items:center;margin-bottom:28px;border:1px solid #f0cc7b5e;background:linear-gradient(125deg,#082522 0%,#103632 62%,#173e39 100%);color:#fff;box-shadow:0 24px 65px #0417154d;overflow:hidden}
+.report-intro:before{content:"2026";position:absolute;z-index:-1;right:24px;bottom:-35px;color:#ffffff08;font:italic 120px/1 Georgia,serif;letter-spacing:-.08em}
+.report-intro>div:first-child{align-self:stretch;padding-right:35px;display:flex;flex-direction:column;justify-content:center;border-right:1px solid #f0cc7b4a}
+.report-intro .eyebrow{margin:0 0 13px;color:#f0cc7b;line-height:1.7}
+.report-issue{margin:0;color:#ffffff58;font:700 10px/1.4 sans-serif;letter-spacing:.24em}
+.report-intro-copy h2{max-width:780px;margin:0 0 19px;color:#fff;font:400 clamp(46px,5.1vw,74px)/1.05 Georgia,"Noto Serif TC",serif;letter-spacing:-.05em}
+.report-intro-copy>p{max-width:780px;margin:0;color:#ffffffbd;font-size:13px;line-height:1.95}
+.report-lead-photo{position:relative;margin:0;overflow:hidden;border:1px solid #f0cc7b82;background:#071f1d;box-shadow:0 34px 90px #041a186b}
+.report-lead-photo-image{position:relative;min-height:clamp(360px,44vw,600px);overflow:hidden}
+.report-lead-photo-image:after{content:"";position:absolute;inset:65% 0 0;background:linear-gradient(transparent,#071d1b70)}
+.report-lead-photo img{object-fit:cover}
+.report-lead-photo figcaption{position:relative;left:auto;right:auto;bottom:auto;min-height:92px;padding:24px 38px;display:flex;align-items:center;justify-content:space-between;gap:20px;color:#fff;background:#092724;border-top:1px solid #f0cc7b55}
+.report-lead-photo strong{font:400 clamp(25px,3vw,42px)/1.2 Georgia,"Noto Serif TC",serif}
+.report-lead-photo span{color:#ffffffb0;font-size:11px;letter-spacing:.08em}
+.report-meta{display:grid;grid-template-columns:repeat(3,1fr);margin-bottom:112px;border:1px solid #ffffff25;border-top:0;background:#071f1ddb}
+.report-meta span{padding:22px 28px;border-right:1px solid #ffffff21;color:#ffffffe0;font-size:12px;font-weight:700}
+.report-meta span:last-child{border-right:0}.report-meta b{display:block;margin-bottom:8px;color:#f0cc7b;font-size:8px;letter-spacing:.2em}
+.report-summary{display:grid;grid-template-columns:90px minmax(280px,.8fr) 1.2fr;gap:40px;align-items:start;margin-bottom:125px}
+.report-section-number{color:#f0cc7b;font:italic 58px/1 Georgia,serif}
+.report-section-copy>p:first-child,.report-section-heading p{margin:0 0 13px;color:#f0cc7b;font-size:9px;font-weight:800;letter-spacing:.18em}
+.report-section-copy h3,.report-section-heading h3{margin:0;color:#fff;font:400 clamp(32px,4vw,55px)/1.18 Georgia,"Noto Serif TC",serif;letter-spacing:-.04em}
+.report-section-copy>p:last-child{margin:25px 0 0;color:#ffffffa8;font-size:13px;line-height:2}
+.report-metrics{display:grid;grid-template-columns:repeat(2,1fr);margin:0;border-top:1px solid #f0cc7b74;border-left:1px solid #ffffff20}
+.report-metrics>div{padding:29px 26px;border-right:1px solid #ffffff20;border-bottom:1px solid #ffffff20;background:#ffffff08}
+.report-metrics dt{color:#f0cc7b;font:italic 46px/1 Georgia,serif}.report-metrics small{margin-left:4px;font:700 10px/1 sans-serif;letter-spacing:.08em}
+.report-metrics dd{margin:10px 0 0;color:#fff;font-size:11px;font-weight:800;letter-spacing:.08em}
+.report-donation-section,.report-impact-section{margin-bottom:125px}
+.report-section-heading{display:grid;grid-template-columns:90px 1fr;gap:40px;align-items:start;margin-bottom:45px;padding-bottom:34px;border-bottom:1px solid #ffffff25}
+.report-section-heading>span{color:#f0cc7b;font:italic 58px/1 Georgia,serif}
+.report-donation-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+.report-donation-grid article{overflow:hidden;border:1px solid #ffffff25;background:#f7f0df;color:#17302e;box-shadow:0 26px 70px #04161454}
+.report-donation-grid figure{position:relative;aspect-ratio:16/10;margin:0;overflow:hidden;background:#0b2623}.report-donation-grid figure img{object-fit:cover}
+.report-donation-grid article>div{padding:31px 34px 36px}.report-donation-grid article>div>span{color:#b77729;font-size:9px;font-weight:900;letter-spacing:.18em}
+.report-donation-grid h4{margin:10px 0 14px;font:400 34px/1.15 Georgia,"Noto Serif TC",serif}.report-donation-grid p{margin:0;color:#17302eb8;font-size:12px;line-height:1.9}
+.report-impact-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.report-impact-grid article{border:1px solid #ffffff24;background:#ffffff08;transition:transform .3s ease,border-color .3s ease}.report-impact-grid article:hover{transform:translateY(-7px);border-color:#f0cc7b7a}
+.report-impact-grid figure{position:relative;aspect-ratio:4/3;margin:0;overflow:hidden}.report-impact-grid figure:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 65%,#08221f)}.report-impact-grid figure img{object-fit:cover}
+.report-impact-grid article>div{position:relative;padding:25px 26px 31px}.report-impact-grid b{position:absolute;right:22px;top:-26px;color:#f0cc7b;font:italic 43px/1 Georgia,serif}
+.report-impact-grid h4{margin:0 0 13px;color:#fff;font:400 25px/1.3 Georgia,"Noto Serif TC",serif}.report-impact-grid p{margin:0;color:#ffffffa6;font-size:11px;line-height:1.85}
+.report-footer{display:flex;align-items:center;justify-content:space-between;gap:40px;padding:46px 48px;border:1px solid #f0cc7b82;background:linear-gradient(120deg,#f0cc7b18,#ffffff08);box-shadow:0 28px 70px #04161452}
+.report-footer p{margin:0 0 8px;color:#f0cc7b;font-size:9px;font-weight:800;letter-spacing:.17em}.report-footer h3{margin:0;color:#fff;font:400 31px/1.35 Georgia,"Noto Serif TC",serif}
+.report-footer-actions{display:flex;align-items:center;gap:24px;flex-wrap:wrap;justify-content:flex-end}
 
 @media(max-width:700px){
   .club-logo-strip{height:70px}
@@ -309,6 +402,7 @@ main[data-lang="ja"] .hero h1,main[data-lang="ko"] .hero h1{font-size:clamp(60px
 @media(max-width:900px){
   .featured-campaign-grid{grid-template-columns:minmax(330px,.82fr) 1.18fr;gap:5vw}.featured-campaign-poster{justify-self:start}
   .latest-event-grid{grid-template-columns:minmax(360px,.95fr) 1.05fr;gap:5vw}.latest-event-posters{justify-self:start;gap:12px}
+  .report-summary{grid-template-columns:70px 1fr}.report-metrics{grid-column:2}.report-section-heading{grid-template-columns:70px 1fr}
   .timeline-copy{grid-template-columns:.55fr 1fr}.timeline-copy small{grid-column:1/3}
   .story,.story.reverse{gap:5vw}.story figure{height:460px}
 }
@@ -343,6 +437,10 @@ main[data-lang="ja"] .hero h1,main[data-lang="ko"] .hero h1{font-size:clamp(60px
   .featured-campaign-social-copy>span{margin-top:16px}
   .featured-campaign-social-frame{width:min(82%,340px);justify-self:center;padding:6px}
   .latest-event{padding:88px 0}
+  .report-intro{grid-template-columns:1fr;gap:22px;margin-bottom:18px;padding:27px 23px}.report-intro>div:first-child{padding:0 0 19px;border-right:0;border-bottom:1px solid #f0cc7b4a}.report-intro-copy h2{font-size:43px;line-height:1.12}.report-intro-copy>p{font-size:13px;line-height:1.85}.report-lead-photo-image{min-height:300px}.report-lead-photo figcaption{min-height:auto;padding:20px 22px;display:block}.report-lead-photo span{display:block;margin-top:7px}.report-meta{grid-template-columns:1fr;margin-bottom:76px}.report-meta span{padding:17px 20px;border-right:0;border-bottom:1px solid #ffffff21}.report-meta span:last-child{border-bottom:0}
+  .report-summary{grid-template-columns:1fr;gap:25px;margin-bottom:82px}.report-section-number{font-size:45px}.report-metrics{grid-column:auto}.report-section-heading{grid-template-columns:1fr;gap:18px;margin-bottom:28px}.report-section-heading>span{font-size:45px}.report-donation-section,.report-impact-section{margin-bottom:82px}.report-donation-grid,.report-impact-grid{grid-template-columns:1fr}.report-donation-grid article>div{padding:25px 24px 29px}.report-impact-grid{gap:14px}.report-footer{display:block;padding:30px 24px}.report-footer-actions{justify-content:flex-start;margin-top:26px}.report-footer-actions .btn{width:100%}
+  .hero-results-art{height:auto}.hero-opening-card{min-height:540px;padding:58px 34px 38px}.hero-opening-card:after{font-size:190px}.hero-opening-chapter{right:31px;top:35px}.hero-opening-card h2{font-size:49px}.hero-opening-lead{font-size:13px;line-height:1.9}.hero-opening-footer{align-items:flex-start;flex-wrap:wrap;gap:14px 20px}.hero-opening-footer a{width:100%;margin:3px 0 0;text-align:center}
+  .latest-impact-strip{grid-template-columns:1fr}.latest-impact-heading{padding:22px 20px}.latest-impact-grid{grid-template-columns:repeat(2,1fr)}.latest-impact-grid article{min-height:115px;padding:18px 20px;border-bottom:1px solid #17302e2a}.latest-impact-grid article:nth-child(2n){border-right:0}.latest-impact-grid article:nth-last-child(-n+2){border-bottom:0}.latest-impact-grid b{font-size:34px}.latest-impact-grid p{margin-top:8px;line-height:1.5}
   .latest-event-grid{grid-template-columns:1fr;gap:58px}
   .latest-event-posters{width:min(94%,590px);justify-self:center;gap:10px}
   .latest-event-posters figure{padding:5px}
@@ -354,6 +452,7 @@ main[data-lang="ja"] .hero h1,main[data-lang="ko"] .hero h1{font-size:clamp(60px
   .latest-event-facts>div:last-child{border-bottom:0}
   .latest-event-highlights{grid-template-columns:1fr}
   .latest-event-schedule{padding:18px 14px}
+  .latest-event-results{padding:22px 18px}.latest-event-results-heading h3{font-size:24px}.latest-event-results dl{grid-template-columns:repeat(2,1fr)}.latest-event-results dl>div,.latest-event-results dl>div:first-child{padding:13px 9px;border-right:1px solid #ffffff20;border-bottom:1px solid #ffffff20}.latest-event-results dl>div:nth-child(2n){border-right:0}.latest-event-results dl>div:nth-last-child(-n+2){border-bottom:0}.latest-event-results dt{font-size:31px}.latest-event-results dd{margin-top:4px}
   .latest-event-schedule-heading{display:block}
   .latest-event-schedule-heading h3{margin-top:8px;font-size:23px}
   .latest-event-schedule-grid{grid-template-columns:1fr}

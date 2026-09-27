@@ -16,17 +16,17 @@ const content = {
   slogan: "手牽手，愛無限；因為有您，我們可以讓世界更美好。",
   intro: "串聯社友、眷屬與在地夥伴，從生活照護、教育支持到社區關懷，讓每一份善意真正抵達需要的地方。",
   stats: [
-    [5, "項", "年度重點行動"],
-    [7, "所", "合作學校"],
-    [1, "隊", "支持偏鄉球隊"],
-    [365, "天", "讓善意持續發生"],
+    [35, "萬元", "公益捐贈總額"],
+    [137, "戶", "弱勢家庭關懷"],
+    [250, "份", "學童愛心餐盒"],
+    [14, "桌", "中秋公益音樂饗宴"],
   ] as const,
   timeline: [
     ["01", "生活照護", "改善照護環境", "攜手公益夥伴汰換社區家園老舊設備，讓陪伴落實在更安心、舒適的日常。"],
     ["02", "偏鄉關懷", "把資源送到需要的地方", "串聯社友、眷屬與在地力量，讓關懷不只是一次活動，而是一段持續同行的關係。"],
     ["03", "教育支持", "陪孩子勇敢追夢", "支持南投雙龍國小女足走上全國賽場，把每一份鼓勵化成孩子繼續奔跑的力量。"],
     ["04", "地區獎助金捐贈", "足球築夢・希望啟航", "2026 年 9 月 10 日前往雙龍國小，捐贈足球訓練設備、教學資源與生活物資，陪孩子在偏鄉勇敢追夢。"],
-    ["05", "最新活動", "偏鄉中秋公益音樂節", "2026 年 9 月 19 日相聚中寮國小，讓音樂、公益服務、在地市集與中秋團圓在偏鄉相遇。"],
+    ["05", "成果專題", "中寮手牽手・愛無限", "2026 年 9 月 19 日，中寮國小匯聚公益服務、在地夥伴與中秋團圓；完整成果已收錄於中寮手牽手成果網站。"],
     ["∞", "未來進行式", "下一個故事，期待有您", "捐助、志工、物資或專業服務，每一種參與都能讓善意繼續向前。"],
   ] as const,
   featuredCampaign: {
@@ -58,19 +58,19 @@ const content = {
     posters: [
       {
         src: "/media/latest-event/event-poster-latest.jpg",
-        label: "最新活動海報",
+        label: "活動宣傳回顧",
         alt: "攜手愛無限偏鄉弱勢關懷公益中秋活動最新海報",
         width: 1024,
         height: 1536,
       },
     ],
-    eyebrow: "LATEST EVENT · 2026 最新活動",
+    eyebrow: "IMPACT STORY · 2026 成果專題",
     title: "手牽手・愛無限",
     subtitle: "偏鄉弱勢關懷公益中秋活動",
     date: "2026 年 9 月 19 日（六）",
     time: "15:00－20:30",
     place: "南投・中寮國小",
-    text: "從午後公益嘉年華到中秋公益晚會，現場安排音樂、義剪、農產品展售、魔術、歌手演唱、公益捐贈與賓果活動，邀請大家相聚中寮，把希望與溫暖送進偏鄉。",
+    text: "從午後公益嘉年華到中秋公益晚會，社友、在地夥伴與居民在中寮相聚。成果網站完整收錄活動故事、服務成果與現場影像，讓這份跨域合作與偏鄉關懷持續被看見。",
     highlights: ["月光音樂饗宴", "公益義剪", "農產品展售・幸福市集", "弱勢家庭關懷"],
     schedule: [
       {
@@ -224,7 +224,6 @@ export default function Home() {
   const [languageReady, setLanguageReady] = useState(false);
   const [filter, setFilter] = useState("全部");
   const [photo, setPhoto] = useState<(typeof content.gallery)[number] | null>(null);
-  const [guide, setGuide] = useState(false);
   const [menu, setMenu] = useState(false);
   const [shareStatus, setShareStatus] = useState("");
   const [campaignShareStatus, setCampaignShareStatus] = useState("");
@@ -254,7 +253,7 @@ export default function Home() {
   useEffect(() => {
     const ob = new IntersectionObserver(es => es.forEach(e => e.isIntersecting && e.target.classList.add("show")), { threshold: .12 });
     document.querySelectorAll(".reveal").forEach(x => ob.observe(x));
-    const key = (e: KeyboardEvent) => e.key === "Escape" && (setPhoto(null), setGuide(false), setMenu(false));
+    const key = (e: KeyboardEvent) => e.key === "Escape" && (setPhoto(null), setMenu(false));
     window.addEventListener("keydown", key);
     return () => { ob.disconnect(); window.removeEventListener("keydown", key); };
   }, []);
@@ -334,7 +333,7 @@ export default function Home() {
     <header>
       <a className="brand" href="#top"><span className="sun header-charity-logo"><Image src="/media/brand/hand-in-hand-mark-transparent.png" alt="" width={700} height={288} aria-hidden="true" unoptimized/></span><span><b>{t(content.name)}</b><small>HAND IN HAND · LOVE WITHOUT LIMITS</small></span></a>
       <nav className={menu ? "open" : ""}>
-        <a href="#latest-event" onClick={() => setMenu(false)}>{t("中秋活動")}</a><a href="#ten-years" onClick={() => setMenu(false)}>{t("十年有成")}</a><a href="#shuanglong-20260910" onClick={() => setMenu(false)}>{t("活動成果")}</a><a href="#actions" onClick={() => setMenu(false)}>{t("公益行動")}</a><a href="#charity-logo" onClick={() => setMenu(false)}>{t("公益 Logo")}</a><a href="#timeline" onClick={() => setMenu(false)}>{t("行動足跡")}</a><a href="#stories" onClick={() => setMenu(false)}>{t("照片故事")}</a><a href="#contact" onClick={() => setMenu(false)}>{t("加入行動")}</a>
+        <a href="#latest-event" onClick={() => setMenu(false)}>{t("中寮成果")}</a><a href="#ten-years" onClick={() => setMenu(false)}>{t("十年有成")}</a><a href="#shuanglong-20260910" onClick={() => setMenu(false)}>{t("活動成果")}</a><a href="#actions" onClick={() => setMenu(false)}>{t("公益行動")}</a><a href="#charity-logo" onClick={() => setMenu(false)}>{t("公益 Logo")}</a><a href="#timeline" onClick={() => setMenu(false)}>{t("行動足跡")}</a><a href="#stories" onClick={() => setMenu(false)}>{t("照片故事")}</a><a href="#contact" onClick={() => setMenu(false)}>{t("加入行動")}</a>
       </nav>
       <div className="header-tools">
         <label className="language-switcher">
@@ -355,17 +354,32 @@ export default function Home() {
         <p className="eyebrow">{t("HAND IN HAND · 手牽手，愛無限")}</p>
         <div className="hero-title-lockup"><h1><span className="hero-title-first">{t("手牽手")}<Image src="/media/brand/hand-in-hand-mark-transparent.png" alt="" width={700} height={288} aria-hidden="true" unoptimized/></span><em>{t("愛無限")}</em></h1></div>
         <div className="hero-latest-meta"><span>2026.09.19</span><b>15:00－20:30</b><em>{t("南投・中寮國小")}</em></div>
-        <p>{t("從午後公益嘉年華到中秋公益晚會，音樂、義剪、市集、魔術、演唱、公益捐贈與賓果精彩接力。")}</p>
-        <div className="actions"><a className="btn gold" href="#latest-event">{t("查看完整活動流程 ↓")}</a><a className="btn outline" href="https://hand-in-hand.pages.dev/" target="_blank" rel="noreferrer">{t("進入活動專頁 ↗")}</a><button className="btn outline share-btn" type="button" onClick={shareSite} aria-live="polite">{shareStatus || t("分享黎明公益網 ↗")}</button></div>
-        <small><i/> {t("9 月 19 日，相聚中寮，把希望與溫暖送進偏鄉")}</small>
+        <p>{t("中寮手牽手成果網站已上線，完整收錄服務成果、活動故事與現場影像。")}</p>
+        <div className="actions"><a className="btn gold" href="#latest-event">{t("查看中寮成果 ↓")}</a><a className="btn outline" href="https://hand-in-hand.pages.dev/?utm_source=liming&utm_medium=referral&utm_campaign=zhongliao_results&utm_content=hero" target="_blank" rel="noreferrer">{t("進入成果網站 ↗")}</a><button className="btn outline share-btn" type="button" onClick={shareSite} aria-live="polite">{shareStatus || t("分享黎明公益網 ↗")}</button></div>
+        <small><i/> {t("讓每一份投入被看見，讓中寮的溫暖繼續傳遞")}</small>
       </div>
-      <div className="hero-art hero-education-art reveal">
-        <figure><Image src="/media/latest-event/event-poster-latest.jpg" alt={t("攜手愛無限偏鄉弱勢關懷公益中秋活動最新海報")} width={1024} height={1536} priority unoptimized/></figure>
-        <div className="stamp"><span>2026</span><b>9/19</b><span>{t("中寮國小")}</span></div>
+      <div className="hero-art hero-results-art reveal">
+        <article className="hero-opening-card" aria-labelledby="hero-opening-title">
+          <div className="hero-opening-orbit" aria-hidden="true"/>
+          <div className="hero-opening-chapter"><span>CHAPTER</span><b>01</b></div>
+          <p className="hero-opening-kicker">2026 ZHONGLIAO · HAND IN HAND</p>
+          <h2 id="hero-opening-title">{t("攜手成行")}<br/><em>{t("讓愛抵達中寮")}</em></h2>
+          <div className="hero-opening-rule"><span/></div>
+          <p className="hero-opening-lead">{t("一場相聚，讓不同領域的善意在偏鄉交會。從孩子的笑容、家庭的需要，到每一雙主動伸出的手，我們把關懷化為看得見的陪伴。")}</p>
+          <blockquote>{t("月光照亮的不只是一個夜晚，也照見一群人願意同行的心。")}</blockquote>
+          <div className="hero-opening-footer">
+            <span><b>35</b>{t("萬元公益捐贈")}</span>
+            <span><b>137</b>{t("戶家庭關懷")}</span>
+            <a href="https://hand-in-hand.pages.dev/?utm_source=liming&amp;utm_medium=referral&amp;utm_campaign=zhongliao_results&amp;utm_content=opening" target="_blank" rel="noreferrer">{t("閱讀完整成果 ↗")}</a>
+          </div>
+        </article>
       </div>
     </section>
 
-    <section className="stats" aria-label={t("成果統計")}>{content.stats.map(([v,u,l], i) => <div key={l} style={{"--stat-delay": `${i * 100}ms`} as CSSProperties}><Counter value={v} unit={t(u)}/><p>{t(l)}</p></div>)}</section>
+    <section className="latest-impact-strip" aria-labelledby="latest-impact-title">
+      <div className="latest-impact-heading"><span>{t("LATEST IMPACT · 最新活動成果")}</span><strong id="latest-impact-title">{t("中寮手牽手・愛無限")}</strong></div>
+      <div className="latest-impact-grid">{content.stats.map(([v,u,l]) => <article key={l}><b>{v}<small>{t(u)}</small></b><p>{t(l)}</p></article>)}</div>
+    </section>
 
     <section className="featured-campaign" id="featured-campaign">
       <div className="section featured-campaign-film reveal">
@@ -458,57 +472,80 @@ export default function Home() {
 
     <section className="latest-event" id="latest-event">
       <WarmParticles compact/>
-      <div className="section latest-event-grid">
-        <div className="latest-event-posters reveal" aria-label={t("最新活動海報")}>
-          <span>2026<br/><b>{t("最新活動")}</b></span>
-          {content.latestEvent.posters.map((poster) => (
-            <figure key={poster.label}>
-              <Image src={poster.src} alt={t(poster.alt)} width={poster.width} height={poster.height} unoptimized/>
-              <figcaption>{t(poster.label)}</figcaption>
-            </figure>
-          ))}
+      <div className="section full-impact-report">
+        <div className="report-intro reveal">
+          <div>
+            <p className="eyebrow">{t("FULL IMPACT REPORT · 完整成果報告")}</p>
+            <p className="report-issue">ISSUE 01 · 2026</p>
+          </div>
+          <div className="report-intro-copy">
+            <h2>{t("中寮手牽手・愛無限")}</h2>
+            <p>{t("從午後公益服務到月光下的團圓晚宴，政府、學校、社福、扶輪與民間夥伴在中寮相聚，把關懷化為可被驗證、可被延續的在地成果。")}</p>
+          </div>
         </div>
-        <div className="latest-event-copy reveal">
-          <p className="eyebrow">{t(content.latestEvent.eyebrow)}</p>
-          <p className="event-kicker">{t("台中黎明扶輪社・中寮偏鄉關懷")}</p>
-          <h2>{t(content.latestEvent.title)}<br/><em>{t(content.latestEvent.subtitle)}</em></h2>
-          <p>{t(content.latestEvent.text)}</p>
-          <dl className="latest-event-facts">
-            <div><dt>{t("日期")}</dt><dd>{t(content.latestEvent.date)}</dd></div>
-            <div><dt>{t("時間")}</dt><dd>{content.latestEvent.time}</dd></div>
-            <div><dt>{t("地點")}</dt><dd>{t(content.latestEvent.place)}</dd></div>
+
+        <figure className="report-lead-photo reveal">
+          <div className="report-lead-photo-image"><Image src="/media/zhongliao-report/02-final-group-banner.jpg" alt={t("中秋傳愛幸福中寮活動團隊大合照")} fill sizes="100vw" unoptimized/></div>
+          <figcaption><strong>{t("中秋傳愛・幸福中寮")}</strong><span>{t("主辦與協力夥伴共同留下圓滿紀錄")}</span></figcaption>
+        </figure>
+
+        <div className="report-meta reveal">
+          <span><b>DATE</b>{t("2026 年 9 月 19 日")}</span>
+          <span><b>PLACE</b>{t("南投縣中寮國小")}</span>
+          <span><b>MISSION</b>{t("偏鄉關懷・教育支持・共融陪伴")}</span>
+        </div>
+
+        <section className="report-summary reveal" aria-labelledby="report-summary-title">
+          <div className="report-section-number">01</div>
+          <div className="report-section-copy">
+            <p>{t("EXECUTIVE SUMMARY · 成果摘要")}</p>
+            <h3 id="report-summary-title">{t("讓每一份投入被看見，讓每一份溫暖繼續傳遞。")}</h3>
+            <p>{t("本次行動以公益市集、義剪、衛教、學童與身心障礙團體演出、家庭關懷及中秋共餐串起一整天。資源不只在舞台上被宣布，更實際進入校園、家庭與社福現場，回應地方真實需要。")}</p>
+          </div>
+          <dl className="report-metrics">
+            <div><dt>35<small>{t("萬元")}</small></dt><dd>{t("公益捐贈總額")}</dd></div>
+            <div><dt>137<small>{t("戶")}</small></dt><dd>{t("弱勢家庭關懷")}</dd></div>
+            <div><dt>250<small>{t("份")}</small></dt><dd>{t("學童愛心餐盒")}</dd></div>
+            <div><dt>14<small>{t("桌")}</small></dt><dd>{t("中秋公益共餐")}</dd></div>
           </dl>
-          <div className="latest-event-highlights" aria-label={t("活動亮點")}>
-            {content.latestEvent.highlights.map((item, i) => <span key={item}><b>0{i + 1}</b>{t(item)}</span>)}
+        </section>
+
+        <section className="report-donation-section reveal" aria-labelledby="report-donation-title">
+          <div className="report-section-heading">
+            <span>02</span>
+            <div><p>{t("GIVING MADE VISIBLE · 捐贈成果")}</p><h3 id="report-donation-title">{t("兩筆捐贈，回應學校、家庭與社福需要")}</h3></div>
           </div>
-          <div className="latest-event-schedule" aria-labelledby="latest-event-schedule-title">
-            <div className="latest-event-schedule-heading">
-              <p>{t("UPDATED PROGRAM · 最新活動流程")}</p>
-              <h3 id="latest-event-schedule-title">{t("9／19 完整活動流程")}</h3>
-            </div>
-            <div className="latest-event-schedule-grid">
-              {content.latestEvent.schedule.map((block) => (
-                <article key={block.phase}>
-                  <header>
-                    <h4>{t(block.phase)}</h4>
-                    <span>{block.hours}</span>
-                  </header>
-                  <ol>
-                    {block.items.map(([time, item]) => (
-                      <li key={`${time}-${item}`}><time>{time}</time><span>{t(item)}</span></li>
-                    ))}
-                  </ol>
-                </article>
-              ))}
-            </div>
+          <div className="report-donation-grid">
+            <article>
+              <figure><Image src="/media/zhongliao-report/03-donation-check.jpg" alt={t("台中黎明扶輪社捐贈五萬元中寮國小獎助學金")} fill sizes="(max-width: 800px) 100vw, 50vw" unoptimized/></figure>
+              <div><span>{t("教育支持")}</span><h4>{t("新臺幣 5 萬元")}</h4><p>{t("台中黎明扶輪社由社長周哲民 JOE 代表全體社友，捐贈中寮國小獎助學金，支持偏鄉學童安心學習。")}</p></div>
+            </article>
+            <article>
+              <figure><Image src="/media/zhongliao-report/49-thirty-million-check.jpg" alt={t("中華存善慢飛天使關懷協會捐贈三十萬元公益款項")} fill sizes="(max-width: 800px) 100vw, 50vw" unoptimized/></figure>
+              <div><span>{t("在地關懷")}</span><h4>{t("新臺幣 30 萬元")}</h4><p>{t("中華存善慢飛天使關懷協會由理事長吳錦河及理監事代表，投入弱勢家庭、獎助學金與玫瑰啟能訓練中心支持。")}</p></div>
+            </article>
           </div>
-          <div className="latest-event-actions">
-            <a className="btn gold" href={`${content.latestEvent.url}?utm_source=liming&utm_medium=referral&utm_campaign=2026_midautumn&utm_content=latest_event_cta`} target="_blank" rel="noreferrer">{t("進入完整活動專頁 ↗")}</a>
-            <a className="latest-event-text-link" href="https://hand-in-hand.pages.dev/en/?utm_source=liming&amp;utm_medium=referral&amp;utm_campaign=2026_midautumn&amp;utm_content=english_record" target="_blank" rel="noreferrer" hrefLang="en">English event record →</a>
-            <a className="latest-event-text-link" href={`${content.latestEvent.url}location?utm_source=liming&utm_medium=referral&utm_campaign=2026_midautumn&utm_content=location_link`} target="_blank" rel="noreferrer">{t("查看地點與交通 →")}</a>
+        </section>
+
+        <section className="report-impact-section reveal" aria-labelledby="report-impact-title">
+          <div className="report-section-heading">
+            <span>03</span>
+            <div><p>{t("THREE LAYERS OF IMPACT · 三大影響")}</p><h3 id="report-impact-title">{t("服務走進生活，舞台接住差異，資源留在地方")}</h3></div>
           </div>
-          <small>{t("完整流程、主題曲、活動地圖與主／協辦單位介紹，請前往活動專頁查看。")}</small>
-        </div>
+          <div className="report-impact-grid">
+            <article><figure><Image src="/media/zhongliao-report/62-care-registration.jpg" alt={t("公益關懷服務登記與物資發放現場")} fill sizes="(max-width: 800px) 100vw, 33vw" unoptimized/></figure><div><b>01</b><h4>{t("社區服務")}</h4><p>{t("公益市集、義剪、健康宣導與家庭關懷走進居民日常，讓服務更靠近需要。")}</p></div></article>
+            <article><figure><Image src="/media/zhongliao-report/21-student-drums.jpg" alt={t("中寮國小學生非洲鼓演出")} fill sizes="(max-width: 800px) 100vw, 33vw" unoptimized/></figure><div><b>02</b><h4>{t("共融舞台")}</h4><p>{t("學童、慢飛天使與表演者共享舞台；每一次掌聲，都是理解與陪伴。")}</p></div></article>
+            <article><figure><Image src="/media/zhongliao-report/55-community-certificate-presentation.jpg" alt={t("中寮地方代表與公益夥伴共同展示感謝狀")} fill sizes="(max-width: 800px) 100vw, 33vw" unoptimized/></figure><div><b>03</b><h4>{t("資源落地")}</h4><p>{t("捐款、餐盒、共餐與社福支持形成具體成果，讓一次活動成為持續合作的起點。")}</p></div></article>
+          </div>
+        </section>
+
+        <footer className="report-footer reveal">
+          <div><p>{t("完整影像紀錄與中英文專題")}</p><h3>{t("看見成果，也邀請下一次同行。")}</h3></div>
+          <div className="report-footer-actions">
+            <a className="btn gold" href={`${content.latestEvent.url}?utm_source=liming&utm_medium=referral&utm_campaign=zhongliao_results&utm_content=full_report_footer`} target="_blank" rel="noreferrer">{t("開啟完整成果網站 ↗")}</a>
+            <a className="latest-event-text-link" href="https://hand-in-hand.pages.dev/en/?utm_source=liming&amp;utm_medium=referral&amp;utm_campaign=zhongliao_results&amp;utm_content=full_report_english" target="_blank" rel="noreferrer" hrefLang="en">View English Report →</a>
+          </div>
+        </footer>
       </div>
     </section>
 
@@ -753,9 +790,6 @@ export default function Home() {
       </aside>
     </section>
     <footer><a className="brand" href="#top"><span className="sun">✦</span><b>{t(content.name)}</b></a><p>© 2026 {t(content.fullName)} · {t("讓善意持續發生")}</p><p>{t("內容更新 2026.09")}</p></footer>
-    <button className="guide-btn" onClick={()=>setGuide(true)}>✦ {t("內容更新指南")}</button>
-
     {photo && <div className="backdrop" onClick={()=>setPhoto(null)}><div className="photo-modal" onClick={e=>e.stopPropagation()}><button onClick={()=>setPhoto(null)} aria-label={t("關閉照片")}>×</button><Image src={photo[2]} alt={t(photo[1])} width={1500} height={1000} unoptimized/><div><p>{t(photo[0])}</p><h3>{t(photo[1])}</h3><small>{t(content.event.title)}・{t("活動實錄")}</small></div></div></div>}
-    {guide && <div className="backdrop" onClick={()=>setGuide(false)}><aside className="guide" onClick={e=>e.stopPropagation()}><button onClick={()=>setGuide(false)}>×</button><p className="eyebrow">EASY TO UPDATE</p><h2>{t("一處更新，")}<br/>{t("全站同步。")}</h2><p>{t("活動、數字、照片與合作夥伴已集中管理；替換內容後，版面與互動會自動保留。")}</p><ol><li><b>01</b><span><strong>{t("活動資訊")}</strong><small>{t("新增標題、摘要與成果")}</small></span></li><li><b>02</b><span><strong>{t("照片相簿")}</strong><small>{t("替換照片與分類說明")}</small></span></li><li><b>03</b><span><strong>{t("成果夥伴")}</strong><small>{t("調整數字與合作單位")}</small></span></li></ol><a className="btn gold" href="#contact" onClick={()=>setGuide(false)}>{t("準備下一次活動 ↗")}</a></aside></div>}
   </main>;
 }
