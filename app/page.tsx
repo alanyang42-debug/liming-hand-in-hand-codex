@@ -9,6 +9,17 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import type { CSSProperties } from "react";
 import { languageOptions, translate, type Lang } from "./i18n";
 
+function NavIcon({kind}:{kind:string}) {
+  const paths:Record<string,string> = {
+    action:"M12 20S3 14 3 8a4 4 0 0 1 9-2 4 4 0 0 1 9 2c0 6-9 12-9 12Z",
+    results:"M5 21V9h4v12M10 21V3h4v18M15 21V6h4v15M3 21h18",
+    press:"M4 4h13v16H4zM17 8h4v10a2 2 0 0 1-4 0M7 8h7M7 12h7M7 16h4",
+    stories:"M3 5h18v14H3zM10 9l5 3-5 3z",
+    about:"M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18M12 11v6M12 7v1",
+    globe:"M3 12h18M12 3c5 5 5 13 0 18-5-5-5-13 0-18M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18"
+  };
+  return <svg className="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d={paths[kind]}/></svg>;
+}
 // 日後更新網站，只要修改這份集中資料即可。
 const content = {
   name: "黎明公益網 手牽手愛無限",
@@ -225,6 +236,7 @@ export default function Home() {
   const [filter, setFilter] = useState("全部");
   const [photo, setPhoto] = useState<(typeof content.gallery)[number] | null>(null);
   const [menu, setMenu] = useState(false);
+  const [languageOpen, setLanguageOpen] = useState(false);
   const [shareStatus, setShareStatus] = useState("");
   const [campaignShareStatus, setCampaignShareStatus] = useState("");
   const filters = useMemo(() => ["全部", ...new Set(content.gallery.map(x => x[0]))], []);
@@ -327,14 +339,21 @@ export default function Home() {
   };
 
   return <main data-lang={lang}>
-    <div className="club-logo-strip" id="top">
-      <Image src="/media/site/taichung-liming-rotary-logo-web.png" alt={t("國際扶輪3462地區・台中黎明扶輪社")} width={2048} height={682} priority unoptimized/>
-    </div>
-    <header>
-      <a className="brand" href="#top"><span className="sun header-charity-logo"><Image src="/media/brand/hand-in-hand-mark-transparent.png" alt="" width={700} height={288} aria-hidden="true" unoptimized/></span><span><b>{t(content.name)}</b><small>HAND IN HAND · LOVE WITHOUT LIMITS</small></span></a>
+    <div id="top"/>
+    <header className="editorial-header">
+      <div className="editorial-brand-lockup">
+        <a className="editorial-charity-brand" href="#top"><Image src="/media/brand/hand-in-hand-white-wings-gold-heart.png" alt="" width={700} height={288} aria-hidden="true" unoptimized/><span><b>黎明公益網</b><small>Hand in Hand, Love without limit</small></span></a>
+        <span className="editorial-brand-divider" aria-hidden="true"/>
+        <a className="editorial-club-brand" href="https://dawnrotaryclub.tw/" target="_blank" rel="noreferrer"><Image src="/media/site/taichung-liming-rotary-logo-web.png" alt="台中黎明扶輪社 ROTARY CLUB OF TAICHUNG DAWN" width={2048} height={682} priority unoptimized/></a>
+      </div>
       <nav className={menu ? "open" : ""}>
-        <a href="#latest-event" onClick={() => setMenu(false)}>{t("中寮成果")}</a><a href="#ten-years" onClick={() => setMenu(false)}>{t("十年有成")}</a><a href="#shuanglong-20260910" onClick={() => setMenu(false)}>{t("活動成果")}</a><a href="#actions" onClick={() => setMenu(false)}>{t("公益行動")}</a><a href="#charity-logo" onClick={() => setMenu(false)}>{t("公益 Logo")}</a><a href="#timeline" onClick={() => setMenu(false)}>{t("行動足跡")}</a><a href="#stories" onClick={() => setMenu(false)}>{t("照片故事")}</a><a href="#contact" onClick={() => setMenu(false)}>{t("加入行動")}</a>
+        <a href="#concept-pillars" onClick={() => setMenu(false)}><NavIcon kind="action"/>{t("公益行動")}</a><a href="#concept-highlights" onClick={() => setMenu(false)}><NavIcon kind="results"/>{t("活動成果")}</a><a href="#media-stories" onClick={() => setMenu(false)}><NavIcon kind="press"/>媒體報導</a><a href="#stories" onClick={() => setMenu(false)}><NavIcon kind="stories"/>{t("影像故事")}</a><a href="#about-publication" onClick={() => setMenu(false)}><NavIcon kind="about"/>關於黎明公益網</a>
+        <button className="language-toggle" type="button" aria-expanded={languageOpen} aria-controls="homepage-language-options" onClick={() => setLanguageOpen(!languageOpen)}><NavIcon kind="globe"/>EN / JP / KR / 中文 <span aria-hidden="true">{languageOpen ? "▴" : "▾"}</span></button>
       </nav>
+      {languageOpen && <div className="homepage-language-options" id="homepage-language-options" role="group" aria-label="選擇語言">
+        {([{code:"en",label:"EN · English"},{code:"ja",label:"JP · 日本語"},{code:"ko",label:"KR · 한국어"},{code:"zh",label:"中文 · 繁體中文"}] as {code:Lang;label:string}[]).map(option => <button type="button" key={option.code} lang={option.code === "zh" ? "zh-Hant" : option.code} aria-pressed={lang === option.code} onClick={() => {setLang(option.code);setLanguageOpen(false);}}>{option.label}</button>)}
+      </div>}
+      <span className="concept-header-note" aria-hidden="true">Love<br/>Without<br/>Limits</span>
       <div className="header-tools">
         <label className="language-switcher">
           <span>{t("選擇語言")}</span>
@@ -342,43 +361,44 @@ export default function Home() {
             {languageOptions.map(option => <option key={option.code} value={option.code}>{option.label}</option>)}
           </select>
         </label>
-        <a className="header-cta" href="#contact">{t("一起行動 ↗")}</a>
         <button className="menu" aria-label={t("開啟選單")} onClick={() => setMenu(!menu)}>☰</button>
       </div>
     </header>
 
-    <section className="hero">
-      <WarmParticles/>
-      <div className="hero-copy reveal">
-        <div className="site-role-note"><span>{t("台中黎明扶輪社｜公益行動專站")}</span><a href="https://dawnrotaryclub.tw/" target="_blank" rel="noreferrer">{t("前往社務官方網站 ↗")}</a></div>
-        <p className="eyebrow">{t("HAND IN HAND · 手牽手，愛無限")}</p>
-        <div className="hero-title-lockup"><h1><span className="hero-title-first">{t("手牽手")}<Image src="/media/brand/hand-in-hand-mark-transparent.png" alt="" width={700} height={288} aria-hidden="true" unoptimized/></span><em>{t("愛無限")}</em></h1></div>
-        <div className="hero-latest-meta"><span>2026.09.19</span><b>15:00－20:30</b><em>{t("南投・中寮國小")}</em></div>
-        <p>{t("中寮手牽手成果網站已上線，完整收錄服務成果、活動故事與現場影像。")}</p>
-        <div className="actions"><a className="btn gold" href="#latest-event">{t("查看中寮成果 ↓")}</a><a className="btn outline" href="https://hand-in-hand.pages.dev/?utm_source=liming&utm_medium=referral&utm_campaign=zhongliao_results&utm_content=hero" target="_blank" rel="noreferrer">{t("進入成果網站 ↗")}</a><button className="btn outline share-btn" type="button" onClick={shareSite} aria-live="polite">{shareStatus || t("分享黎明公益網 ↗")}</button></div>
-        <small><i/> {t("讓每一份投入被看見，讓中寮的溫暖繼續傳遞")}</small>
+    <section className="concept-hero" aria-labelledby="hero-opening-title">
+      <Image src="/media/zhongliao-report/02-final-group-banner.jpg" alt="中寮攜手愛無限公益活動現場合影" fill sizes="100vw" priority unoptimized/>
+      <div className="concept-hero-shade"/>
+      <div className="concept-hero-copy reveal">
+        <p>用行動點亮偏鄉　讓愛走得更遠</p>
+        <h1 id="hero-opening-title">中寮<br/>攜手<em>愛</em>無限</h1>
+        <strong>一場相聚，讓善意在偏鄉交會。</strong>
+        <a href="#latest-event">閱讀完整成果　→</a>
+        <small>SMALL HANDS<br/>BIG CHANGES</small>
       </div>
-      <div className="hero-art hero-results-art reveal">
-        <article className="hero-opening-card" aria-labelledby="hero-opening-title">
-          <div className="hero-opening-orbit" aria-hidden="true"/>
-          <div className="hero-opening-chapter"><span>CHAPTER</span><b>01</b></div>
-          <p className="hero-opening-kicker">2026 ZHONGLIAO · HAND IN HAND</p>
-          <h2 id="hero-opening-title">{t("攜手成行")}<br/><em>{t("讓愛抵達中寮")}</em></h2>
-          <div className="hero-opening-rule"><span/></div>
-          <p className="hero-opening-lead">{t("一場相聚，讓不同領域的善意在偏鄉交會。從孩子的笑容、家庭的需要，到每一雙主動伸出的手，我們把關懷化為看得見的陪伴。")}</p>
-          <blockquote>{t("月光照亮的不只是一個夜晚，也照見一群人願意同行的心。")}</blockquote>
-          <div className="hero-opening-footer">
-            <span><b>35</b>{t("萬元公益捐贈")}</span>
-            <span><b>137</b>{t("戶家庭關懷")}</span>
-            <a href="https://hand-in-hand.pages.dev/?utm_source=liming&amp;utm_medium=referral&amp;utm_campaign=zhongliao_results&amp;utm_content=opening" target="_blank" rel="noreferrer">{t("閱讀完整成果 ↗")}</a>
-          </div>
-        </article>
+      <span className="concept-hero-handnote">為更好的<br/>明天<br/>一起努力 ♡</span>
+    </section>
+
+    <section className="concept-overview" aria-labelledby="concept-intro-title">
+      <div className="concept-intro reveal">
+        <p>A BRIGHTER TOMORROW</p>
+        <h2 id="concept-intro-title">從相聚開始，<br/>讓善意持續發生</h2>
+        <div>台中黎明扶輪社以行動串連社會善意，<br/>在南投中寮用愛心與陪伴，為偏鄉帶來更多希望。<br/>我們相信，每一次相聚，都是改變的起點；<br/>每一份關懷，都能讓更多孩子看見更大的未來。</div>
+        <blockquote className="concept-love-quote"><span aria-hidden="true">♡</span><p>愛，沒有距離。<br/><strong>只有更多的可能。</strong></p></blockquote>
+      </div>
+      <div className="concept-results">
+        <div className="concept-results-head"><p className="results-kicker">2026 · IMPACT IN ACTION</p><h3>每一份善意，都有回響</h3><p className="results-event">中寮關懷暨中秋公益晚會<span>成果數據</span></p></div>
+        <div className="concept-metrics">{content.stats.map(([v,u,l]) => <article key={l}><b>{v}<small>{t(u)}</small></b><p>{t(l)}</p></article>)}</div>
+        <div className="concept-pillars" id="concept-pillars">
+          <article className="concept-education"><figure><Image src="/media/hand-in-hand-10-years/01.jpg" alt="手牽手十年有成：扶輪社夥伴與太平國小孩子的大合照" fill sizes="(max-width: 800px) 100vw, 23vw" unoptimized/></figure><div><b>01</b><span><h3>教育陪伴</h3><p>陪伴孩子探索興趣，<br/>用教育打開更寬廣的未來。</p></span></div></article>
+          <article><figure><Image src="/media/shuanglong-20260910/1000094025.jpg" alt="偏鄉培育" fill sizes="(max-width: 800px) 100vw, 23vw" unoptimized/></figure><div><b>02</b><span><h3>偏鄉培育</h3><p>縮短城鄉資源落差，<br/>讓每個孩子都有發光的機會。</p></span></div></article>
+          <article className="concept-community"><figure className="community-split"><span><svg className="community-heart-icon" viewBox="0 0 100 100" role="img" aria-label="愛心關懷"><path fill="#e52335" d="M50 86C39 77 9 57 9 32C9 11 36 6 50 25C64 6 91 11 91 32C91 57 61 77 50 86Z"/></svg></span><span><Image src="/media/zhongliao-report/community-care-market-08.jpg" alt="中寮攜手愛無限公益市集盛況" fill sizes="(max-width: 700px) 50vw, 12vw" unoptimized/></span></figure><div><b>03</b><span><h3>社區關懷</h3><p>在地連結、長期陪伴，<br/>讓善意在社區持續循環。</p></span></div></article>
+        </div>
       </div>
     </section>
 
-    <section className="latest-impact-strip" aria-labelledby="latest-impact-title">
-      <div className="latest-impact-heading"><span>{t("LATEST IMPACT · 最新活動成果")}</span><strong id="latest-impact-title">{t("中寮手牽手・愛無限")}</strong></div>
-      <div className="latest-impact-grid">{content.stats.map(([v,u,l]) => <article key={l}><b>{v}<small>{t(u)}</small></b><p>{t(l)}</p></article>)}</div>
+    <section className="concept-highlights" id="concept-highlights">
+      <article className="reveal"><header><h2>精選活動</h2><a href="#actions">探索更多活動　→</a></header><div className="concept-highlight-body"><figure><Image src="/media/zhongliao-report/02-final-group-banner.jpg" alt="2026 中寮關懷暨中秋公益晚會" fill sizes="(max-width: 800px) 100vw, 22vw" unoptimized/></figure><div><h3>2026 中寮關懷暨中秋公益晚會</h3><p>月圓人團圓，愛心無距離。<br/>台中黎明扶輪社與在地夥伴攜手，<br/>用實際行動傳遞溫暖，讓中寮的夜晚充滿愛與希望。</p><a href="#latest-event">閱讀完整成果　→</a></div></div></article>
+      <article className="reveal"><header><h2>新聞媒體報導</h2><a href="#media-stories">查看更多報導　→</a></header><div className="concept-highlight-body"><figure><Image src="/media/site/press-editorial-photo-v2.png" alt="報紙與雜誌示意，象徵新聞媒體報導" fill sizes="(max-width:700px) 100vw, 25vw" unoptimized/></figure><div><h3>用行動，讓愛被看見</h3><p>從在地到更遠的地方，<br/>台中黎明扶輪社持續推動公益行動，<br/>讓得各界媒體關注與肯定。</p><a href="#media-stories">閱讀相關報導　→</a></div></div></article>
     </section>
 
     <section className="featured-campaign" id="featured-campaign">
@@ -549,6 +569,56 @@ export default function Home() {
       </div>
     </section>
 
+    <section className="newsroom" id="media-stories" aria-labelledby="media-stories-title">
+      <span className="anchor-alias" id="education-news" aria-hidden="true"/>
+      <div className="section newsroom-heading reveal">
+        <div><p className="eyebrow">DAWN CHARITY NETWORK · PRESS ROOM</p><h2 id="media-stories-title">新聞媒體<span>報導專區</span></h2><p className="newsroom-deck">讓每一則報導，成為公益行動的見證。</p></div>
+        <div className="newsroom-intro"><p>集中收錄黎明公益網相關媒體報導，從教育陪伴、偏鄉關懷到青少年培育，透過不同媒體視角保存每一段值得被看見的公益歷程。</p><dl><div><dt>5</dt><dd>媒體報導</dd></div><div><dt>3</dt><dd>公益專題</dd></div><div><dt>2026</dt><dd>持續更新</dd></div></dl></div>
+      </div>
+
+      <div className="section press-editorial-banner">
+        <figure><Image src="/media/site/press-editorial-photo-v2.png" alt="報紙與雜誌示意照片" fill sizes="(max-width:700px) 100vw, 40vw" unoptimized/></figure>
+        <div><p>IN THE NEWS · 媒體視角</p><h3>看見行動的價值<br/>保存善意的足跡</h3><span>從教育陪伴到偏鄉關懷，透過新聞報導，閱讀每一次投入的故事。</span><a href="#press-all-coverage">瀏覽全部報導 <span aria-hidden="true">↓</span></a></div>
+      </div>
+      <div className="section press-outlet-strip" aria-label="已收錄媒體"><span>收錄媒體</span><b>經濟日報</b><b>PeoPo 公民新聞</b><b>新頭條</b><b>覞傳媒</b><b>工商時報</b></div>
+      <div className="section press-feature-label"><span>01 / FEATURED STORY</span><strong>焦點報導</strong><span>教育陪伴 · 最新收錄</span></div>
+      <article className="newsroom-feature reveal">
+        <figure><Image src="/media/site/edn-taiping-20260929.jpg" alt="經濟日報報導照片：太平國小學童參與英語拼字互動" fill sizes="(max-width: 850px) 100vw, 52vw" unoptimized/><span>最新收錄</span><figcaption className="press-photo-credit">照片來源：經濟日報原文</figcaption></figure>
+        <div className="newsroom-feature-copy">
+          <p>教育陪伴</p><div className="press-source"><strong>經濟日報</strong><time dateTime="2026-09-29">報導日期｜2026.09.29</time></div>
+          <h3>中市北區太平國小「手牽手英語課」中秋開課　扶輪社攜手傳愛</h3>
+          <p>台中黎明扶輪社支持低年級英語學習，以雙語故事、英語歌曲與拼字遊戲陪伴孩子扎根；在地企業也共同投入，讓節慶成為溫暖的學習時光。</p>
+          <div><a className="newsroom-primary" href="https://money.udn.com/money/story/5723/9782564" target="_blank" rel="noopener noreferrer">閱讀經濟日報原文 ↗</a><a className="newsroom-secondary" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmoney.udn.com%2Fmoney%2Fstory%2F5723%2F9782564" target="_blank" rel="noopener noreferrer">分享報導</a></div>
+        </div>
+      </article>
+
+      <div className="section newsroom-archive" id="press-all-coverage">
+        <div className="newsroom-archive-heading reveal"><p>ALL COVERAGE · 全部報導</p><h3>依公益專題完整收錄</h3><span>點選每一篇報導，可前往媒體網站閱讀原文。</span></div>
+        <div className="newsroom-grid">
+          <article className="newsroom-card reveal"><figure><Image src="/media/site/peopo-taiping-20260929.webp" alt="PeoPo 公民新聞報導照片：太平國小手牽手英語課開課活動合照" fill sizes="(max-width: 800px) 100vw, 50vw" unoptimized/><b>教育陪伴</b><figcaption className="press-photo-credit">照片來源：PeoPo 公民新聞原文</figcaption></figure><div><div className="press-source"><strong>PeoPo 公民新聞</strong><time dateTime="2026-09-29">報導日期｜2026.09.29</time></div><h4>太平國小「手牽手英語課」中秋開課，扶輪社攜手企業傳愛</h4><span>雙語故事、歌唱與遊戲，讓孩子在節慶中快樂接觸英語，也記錄長期教育陪伴的延續。</span><a href="https://www.peopo.org/news/858920" target="_blank" rel="noopener noreferrer">閱讀 PeoPo 報導 ↗</a></div></article>
+          <article className="newsroom-card reveal"><figure><Image src="/media/zhongliao-report/02-final-group-banner.jpg" alt="中寮手牽手愛無限公益活動合影" fill sizes="(max-width: 800px) 100vw, 50vw" unoptimized/><b>偏鄉關懷</b></figure><div><div className="press-source"><strong>新頭條 TheHubNews</strong><time dateTime="2026-09-28">報導日期｜2026.09.28</time></div><h4>逾 30 萬元愛心，挹注弱勢家庭、學童與慢飛天使</h4><span>跨團體匯聚資源，把中秋關懷化為弱勢家庭、偏鄉學童與慢飛天使的實際支持。</span><a href="https://www.thehubnews.net/archives/669432" target="_blank" rel="noopener noreferrer">閱讀新頭條報導 ↗</a></div></article>
+          <article className="newsroom-card reveal"><figure><Image src="/media/zhongliao-report/49-thirty-million-check.jpg" alt="中寮公益中秋活動捐贈儀式" fill sizes="(max-width: 800px) 100vw, 50vw" unoptimized/><b>共融行動</b></figure><div><div className="press-source"><strong>覞傳媒新聞中心</strong><time dateTime="2026-09-23">報導日期｜2026.09.23</time></div><h4>南投中寮中秋公益晚會，以教育扶助與共融餐會點亮微光</h4><span>從生活禮券、教育經費到市集服務與共融餐會，呈現資源如何實際回應地方需要。</span><a href="https://www.300c3.org.tw/uninews_view.php?new_sn=143935" target="_blank" rel="noopener noreferrer">閱讀覞傳媒報導 ↗</a></div></article>
+          <article className="newsroom-card reveal"><figure><Image src="/media/shuanglong-20260910/1000094025.jpg" alt="台中黎明扶輪社與雙龍國小師生合影" fill sizes="(max-width: 800px) 100vw, 50vw" unoptimized/><b>青少年培育</b></figure><div><div className="press-source"><strong>工商時報</strong><time dateTime="2026-09-10">報導日期｜2026.09.10</time></div><h4>足球築夢希望啟航　讓愛與資源走進雙龍偏鄉</h4><span>足球設備、生活物資與親身陪伴走進雙龍部落，支持孩子突破環境限制、勇敢追夢。</span><a href="https://www.ctee.com.tw/news/20260910701521-431208" target="_blank" rel="noopener noreferrer">閱讀工商時報報導 ↗</a></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section className="rick-visit" id="rick-visit" aria-labelledby="rick-visit-title">
+      <div className="section rick-visit-grid">
+        <div className="rick-visit-copy reveal">
+          <p className="eyebrow">WITH GRATITUDE · 蒞臨指導</p>
+          <p className="rick-visit-date">2026.09.19・南投中寮</p>
+          <h2 id="rick-visit-title">感謝 2027–28 年度<br/><em>準總監 Rick 蒞臨指導</em></h2>
+          <p>感謝準總監 Rick 親臨「手牽手・愛無限」中寮公益行動現場，與服務夥伴及地方來賓交流，為偏鄉關懷、教育支持與公益串聯帶來珍貴鼓勵。崴正公司長期投入中寮孩童及長者的弱勢關懷，今年並於永康國小舉辦成果展，讓持續投入的愛心與陪伴被更多人看見。</p>
+          <blockquote>一份親自到場的支持，讓投入服務的每一雙手更有力量，也讓中寮的溫暖持續被看見。</blockquote>
+        </div>
+        <div className="rick-visit-photos reveal" aria-label="準總監 Rick 蒞臨中寮公益活動照片">
+          <figure className="rick-visit-main"><Image src="/media/zhongliao-report/63-rick-group.jpg" alt="2027至28年度準總監 Rick 參與中寮攜手愛無限活動並與服務夥伴合影" fill sizes="(max-width: 800px) 100vw, 58vw" unoptimized/><figcaption>活動紀錄｜準總監 Rick 參與中寮「攜手愛無限」公益行動，與服務夥伴合影</figcaption></figure>
+          <figure className="rick-visit-detail"><Image src="/media/zhongliao-report/64-rick-guidance.jpg" alt="吳理事長、春風社莊社長及2027至28年度準總監 Rick 於中寮攜手愛無限活動合影" fill sizes="(max-width: 800px) 100vw, 32vw" unoptimized/><figcaption>現場紀實｜吳理事長、春風社莊社長及 Rick 準總監合影</figcaption></figure>
+        </div>
+      </div>
+    </section>
+
     <section className="ten-years-feature" id="ten-years">
       <div className="section ten-years-grid">
         <div className="ten-years-collage reveal" aria-label="手牽手十年有成拍攝紀錄">
@@ -702,7 +772,7 @@ export default function Home() {
     <section className="section impact" id="impact">
       <div className="quote reveal"><span>“</span><h2>{t(content.slogan)}</h2><p>— {t(content.fullName)}</p></div>
       <div className="partner-head reveal" id="partners"><p className="eyebrow">{t("TOGETHER, WE GO FURTHER · 合作夥伴")}</p><h2>{t("所有相關合作單位")}</h2></div>
-      <p className="partner-summary">{t("7所合作學校・2個公益與照護單位。感謝每一位教育與公益夥伴，讓陪伴持續發生。")}</p>
+      <div className="partner-stats" aria-label="合作夥伴統計"><article><span>SCHOOLS</span><p><strong>8</strong><em>所</em></p><h3>合作學校</h3></article><article><span>CARE PARTNERS</span><p><strong>2</strong><em>個</em></p><h3>公益與照護單位</h3></article></div><p className="partner-gratitude"><span aria-hidden="true">♡</span>誠摯感謝每一所學校、每一位教育與公益夥伴，<br/>讓善意相連，讓陪伴持續發生。</p>
       <p className="partner-note">{t("本區彙整歷年服務與活動合作紀錄，不代表所有單位目前均持續開課或參與同一活動。")}</p>
       <div className="partner-category">
         <h3>{t("手牽手英語教學｜歷年合作學校")}</h3>
@@ -714,7 +784,17 @@ export default function Home() {
         <h3>{t("公益合作學校｜活動與服務")}</h3>
         <div className="partner-directory">
           <article><span>{t("教育支持・活動合作")}</span><h4>{t("南投縣信義鄉雙龍國小")}</h4><p>{t("足球隊賽事支持、足球設備與物資捐贈。")}</p><a href="#featured-campaign">{t("查看相關公益行動 →")}</a></article>
-          <article><span>{t("公益活動場地")}</span><h4>{t("南投縣中寮鄉中寮國小")}</h4><p>{t("中寮手牽手愛無限公益活動與中秋共融。")}</p><a href="#latest-event">{t("查看相關公益行動 →")}</a></article>
+          <article><span>{t("公益活動場地")}</span><h4>{t("南投縣中寮鄉中寮國小")}</h4><p>{t("中寮手牽手愛無限公益活動與中秋共融。")}</p><a href="#latest-event">{t("查看相關公益行動 →")}</a></article><article className="ailan-partner" id="ruizhe-gratitude">
+  <div className="ailan-feature-heading"><span>WITH GRATITUDE · 長期教育支持</span><h4>南投愛蘭國小</h4><p>多年同行，讓教育陪伴持續發生。</p></div>
+  <div className="ailan-feature-story">
+    <p>誠摯感謝<strong>瑞哲工業股份有限公司</strong>多年來全額贊助愛蘭國小。這份持續投入的心意，讓公益不只是一時的熱情，更成為與學校長期同行的支持。</p>
+    <p>教育需要時間，陪伴也需要堅持。年復一年的支持，承載著對孩子成長的重視，以及對學校教育工作的信任。我們珍惜這份長久的承諾，也希望透過紀錄，讓每一份默默付出的善意被看見。</p>
+    <blockquote>一份長期的支持，是對教育的信任，也是對孩子未來的祝福。</blockquote>
+    <p className="partner-sponsor-credit">特別感謝瑞哲工業股份有限公司董事長 <strong>Wrench</strong>。身為<strong>台中黎明扶輪社的優秀社友</strong>，他以實際行動支持教育，將企業的力量與扶輪服務的心意相連，讓關懷在校園中持續傳遞。</p>
+    <p>也誠摯感謝愛蘭國小教育夥伴的投入。企業的支持與學校的用心，共同寫下這段值得珍惜的公益歷程。願這份多年累積的善意，繼續陪伴孩子迎向更多可能。</p>
+    <div className="ailan-sponsor-signature"><span>長期全額贊助</span><strong>瑞哲工業股份有限公司</strong><small>董事長 Wrench｜台中黎明扶輪社社友</small></div>
+  </div>
+</article>
         </div>
       </div>
       <div className="partner-category">
@@ -726,6 +806,41 @@ export default function Home() {
       </div>
     </section>
 
+    <section className="about-publication" id="about-publication" aria-labelledby="about-publication-title">
+      <div className="about-publication-inner reveal">
+        <p className="eyebrow">ABOUT THIS PUBLICATION · 關於黎明公益網</p>
+        <div className="about-publication-grid">
+          <h2 id="about-publication-title">以紀實保存行動，<br/><em>讓公益被清楚看見。</em></h2>
+          <div>
+            <p>黎明公益網為獨立第三方公益紀實網站，依據公開資料、活動紀錄與現場素材，客觀、忠實整理台中黎明扶輪社參與的各項公益行動。</p>
+            <p>本站並非台中黎明扶輪社官方網站，內容以資料保存、公益傳播與社會記錄為目的。</p>
+            <a href="https://dawnrotaryclub.tw/" target="_blank" rel="noreferrer">前往台中黎明扶輪社官方網站 ↗</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section className="founders-gratitude" id="founders-gratitude" aria-labelledby="founders-gratitude-title">
+      <div className="founders-gratitude-inner">
+        <div className="founders-intro">
+          <p className="founders-kicker">WITH GRATITUDE · 感恩・發起感謝文</p>
+          <svg className="founders-seed" viewBox="0 0 80 80" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true"><path d="M40 67V34M40 48C17 48 12 30 15 17c20 0 29 12 25 31ZM40 36C40 18 51 9 67 12c1 18-10 27-27 24M24 69h32"/></svg>
+          <h2 id="founders-gratitude-title">一顆小小的種子，<br/><em>長成手牽手的愛</em></h2>
+          <p className="founders-lead">一切，都從一份最單純的初衷開始。</p>
+          <div className="founders-names"><span>由衷感謝三位發起人</span><strong>創設社長 CPA</strong><strong>Michael</strong><strong>Stanley</strong></div>
+        </div>
+        <div className="founders-letter">
+          <p>台中黎明扶輪社創社之初，便懷抱著一個心願：讓公益成為這個社團最溫暖的底色。多年後，這份初衷化成了「手牽手 愛無限」，我們想把關懷送到偏鄉，特別是弱勢孩子的英文教育。因為我們相信，每個孩子都值得擁有看見世界的機會，不論他生在城市或山邊。</p>
+          <p>這份心意能夠啟程，要由衷感謝三位發起人：<strong>創設社長 CPA、Michael、Stanley</strong>。他們不只提出想法，更以行動「拋磚引玉」，率先付出，邀請各行各業的菁英一起加入。也正因為這塊磚拋得真誠，才引來了一塊又一塊的玉。</p>
+          <p>感謝每一位願意伸出手的夥伴。你們來自不同的專業與領域，卻因同一份善意站在一起。有人出力，有人出錢，有人出點子，有人只是默默地在旁邊說一句「我來幫忙」，這些都是「愛無限」最珍貴的樣子。</p>
+          <p>也感謝每一位關心偏鄉孩子的朋友。你的一次分享、一句鼓勵、一份參與，都會成為孩子學習路上的一盞小燈。</p>
+          <blockquote>公益不是一個人走得很快，<br/>而是一群人走得很遠。</blockquote>
+          <p>願我們繼續手牽著手，把這份溫暖傳下去，讓更多孩子在英文的世界裡，找到自信，也找到夢想。</p>
+          <p className="founders-thanks">謝謝你們，讓愛不斷延伸。</p>
+          <div className="founders-signature"><span>社友</span><strong>Alan Yang <small>敬上</small></strong><p>台中黎明扶輪社「手牽手 愛無限」</p></div>
+        </div>
+      </div>
+    </section>
     <section className="action-banner" aria-label={t("捐助或志工行動")}>
       <WarmParticles compact/>
       <div className="action-banner-copy reveal">
@@ -736,13 +851,13 @@ export default function Home() {
           <a className="btn donate" href="#contact"><span>♥</span> {t("洽詢捐助方式")}</a>
           <a className="btn volunteer" href="#contact"><span>✦</span> {t("洽詢參與方式")}</a>
         </div>
-        <small>{t("實際捐助方式與志工活動名額，請與台中黎明扶輪社聯絡確認。")}</small>
+        <small>{t("捐贈方式、志工參與及公益合作，可洽台中黎明扶輪社或中華存善慢飛天使關懷協會，相關細節請與各單位確認。")}</small>
       </div>
     </section>
 
     <section className="contact" id="contact">
       <div className="reveal"><p className="eyebrow">{t("LET’S CREATE IMPACT · 聯絡我們")}</p><h2>{t("下一個好故事，")}<br/><em>{t("期待有您同行。")}</em></h2><p>{t("企業合作、物資支持、專業服務或活動參與，都歡迎與我們聊聊。")}</p><div className="actions"><a className="btn light" href="tel:+886423227799">{t("立即來電 ↗")}</a><a className="btn outline" href="https://dawnrotaryclub.tw/" target="_blank" rel="noreferrer">{t("黎明扶輪社官方網站 ↗")}</a></div></div>
-      <aside className="contact-card reveal"><p>TAICHUNG DAWN</p><h3>{t(content.fullName)}</h3><dl><div><dt>{t("電話")}</dt><dd><a href="tel:+886423227799">04-2322-7799</a></dd></div><div><dt>{t("辦公室")}</dt><dd>{t("台中市南屯區公益路二段 61 號")}<br/>{t("13 樓之 1")}</dd></div><div><dt>{t("合作洽詢")}</dt><dd>{t("歡迎來電洽詢公益合作與活動資訊")}</dd></div></dl><a href="https://www.facebook.com/groups/376285655902508/" target="_blank">{t("Facebook 社群 ↗")}</a></aside>
+      <div className="contact-organizations"><aside className="contact-card reveal"><p>TAICHUNG DAWN</p><h3>{t(content.fullName)}</h3><dl><div><dt>{t("電話")}</dt><dd><a href="tel:+886423227799">04-2322-7799</a></dd></div><div><dt>{t("辦公室")}</dt><dd>{t("台中市南屯區公益路二段 61 號")}<br/>{t("13 樓之 1")}</dd></div><div><dt>{t("合作洽詢")}</dt><dd>{t("歡迎來電洽詢公益合作與活動資訊")}</dd></div></dl><a href="https://www.facebook.com/groups/376285655902508/" target="_blank">{t("Facebook 社群 ↗")}</a></aside><aside className="contact-card association-contact"><p>CHARITY PARTNER · 公益合作夥伴</p><h3>中華存善<br/>慢飛天使關懷協會</h3><dl><div><dt>捐贈洽詢</dt><dd>公益捐助、物資支持與關懷服務</dd></div><div><dt>合作洽談</dt><dd>公益活動協作、在地關懷與資源串聯</dd></div></dl><p className="association-contact-note">感謝每一份愛心與支持。捐贈及合作細節，請與協會確認。</p></aside></div>
     </section>
 
     <section className="charity-logo-section" id="charity-logo" aria-labelledby="charity-logo-title">
@@ -789,7 +904,14 @@ export default function Home() {
         <a href="https://www.alanyang.com.tw/?utm_source=liming&amp;utm_medium=referral&amp;utm_campaign=alan_ai_team&amp;utm_content=credit_footer" target="_blank" rel="noreferrer">{t("認識企劃夥伴 Alan Yang ↗")}</a>
       </aside>
     </section>
-    <footer><a className="brand" href="#top"><span className="sun">✦</span><b>{t(content.name)}</b></a><p>© 2026 {t(content.fullName)} · {t("讓善意持續發生")}</p><p>{t("內容更新 2026.09")}</p></footer>
+    <section className="concept-closing" id="concept-closing" aria-label="加入公益行動">
+      <Image src="/media/site/taiwan-mountain-sunrise-banner.png" alt="台灣山林晨光" fill sizes="100vw" unoptimized/>
+      <div className="concept-closing-shade"/>
+      <div className="concept-closing-title"><h2>因為有你，<br/>世界可以更好</h2><p>TOGETHER FOR A KINDER TOMORROW</p></div>
+      <div className="concept-closing-action"><p>黎明公益網，串連更多善意，<br/>陪伴每一個需要的角落，<br/>讓愛心沒有距離，讓希望持續發生。</p><a href="#actions">加入公益行動　→</a></div>
+      <span>愛無界限<br/>善的力量<br/>一直都在 ♡</span>
+    </section>
+    <footer><a className="brand" href="#top"><span className="sun">✦</span><b>{t(content.name)}</b></a><p>© 2026 {t(content.name)} · {t("讓善意持續發生")}</p><p className="independent-notice">獨立第三方公益紀實網站｜非台中黎明扶輪社官方網站</p><p>{t("內容更新 2026.09")}</p></footer>
     {photo && <div className="backdrop" onClick={()=>setPhoto(null)}><div className="photo-modal" onClick={e=>e.stopPropagation()}><button onClick={()=>setPhoto(null)} aria-label={t("關閉照片")}>×</button><Image src={photo[2]} alt={t(photo[1])} width={1500} height={1000} unoptimized/><div><p>{t(photo[0])}</p><h3>{t(photo[1])}</h3><small>{t(content.event.title)}・{t("活動實錄")}</small></div></div></div>}
   </main>;
 }
