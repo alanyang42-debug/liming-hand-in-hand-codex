@@ -833,3 +833,109 @@ main>footer{background:#10302d}
 @media(max-width:700px){.founders-gratitude{padding:0 20px 48px}.founders-gratitude-inner{grid-template-columns:1fr}.founders-intro{padding:30px 24px}.founders-seed{width:54px;height:54px;margin:20px 0 12px}.founders-intro h2{font-size:28px}.founders-names{flex-direction:row;flex-wrap:wrap;gap:12px 22px}.founders-names>span{width:100%}.founders-names>strong{font-size:20px}.founders-letter{padding:28px 24px}.founders-letter blockquote{font-size:19px}.founders-letter>p{font-size:15px}}
 
 .press-photo-credit{position:absolute;z-index:3;right:10px;bottom:8px;max-width:90%;padding:4px 7px;background:rgba(16,48,45,.82);color:#fff;font-size:10px;line-height:1.5}.newsroom-card figure:has(.press-photo-credit) b{bottom:40px}
+
+.association-contact .association-map-label{display:inline-block;margin-top:8px;font-size:12px;color:#936420}.association-contact .association-facebook{display:block;text-align:center;padding:14px 16px;margin-top:24px;border:1px solid #b79351;color:#17302e;font-size:14px;font-weight:700;line-height:1.6}.association-contact .association-facebook:hover{background:#17302e;color:#fffaf0}.association-contact dd a:focus-visible,.association-contact .association-facebook:focus-visible{outline:3px solid #dca943;outline-offset:4px}
+/* Allow translated copy to breathe while preserving the original Chinese layout. */
+main:not([data-lang="zh"]) .editorial-charity-brand b{font-size:5.7cqw;line-height:1.25;letter-spacing:0}
+main:not([data-lang="zh"]) .concept-hero h1{font-size:clamp(38px,4.4vw,66px);line-height:1.13;letter-spacing:0;max-width:650px}
+main:not([data-lang="zh"]) .concept-hero-copy{max-width:680px}
+main:not([data-lang="zh"]) .concept-hero-copy strong{font-size:clamp(16px,1.5vw,22px);max-width:570px}
+main:not([data-lang="zh"]) .concept-intro h2,main:not([data-lang="zh"]) .concept-closing h2{font-size:clamp(32px,3.2vw,52px);line-height:1.25}
+main:not([data-lang="zh"]) .concept-pillars h3{font-size:clamp(20px,1.6vw,28px);line-height:1.35}
+main:not([data-lang="zh"]) .concept-pillars p{line-height:1.7}
+main:not([data-lang="zh"]) .editorial-header nav a{letter-spacing:0;line-height:1.3}
+main:not([data-lang="zh"]) .newsroom h2{font-size:clamp(36px,4vw,64px);letter-spacing:0;line-height:1.2}
+main:not([data-lang="zh"]) .newsroom h3,main:not([data-lang="zh"]) .newsroom h4{line-height:1.4;overflow-wrap:anywhere}
+main:not([data-lang="zh"]) .contact-card dl>div{grid-template-columns:minmax(80px,.65fr) minmax(0,1.35fr);gap:14px}
+main:not([data-lang="zh"]) .contact-card h3{font-size:clamp(22px,2vw,30px);line-height:1.3}
+main:not([data-lang="zh"]) .founders-intro h2{font-size:clamp(30px,3vw,48px);line-height:1.3}
+main:not([data-lang="zh"]) .press-outlet-strip{flex-wrap:wrap}
+main:not([data-lang="zh"]) .concept-closing-action p{font-size:15px;line-height:1.65}
+main:not([data-lang="zh"]) .concept-metrics b{font-size:clamp(35px,3.7vw,58px)}
+main:not([data-lang="zh"]) .concept-metrics small{font-size:13px}
+main:not([data-lang="zh"]) .decade-hero h1{font-size:clamp(38px,5vw,80px);line-height:1.2}
+.decade-language{padding:8px 12px;border:1px solid #c9a45f;background:#fffaf0;color:#10302d;border-radius:4px;max-width:140px}
+@media(max-width:700px){
+main:not([data-lang="zh"]) .concept-hero h1{font-size:clamp(34px,8vw,52px)}
+main:not([data-lang="zh"]) .concept-hero-copy{width:auto;max-width:100%}
+main:not([data-lang="zh"]) .concept-closing{min-height:680px}
+main:not([data-lang="zh"]) .concept-closing-title,main:not([data-lang="zh"]) .concept-closing-action{max-width:100%}
+main:not([data-lang="zh"]) .press-source{flex-wrap:wrap}
+.decade-header{flex-wrap:wrap;gap:12px}
+}
+
+@media(min-width:701px){main:not([data-lang="zh"]) .concept-hero h1{font-size:clamp(34px,3.2vw,50px);line-height:1.16}main:not([data-lang="zh"]) .concept-hero-copy>p:first-child{font-size:14px;letter-spacing:.08em}main:not([data-lang="zh"]) .concept-hero-copy strong{font-size:18px}}
+/* Compact, uncropped brand lockups and intentional Chinese line lengths on phones. */
+@media(max-width:700px){
+.editorial-header>.editorial-brand-lockup{grid-template-columns:minmax(0,1fr) 1px minmax(0,1fr);gap:10px;width:100%;padding:16px 0}
+.editorial-charity-brand{display:grid;grid-template-columns:30px minmax(0,1fr);gap:6px;justify-content:initial;container-type:normal;min-width:0;height:auto}
+.editorial-charity-brand>img{width:30px;max-width:100%;height:32px;min-width:0;object-fit:contain;flex:none}
+.editorial-charity-brand>span{min-width:0;white-space:normal}
+.editorial-charity-brand b{font-size:clamp(13px,3.7vw,22px);line-height:1.3;letter-spacing:0;white-space:nowrap}
+.editorial-charity-brand small{font-size:clamp(5px,1.35vw,8px);line-height:1.4;letter-spacing:0;white-space:normal;overflow-wrap:normal;margin-top:3px}
+main:not([data-lang="zh"]) .editorial-charity-brand b{font-size:clamp(10px,2.6vw,16px);line-height:1.3;white-space:normal}
+.editorial-club-brand{container-type:normal;min-width:0;width:100%;height:auto;overflow:visible}
+.editorial-club-brand img{width:100%;max-width:100%;height:auto;flex:none;object-fit:contain}
+.editorial-brand-divider{height:36px}
+.concept-hero{height:auto;min-height:600px}
+.concept-hero-copy{height:auto;min-height:600px;padding:220px 22px 28px;justify-content:flex-end;width:100%}
+main[data-lang="zh"] .concept-hero-copy h1{font-size:clamp(38px,10.5vw,62px);line-height:1.14;letter-spacing:0;word-break:keep-all;overflow-wrap:normal}
+.concept-hero-copy>p{letter-spacing:.06em;font-size:12px;line-height:1.7}
+.concept-hero-copy strong{font-size:16px;line-height:1.7;letter-spacing:0;text-wrap:pretty}
+.concept-hero-copy>a{flex-shrink:0;white-space:normal;line-height:1.5;padding:16px 20px}
+main[data-lang="zh"] .concept-intro h2{font-size:clamp(25px,7.3vw,36px);line-height:1.4;letter-spacing:0;padding-left:16px}
+main[data-lang="zh"] .concept-results-head h3{font-size:clamp(20px,5.9vw,28px);letter-spacing:0;line-height:1.5}
+.results-event{display:flex;flex-wrap:wrap;align-items:center;gap:8px;line-height:1.7}
+.results-event span{margin-left:0;white-space:nowrap}
+.concept-intro,.concept-results{min-width:0}
+.concept-metrics small{white-space:nowrap}
+}
+/* Keep every person visible: separate editorial copy from the uncropped photograph. */
+.concept-hero{display:grid;grid-template-columns:minmax(300px,32%) minmax(0,1fr);height:auto;min-height:0;align-items:center;background:#123b34}
+.concept-hero>img{position:relative!important;inset:auto!important;grid-column:2;grid-row:1;width:100%!important;height:auto!important;object-fit:contain;object-position:center}
+.concept-hero-shade{display:none}
+.concept-hero-copy{grid-column:1;grid-row:1;width:100%;height:auto;min-height:0;padding:32px clamp(22px,2.5vw,48px);max-width:none}
+.concept-hero-copy h1,main[data-lang="zh"] .concept-hero-copy h1{font-size:clamp(32px,3.5vw,62px);line-height:1.2;letter-spacing:0}
+.concept-hero-copy>p{font-size:14px;letter-spacing:.08em}
+.concept-hero-copy strong{font-size:clamp(16px,1.4vw,22px)}
+.concept-hero-copy small{margin-top:28px}
+.concept-hero-handnote{display:none}
+@media(max-width:1000px){
+.concept-hero{grid-template-columns:1fr}
+.concept-hero>img{grid-column:1;grid-row:1}
+.concept-hero-copy{grid-column:1;grid-row:2;padding:28px 24px;min-height:0;width:100%}
+main[data-lang="zh"] .concept-hero-copy h1{font-size:clamp(34px,6vw,48px)}
+.concept-hero-copy>p{font-size:12px}
+.concept-hero-copy strong{font-size:16px}
+}
+/* A narrow seam gradient blends the photograph into the green editorial panel. */
+@media(min-width:1001px){
+.concept-hero-shade{display:block;grid-column:2;grid-row:1;position:relative;inset:auto;align-self:stretch;justify-self:start;width:15%;height:100%;z-index:1;pointer-events:none;background:linear-gradient(90deg,#123b34 0%,rgba(18,59,52,.7) 24%,rgba(18,59,52,.22) 62%,transparent 100%)}
+}
+.press-gratitude{margin:20px 0!important;padding:16px 18px;border-left:3px solid #b49352;background:#f4efdf;color:#173c34;font-size:16px;line-height:1.8}
+/* Gratitude callouts need explicit contrast within dark press features. */
+main .press-gratitude{color:#123b34!important;background:#fff8e8;font-family:Arial,"Microsoft JhengHei",sans-serif;font-size:18px!important;font-weight:600;line-height:1.85!important;opacity:1;text-shadow:none;letter-spacing:.02em}
+/* Supporting acknowledgements: readable, but quieter than the story itself. */
+main .press-gratitude{font-size:15px!important;font-weight:400;line-height:1.8!important;letter-spacing:0;padding:12px 16px;margin:18px 0!important;background:#f5f0e4;border-left:2px solid #bca775;color:#23473f!important}
+/* Prominent, comfortable touch target for the original TheHubNews report. */
+#media-stories a.press-read-featured{display:flex;align-items:center;justify-content:center;width:100%;min-height:54px;padding:15px 22px;margin-top:24px;background:#dfad43;color:#123b34;border:1px solid #c18c28;border-radius:8px;box-shadow:0 4px 12px rgba(18,59,52,.12);font-size:17px;font-weight:700;line-height:1.5;text-decoration:none;text-align:center;transition:background .2s,box-shadow .2s}
+#media-stories a.press-read-featured:hover{background:#edbd59;box-shadow:0 6px 16px rgba(18,59,52,.18)}
+#media-stories a.press-read-featured:focus-visible{outline:3px solid #123b34;outline-offset:4px}
+
+/* Refined Dawn Charity Network identity lockup: one balanced mark, name and English signature. */
+.editorial-header>.editorial-brand-lockup{max-width:680px;grid-template-columns:minmax(0,1.04fr) 1px minmax(0,.96fr);gap:20px}
+.editorial-charity-brand{display:grid;grid-template-columns:31% minmax(0,1fr);align-items:center;justify-content:stretch;gap:12px;height:70px;padding:5px 0;container-type:inline-size}
+.editorial-charity-brand>img{width:100%;height:auto;max-height:58px;object-fit:contain;filter:drop-shadow(0 2px 8px rgba(0,0,0,.14))}
+.editorial-charity-brand .charity-brand-copy{display:flex;min-width:0;flex-direction:column;justify-content:center;white-space:nowrap}
+.editorial-charity-brand .charity-brand-name{color:#fffdf8;font:800 11cqw/1.08 "Noto Serif TC","Songti TC",serif;letter-spacing:.055em;text-shadow:0 1px 4px rgba(0,0,0,.2)}
+.editorial-charity-brand .charity-brand-tagline{margin-top:7px;color:#e1bd70;font:700 3cqw/1.25 Arial,"Helvetica Neue",sans-serif;letter-spacing:.01em;text-transform:none}
+.editorial-charity-brand:hover .charity-brand-name,.editorial-charity-brand:focus-visible .charity-brand-name{color:#fff}
+.editorial-charity-brand:focus-visible{outline:2px solid #e1bd70;outline-offset:6px}
+@media(max-width:700px){
+  .editorial-header>.editorial-brand-lockup{grid-template-columns:minmax(0,1.06fr) 1px minmax(0,.94fr);gap:8px;padding:12px 0}
+  .editorial-charity-brand{display:grid;grid-template-columns:38px minmax(0,1fr);gap:6px;height:48px;padding:0;container-type:normal}
+  .editorial-charity-brand>img{width:38px;height:auto;max-height:34px}
+  .editorial-charity-brand .charity-brand-copy{white-space:nowrap}
+  .editorial-charity-brand .charity-brand-name{font-size:clamp(14px,4vw,17px);line-height:1.12;letter-spacing:.02em}
+  .editorial-charity-brand .charity-brand-tagline{margin-top:4px;font-size:clamp(5px,1.42vw,6.2px);line-height:1.25;letter-spacing:0}
+}

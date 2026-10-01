@@ -1,3 +1,4 @@
+import { additions } from "./i18n-additions";
 export type Lang = "zh" | "en" | "ja" | "ko";
 
 export const languageOptions: { code: Lang; label: string; htmlLang: string }[] = [
@@ -13,14 +14,14 @@ const en: Record<string, string> = {
   "手牽手，愛無限；因為有您，我們可以讓世界更美好。": "Hand in hand, love without limits. With you, we can make the world a better place.",
   "串聯社友、眷屬與在地夥伴，從生活照護、教育支持到社區關懷，讓每一份善意真正抵達需要的地方。": "Bringing Rotarians, families and local partners together—from daily care and education to community outreach—so every act of kindness reaches those who need it.",
   "項": "initiatives", "所": "partners", "隊": "team", "天": "days",
-  "年度重點行動": "priority initiatives", "服務合作單位": "service partners", "支持偏鄉球隊": "rural team supported", "讓善意持續發生": "of kindness in action",
+  "年度重點行動": "priority initiatives",  "支持偏鄉球隊": "rural team supported", 
   "生活照護": "Daily Care", "改善照護環境": "Improving care environments", "攜手公益夥伴汰換社區家園老舊設備，讓陪伴落實在更安心、舒適的日常。": "Together with nonprofit partners, we replace aging equipment in community homes to create safer, more comfortable everyday care.",
   "偏鄉關懷": "Rural Outreach", "把資源送到需要的地方": "Taking resources where they are needed", "串聯社友、眷屬與在地力量，讓關懷不只是一次活動，而是一段持續同行的關係。": "We connect members, families and local communities so care becomes an enduring relationship, not a one-time event.",
   "教育支持": "Education", "陪孩子勇敢追夢": "Helping children pursue their dreams", "支持南投雙龍國小女足走上全國賽場，把每一份鼓勵化成孩子繼續奔跑的力量。": "We support Shuanglong Elementary's girls' football team on the national stage, turning encouragement into the strength to keep running.",
-  "最新活動": "Latest Event", "偏鄉中秋公益音樂節": "Rural Mid-Autumn Charity Music Festival", "2026 年 9 月 19 日相聚中寮國小，讓音樂、公益服務、在地市集與中秋團圓在偏鄉相遇。": "Join us at Zhongliao Elementary on September 19, 2026, where music, community services, a local market and Mid-Autumn reunion come together.",
+   "偏鄉中秋公益音樂節": "Rural Mid-Autumn Charity Music Festival", "2026 年 9 月 19 日相聚中寮國小，讓音樂、公益服務、在地市集與中秋團圓在偏鄉相遇。": "Join us at Zhongliao Elementary on September 19, 2026, where music, community services, a local market and Mid-Autumn reunion come together.",
   "未來進行式": "What Comes Next", "下一個故事，期待有您": "We hope you will join the next chapter", "捐助、志工、物資或專業服務，每一種參與都能讓善意繼續向前。": "Donations, volunteering, supplies or professional services—every contribution keeps kindness moving forward.",
   "第一階段": "Stage 1", "第二階段": "Stage 2", "第一階段公益嘉年華活動海報": "Stage 1 charity carnival poster", "第二階段中秋公益晚會活動海報": "Stage 2 Mid-Autumn charity evening poster",
-  "LATEST EVENT · 2026 最新活動": "LATEST EVENT · 2026", "手牽手 愛無限": "Hand in Hand · Love Without Limits", "手牽手・愛無限": "Hand in Hand · Love Without Limits", "2026 年 9 月 19 日（六）": "Saturday, September 19, 2026", "南投・中寮國小": "Zhongliao Elementary, Nantou",
+  "LATEST EVENT · 2026 最新活動": "LATEST EVENT · 2026", "手牽手 愛無限": "Hand in Hand · Love Without Limits",  "2026 年 9 月 19 日（六）": "Saturday, September 19, 2026", "南投・中寮國小": "Zhongliao Elementary, Nantou",
   "成果專題": "Impact Story", "中寮成果": "Zhongliao Results", "中寮手牽手・愛無限": "Zhongliao · Hand in Hand", "IMPACT STORY · 2026 成果專題": "IMPACT STORY · 2026", "2026 年 9 月 19 日，中寮國小匯聚公益服務、在地夥伴與中秋團圓；完整成果已收錄於中寮手牽手成果網站。": "On September 19, 2026, community service, local partners and a Mid-Autumn gathering came together at Zhongliao Elementary. The full story is now available on the Zhongliao results website.",
   "中寮手牽手成果網站已上線，完整收錄服務成果、活動故事與現場影像。": "The Zhongliao Hand in Hand results website is now live, bringing together service outcomes, event stories and on-site photographs.", "查看中寮成果 ↓": "Explore Zhongliao Results ↓", "進入成果網站 ↗": "Visit Results Website ↗", "讓每一份投入被看見，讓中寮的溫暖繼續傳遞": "Making every contribution visible and carrying Zhongliao's warmth forward.",
   "最新活動成果": "LATEST IMPACT", "LATEST IMPACT · 最新活動成果": "LATEST IMPACT", "2026 中寮公益行動成果紀錄": "2026 Zhongliao Community Impact", "中寮手牽手成果網站預覽": "Preview of the Zhongliao Hand in Hand results website", "開啟完整成果網站 ↗": "Open Full Results ↗", "活動宣傳回顧": "Campaign Archive",
@@ -31,7 +32,7 @@ const en: Record<string, string> = {
   "GIVING MADE VISIBLE · 捐贈成果": "GIVING MADE VISIBLE", "兩筆捐贈，回應學校、家庭與社福需要": "Two donations supporting schools, families and social services", "台中黎明扶輪社捐贈五萬元中寮國小獎助學金": "Rotary Club of Taichung Dawn presents a NT$50,000 scholarship donation", "新臺幣 5 萬元": "NT$50,000", "台中黎明扶輪社由社長周哲民 JOE 代表全體社友，捐贈中寮國小獎助學金，支持偏鄉學童安心學習。": "President Joe Chou represented the Rotary Club of Taichung Dawn in presenting a scholarship donation to Zhongliao Elementary, helping rural students learn with confidence.", "中華存善慢飛天使關懷協會捐贈三十萬元公益款項": "Chung Hua Kindness Care Association presents a NT$300,000 charitable donation", "在地關懷": "Local Care", "新臺幣 30 萬元": "NT$300,000", "中華存善慢飛天使關懷協會由理事長吳錦河及理監事代表，投入弱勢家庭、獎助學金與玫瑰啟能訓練中心支持。": "Chair Health Wu and the association's board directed support to families in need, scholarships and the Rose Training Center.",
   "THREE LAYERS OF IMPACT · 三大影響": "THREE LAYERS OF IMPACT", "服務走進生活，舞台接住差異，資源留在地方": "Services in daily life, an inclusive stage, and resources rooted locally", "社區服務": "Community Service", "公益市集、義剪、健康宣導與家庭關懷走進居民日常，讓服務更靠近需要。": "A charity market, free haircuts, health education and family outreach brought services closer to everyday needs.", "共融舞台": "An Inclusive Stage", "學童、慢飛天使與表演者共享舞台；每一次掌聲，都是理解與陪伴。": "Students, Slow-Flying Angels and performers shared one stage; every applause expressed understanding and companionship.", "資源落地": "Resources Delivered", "捐款、餐盒、共餐與社福支持形成具體成果，讓一次活動成為持續合作的起點。": "Donations, meals and social-service support turned the event into measurable impact and a foundation for continued partnership.",
   "完整影像紀錄與中英文專題": "Full visual record · Chinese and English reports", "看見成果，也邀請下一次同行。": "See the impact—and join the next chapter.",
-  "戶": "households", "份": "meals", "桌": "tables", "弱勢家庭關懷": "families in need reached", "學童愛心餐盒": "student care meals", "中秋公益音樂饗宴": "Mid-Autumn community dinner",
+  "戶": "households", "份": "meals", "桌": "tables",  "學童愛心餐盒": "student care meals", "中秋公益音樂饗宴": "Mid-Autumn community dinner",
   "ZHONGLIAO IMPACT · 中寮成果網站": "ZHONGLIAO IMPACT · RESULTS WEBSITE", "把相聚的溫度，整理成看得見的成果。": "Turning a warm gathering into visible impact.", "萬元": "0K TWD", "公益捐贈總額": "total charitable giving", "戶家庭關懷": "families reached", "份學童餐點": "student meals", "桌社區共餐": "community meal tables", "完整成果網站收錄活動故事、服務數據、現場照片與中英文成果內容，適合分享給社友、合作夥伴與國際讀者。": "The full results site brings together the story, service data, event photographs and Chinese and English reports for members, partners and international readers.", "查看中文完整成果 ↗": "View Full Results in Chinese ↗", "進入中寮成果網站 ↗": "Visit Zhongliao Results ↗",
   "EVENT ARCHIVE · 當日活動流程": "EVENT ARCHIVE · PROGRAM", "9／19 活動流程回顧": "September 19 Program", "完整成果、活動照片、主題曲、活動地圖與主／協辦單位介紹，請前往中寮成果網站查看。": "Visit the Zhongliao results website for the full outcomes, photographs, theme song, map, and organizer information.",
   "在中寮的月光下，讓音樂、公益服務與團圓餐會相遇。從午後公益嘉年華到中秋公益晚會，邀請您牽起一雙手，把希望與溫暖送進偏鄉。": "Under the moonlight in Zhongliao, music, community service and a reunion dinner come together. From the afternoon charity carnival to the Mid-Autumn evening, take a hand and help bring hope and warmth to rural communities.",
@@ -50,10 +51,10 @@ const en: Record<string, string> = {
   "選擇語言": "Select language", "最新活動": "Latest Event", "公益行動": "Actions", "行動足跡": "Journey", "照片故事": "Stories", "足球紀錄": "Football", "加入行動": "Join Us", "一起行動 ↗": "Take Action ↗", "開啟選單": "Open menu",
   "台中黎明扶輪社｜公益行動專站": "Rotary Club of Taichung Dawn | Charity Action Site", "前往社務官方網站 ↗": "Club Official Website ↗", "洽詢捐助方式": "Ask About Giving", "洽詢參與方式": "Ask About Participation", "黎明扶輪社官方網站 ↗": "Club Official Website ↗",
   "HAND IN HAND · 手牽手，愛無限": "HAND IN HAND · LOVE WITHOUT LIMITS", "手牽手": "Hand in Hand", "讓愛無限": "Love Without Limits", "看見我們的行動 ↓": "Explore Our Work ↓", "成為合作夥伴 ↗": "Become a Partner ↗", "分享黎明公益網 ↗": "Share Dawn Charity ↗", "公益不是一場活動，而是一段長久的陪伴": "Public service is not a single event—it is a lasting commitment.",
-  "愛無限": "Love Without Limits", "中寮國小": "Zhongliao Elementary", "查看完整活動流程 ↓": "View Full Program ↓", "進入活動專頁 ↗": "Visit Event Site ↗", "從午後公益嘉年華到中秋公益晚會，音樂、義剪、市集、魔術、演唱、公益捐贈與賓果精彩接力。": "From the afternoon charity carnival to the Mid-Autumn evening, enjoy music, free haircuts, a local market, magic, live singing, a donation ceremony and bingo.", "9 月 19 日，相聚中寮，把希望與溫暖送進偏鄉": "Meet in Zhongliao on September 19 and bring hope and warmth to rural communities.",
+   "中寮國小": "Zhongliao Elementary", "查看完整活動流程 ↓": "View Full Program ↓", "進入活動專頁 ↗": "Visit Event Site ↗", "從午後公益嘉年華到中秋公益晚會，音樂、義剪、市集、魔術、演唱、公益捐贈與賓果精彩接力。": "From the afternoon charity carnival to the Mid-Autumn evening, enjoy music, free haircuts, a local market, magic, live singing, a donation ceremony and bingo.", "9 月 19 日，相聚中寮，把希望與溫暖送進偏鄉": "Meet in Zhongliao on September 19 and bring hope and warmth to rural communities.",
   "公益活動示意照片": "Community service illustration", "社區家園・生活照護": "COMMUNITY HOME · DAILY CARE", "南投雙龍國小女足全國賽事紀錄": "Shuanglong Elementary girls at the national tournament", "愛無限": "Love Without Limits", "成果統計": "Impact statistics",
   "第一階段與第二階段活動海報": "Stage 1 and Stage 2 event posters", "台中黎明扶輪社・中寮偏鄉關懷": "ROTARY CLUB OF TAICHUNG DAWN · ZHONGLIAO OUTREACH", "日期": "DATE", "時間": "TIME", "地點": "LOCATION", "活動亮點": "Event highlights", "進入完整活動專頁 ↗": "Visit Full Event Site ↗", "查看地點與交通 →": "Location & Directions →", "完整流程、主題曲、活動地圖與主／協辦單位介紹，請前往活動專頁查看。": "Visit the event site for the full program, theme song, map and organizer information.",
-  "OUR ACTIONS · 公益行動": "OUR ACTIONS", "把關心，落實在": "Turning care into action", "每一個需要裡。": "where it is needed most.", "聚焦照護、教育與社區串聯，讓資源精準抵達，也讓故事被更多人看見。": "We focus on care, education and community partnerships so resources reach the right people and their stories are seen.", "活動實錄": "Event Photo", "示意照片・可替換": "Illustration", "社區家園設備汰舊換新活動合影": "Community home equipment renewal", "南投雙龍國小女足全國第七名合影": "Shuanglong girls celebrate seventh nationwide", "示意照片": " illustration",
+  "OUR ACTIONS · 公益行動": "OUR ACTIONS", "把關心，落實在": "Turning care into action", "每一個需要裡。": "where it is needed most.", "聚焦照護、教育與社區串聯，讓資源精準抵達，也讓故事被更多人看見。": "We focus on care, education and community partnerships so resources reach the right people and their stories are seen.",  "示意照片・可替換": "Illustration", "社區家園設備汰舊換新活動合影": "Community home equipment renewal", "南投雙龍國小女足全國第七名合影": "Shuanglong girls celebrate seventh nationwide", "示意照片": " illustration",
   "OUR JOURNEY · 行動足跡": "OUR JOURNEY", "每一次伸手，": "Every hand we extend", "都讓改變向前一步。": "moves change forward.", "從生活照護、偏鄉關懷到教育支持，我們把善意串成一條持續前進的時間軸。": "From daily care and rural outreach to education, we connect acts of kindness into a journey that keeps moving forward.",
   "STORIES BEHIND THE PHOTOS · 照片故事": "STORIES BEHIND THE PHOTOS", "照片留住一刻，": "A photo holds a moment;", "故事讓感動繼續。": "a story carries it forward.", "看見生活照護行動": "See Our Daily Care Work", "觀看完整活動紀錄": "View the Full Event Story",
   "FOOTBALL DREAM · 足球公益紀錄": "FOOTBALL DREAM · CHARITY IN ACTION", "看完整活動相簿 ↓": "View Full Gallery ↓", "114學年度小學生足球賽全國決賽活動影片": "National elementary football finals film", "您的瀏覽器目前無法播放這段影片。": "Your browser cannot play this video.", "奔跑的每一步，都有人在身後加油": "Every step they run is backed by someone cheering.",
@@ -77,14 +78,14 @@ const ja: Record<string, string> = {
   "手牽手，愛無限；因為有您，我們可以讓世界更美好。": "手をつなげば、愛は無限に。あなたとともに、世界をもっと素敵な場所へ。",
   "串聯社友、眷屬與在地夥伴，從生活照護、教育支持到社區關懷，讓每一份善意真正抵達需要的地方。": "会員とご家族、地域のパートナーをつなぎ、生活支援・教育支援・地域ケアを通して、すべての善意を必要な場所へ届けます。",
   "項": "事業", "所": "団体", "隊": "チーム", "天": "日",
-  "年度重點行動": "年間重点活動", "服務合作單位": "連携支援団体", "支持偏鄉球隊": "支援する地域チーム", "讓善意持續發生": "善意をつなぐ毎日",
+  "年度重點行動": "年間重点活動",  "支持偏鄉球隊": "支援する地域チーム", "讓善意持續發生": "善意をつなぐ毎日",
   "生活照護": "生活支援", "改善照護環境": "ケア環境の改善", "攜手公益夥伴汰換社區家園老舊設備，讓陪伴落實在更安心、舒適的日常。": "公益パートナーとともに地域ホームの老朽設備を更新し、より安心で快適な日常を支えます。",
   "偏鄉關懷": "地域支援", "把資源送到需要的地方": "必要な場所へ支援を届ける", "串聯社友、眷屬與在地力量，讓關懷不只是一次活動，而是一段持續同行的關係。": "会員、ご家族、地域の力を結び、支援を一度きりの活動ではなく、長く寄り添う関係へ育てます。",
   "教育支持": "教育支援", "陪孩子勇敢追夢": "子どもたちの夢を応援", "支持南投雙龍國小女足走上全國賽場，把每一份鼓勵化成孩子繼續奔跑的力量。": "南投・双龍小学校女子サッカーチームの全国大会出場を支え、声援を走り続ける力に変えます。",
-  "最新活動": "最新イベント", "偏鄉中秋公益音樂節": "地域中秋チャリティー音楽祭", "2026 年 9 月 19 日相聚中寮國小，讓音樂、公益服務、在地市集與中秋團圓在偏鄉相遇。": "2026年9月19日、中寮小学校で音楽、公益サービス、地域マーケット、中秋の団らんがひとつになります。",
+  "最新活動": "最新イベント",  "2026 年 9 月 19 日相聚中寮國小，讓音樂、公益服務、在地市集與中秋團圓在偏鄉相遇。": "2026年9月19日、中寮小学校で音楽、公益サービス、地域マーケット、中秋の団らんがひとつになります。",
   "未來進行式": "これから", "下一個故事，期待有您": "次の物語を、あなたとともに", "捐助、志工、物資或專業服務，每一種參與都能讓善意繼續向前。": "寄付、ボランティア、物資、専門サービス。どの参加も善意を未来へつなぎます。",
   "第一階段": "第1部", "第二階段": "第2部", "第一階段公益嘉年華活動海報": "第1部チャリティーカーニバル ポスター", "第二階段中秋公益晚會活動海報": "第2部中秋チャリティー夕べ ポスター",
-  "LATEST EVENT · 2026 最新活動": "LATEST EVENT · 2026 最新イベント", "手牽手 愛無限": "手をつなごう 愛は無限", "手牽手・愛無限": "手をつなごう・愛は無限", "偏鄉中秋公益音樂節": "地域中秋チャリティー音楽祭", "2026 年 9 月 19 日（六）": "2026年9月19日（土）", "南投・中寮國小": "南投・中寮小学校",
+  "LATEST EVENT · 2026 最新活動": "LATEST EVENT · 2026 最新イベント", "手牽手 愛無限": "手をつなごう 愛は無限",  "偏鄉中秋公益音樂節": "地域中秋チャリティー音楽祭", "2026 年 9 月 19 日（六）": "2026年9月19日（土）", "南投・中寮國小": "南投・中寮小学校",
   "在中寮的月光下，讓音樂、公益服務與團圓餐會相遇。從午後公益嘉年華到中秋公益晚會，邀請您牽起一雙手，把希望與溫暖送進偏鄉。": "中寮の月明かりの下、音楽、公益サービス、団らんの食卓が出会います。午後のチャリティーカーニバルから中秋の夕べまで、手を取り合い、希望とぬくもりを地域へ届けましょう。",
   "從午後公益嘉年華到中秋公益晚會，現場安排音樂、義剪、農產品展售、魔術、歌手演唱、公益捐贈與賓果活動，邀請大家相聚中寮，把希望與溫暖送進偏鄉。": "午後のチャリティーカーニバルから中秋公益イベントまで、音楽、無料ヘアカット、農産物販売、マジック、歌手ステージ、寄付贈呈、ビンゴを開催します。中寮に集い、地域へ希望とぬくもりを届けましょう。",
   "月光音樂饗宴": "月明かりの音楽会", "愛心義診・義剪": "無料診療・ヘアカット", "幸福市集": "しあわせマーケット", "弱勢家庭關懷": "支援を必要とする家庭へのケア",
@@ -126,14 +127,14 @@ const ko: Record<string, string> = {
   "手牽手，愛無限；因為有您，我們可以讓世界更美好。": "손에 손잡으면 사랑은 끝없이 이어집니다. 여러분과 함께 더 나은 세상을 만듭니다.",
   "串聯社友、眷屬與在地夥伴，從生活照護、教育支持到社區關懷，讓每一份善意真正抵達需要的地方。": "회원과 가족, 지역 파트너를 연결해 생활 돌봄과 교육 지원, 지역사회 나눔을 이어가며 모든 선의가 꼭 필요한 곳에 닿도록 합니다.",
   "項": "개", "所": "곳", "隊": "팀", "天": "일",
-  "年度重點行動": "연간 핵심 활동", "服務合作單位": "협력 기관", "支持偏鄉球隊": "농촌 지역 지원 팀", "讓善意持續發生": "선의를 이어가는 매일",
+  "年度重點行動": "연간 핵심 활동",  "支持偏鄉球隊": "농촌 지역 지원 팀", "讓善意持續發生": "선의를 이어가는 매일",
   "生活照護": "생활 돌봄", "改善照護環境": "돌봄 환경 개선", "攜手公益夥伴汰換社區家園老舊設備，讓陪伴落實在更安心、舒適的日常。": "공익 파트너와 함께 공동생활시설의 노후 장비를 교체해 더 안전하고 편안한 일상을 만듭니다.",
   "偏鄉關懷": "농촌 지역 나눔", "把資源送到需要的地方": "필요한 곳에 자원을 전합니다", "串聯社友、眷屬與在地力量，讓關懷不只是一次活動，而是一段持續同行的關係。": "회원과 가족, 지역의 힘을 모아 일회성 행사를 넘어 오래 동행하는 관계를 만듭니다.",
   "教育支持": "교육 지원", "陪孩子勇敢追夢": "아이들의 꿈을 응원합니다", "支持南投雙龍國小女足走上全國賽場，把每一份鼓勵化成孩子繼續奔跑的力量。": "난터우 솽룽초 여자 축구팀의 전국대회 출전을 지원해 모든 응원이 계속 달릴 힘이 되게 합니다.",
   "最新活動": "최신 행사", "偏鄉中秋公益音樂節": "농촌 지역 중추절 자선 음악축제", "2026 年 9 月 19 日相聚中寮國小，讓音樂、公益服務、在地市集與中秋團圓在偏鄉相遇。": "2026년 9월 19일 중랴오초에서 음악, 공익 서비스, 지역 장터와 중추절의 만남이 펼쳐집니다.",
   "未來進行式": "다음 이야기", "下一個故事，期待有您": "다음 이야기에 함께해 주세요", "捐助、志工、物資或專業服務，每一種參與都能讓善意繼續向前。": "기부, 자원봉사, 물품 또는 전문 서비스—어떤 참여든 선의를 앞으로 이어갑니다.",
   "第一階段": "1부", "第二階段": "2부", "第一階段公益嘉年華活動海報": "1부 자선 카니발 포스터", "第二階段中秋公益晚會活動海報": "2부 중추절 자선의 밤 포스터",
-  "LATEST EVENT · 2026 最新活動": "LATEST EVENT · 2026 최신 행사", "手牽手 愛無限": "손에 손잡고 무한한 사랑", "手牽手・愛無限": "손에 손잡고・무한한 사랑", "2026 年 9 月 19 日（六）": "2026년 9월 19일(토)", "南投・中寮國小": "난터우 중랴오초등학교",
+  "LATEST EVENT · 2026 最新活動": "LATEST EVENT · 2026 최신 행사", "手牽手 愛無限": "손에 손잡고 무한한 사랑",  "2026 年 9 月 19 日（六）": "2026년 9월 19일(토)", "南投・中寮國小": "난터우 중랴오초등학교",
   "在中寮的月光下，讓音樂、公益服務與團圓餐會相遇。從午後公益嘉年華到中秋公益晚會，邀請您牽起一雙手，把希望與溫暖送進偏鄉。": "중랴오의 달빛 아래 음악과 공익 서비스, 함께하는 식사가 만납니다. 오후 자선 카니발부터 중추절 자선의 밤까지 손을 맞잡고 농촌 지역에 희망과 온기를 전해 주세요.",
   "從午後公益嘉年華到中秋公益晚會，現場安排音樂、義剪、農產品展售、魔術、歌手演唱、公益捐贈與賓果活動，邀請大家相聚中寮，把希望與溫暖送進偏鄉。": "오후 자선 카니발부터 중추절 공익 행사까지 음악, 무료 이발, 농산물 판매, 마술, 가수 공연, 기부식과 빙고가 이어집니다. 중랴오에 함께 모여 농촌 지역에 희망과 온기를 전해 주세요.",
   "月光音樂饗宴": "달빛 음악회", "愛心義診・義剪": "무료 진료·미용", "幸福市集": "행복 장터", "弱勢家庭關懷": "취약가정 지원",
@@ -274,6 +275,9 @@ Object.assign(ko, {
   "輕盈樂團薩克斯風演奏": "경쾌한 악단 색소폰 연주", "慢兔兔啦啦隊演出": "느린 토끼 치어리딩", "主辦單位／貴賓致詞": "주최 측・내빈 인사", "愛心捐贈儀式": "사랑의 기부식", "超級魔術秀": "슈퍼 마술쇼", "獎落誰家": "경품 추첨", "藝人小璇演唱": "가수 샤오쉬안 공연", "賓果大挑戰": "빙고 챌린지", "卡拉 OK・中秋佳節快樂，明年再見": "노래자랑・즐거운 추석, 내년에 만나요",
 });
 
+Object.assign(en, additions.en);
+Object.assign(ja, additions.ja);
+Object.assign(ko, additions.ko);
 const dictionaries = { en, ja, ko };
 
 export function translate(lang: Lang, value: string) {

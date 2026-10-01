@@ -49,7 +49,7 @@ const structuredData = {
 };
 export const metadata: Metadata = {
   metadataBase: new URL("https://dawn-7dq.pages.dev"),
-  title: "黎明公益網｜台中黎明扶輪社・手牽手愛無限公益行動",
+  title: "黎明公益網｜公益行動・成果紀錄・媒體報導",
   description: "黎明公益網記錄台中黎明扶輪社「手牽手愛無限」公益行動，包含中寮偏鄉關懷、雙龍國小教育支持、十年英語陪伴與社區照護成果。",
   keywords: ["台中黎明扶輪社", "黎明公益網", "手牽手愛無限", "足球築夢", "雙龍國小", "地區獎助金", "公益活動", "偏鄉關懷"],
   verification: { google: "49Kjbm2s-tx5ydR7bdH4jIwrbcSOpsHNOgIr8KmcUOI" },
@@ -59,15 +59,15 @@ export const metadata: Metadata = {
     locale: "zh_TW",
     url: "/",
     siteName: "黎明公益網 手牽手愛無限",
-    title: "黎明公益網｜台中黎明扶輪社・手牽手愛無限",
-    description: "看見中寮偏鄉關懷、雙龍國小教育支持、十年英語陪伴與社區照護的公益成果。",
-    images: [{ url: "/media/latest-event/event-poster-latest.jpg", width: 1024, height: 1536, alt: "台中黎明扶輪社手牽手愛無限公益活動海報" }],
+    title: "黎明公益網｜公益行動・成果紀錄・媒體報導",
+    description: "閱讀各大媒體報導，回顧教育陪伴、偏鄉關懷與社區服務，讓每一份善意被看見。",
+    images: [{ url: "/media/site/dawn-homepage-share-20260930.png", width: 1440, height: 1000, alt: "黎明公益網首頁｜公益行動、活動成果與新聞媒體報導" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "黎明公益網｜台中黎明扶輪社・手牽手愛無限",
+    title: "黎明公益網｜公益行動・成果紀錄・媒體報導",
     description: "中寮偏鄉關懷、雙龍國小教育支持、十年英語陪伴與社區照護成果。",
-    images: ["/media/latest-event/event-poster-latest.jpg"],
+    images: ["/media/site/dawn-homepage-share-20260930.png"],
   },
   robots: { index: true, follow: true },
 };
