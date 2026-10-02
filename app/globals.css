@@ -929,7 +929,7 @@ main .press-gratitude{font-size:15px!important;font-weight:400;line-height:1.8!i
 .editorial-charity-brand .charity-brand-primary{display:flex;flex-direction:row;align-items:center;justify-content:center;gap:11px;min-width:0;white-space:nowrap}
 .editorial-charity-brand .charity-brand-primary>img{flex:0 0 70px;width:70px;height:34px;object-fit:contain;filter:drop-shadow(0 2px 8px rgba(0,0,0,.14))}
 .editorial-charity-brand .charity-brand-name{color:#fffdf8;font:800 clamp(20px,2vw,26px)/1 "Noto Serif TC","Songti TC",serif;letter-spacing:.09em;text-shadow:0 1px 4px rgba(0,0,0,.2);white-space:nowrap}
-.editorial-charity-brand .charity-brand-tagline{display:flex;align-items:center;gap:9px;width:100%;margin:0;color:#e1bd70;font:800 7.5px/1.2 Arial,"Helvetica Neue",sans-serif;letter-spacing:.17em;text-transform:uppercase;white-space:nowrap;text-align:center}
+.editorial-charity-brand .charity-brand-tagline{display:flex;align-items:center;gap:7px;width:100%;margin:0;color:#e1bd70;font:700 6.6px/1.2 Arial,"Helvetica Neue",sans-serif;letter-spacing:.055em;text-transform:none;white-space:nowrap;text-align:center}
 .editorial-charity-brand .charity-brand-tagline:before,.editorial-charity-brand .charity-brand-tagline:after{content:"";height:1px;flex:1 1 auto;background:linear-gradient(90deg,transparent,rgba(226,187,112,.72))}
 .editorial-charity-brand .charity-brand-tagline:after{transform:scaleX(-1)}
 .editorial-charity-brand:hover .charity-brand-name,.editorial-charity-brand:focus-visible .charity-brand-name{color:#fff}
@@ -940,5 +940,5 @@ main .press-gratitude{font-size:15px!important;font-weight:400;line-height:1.8!i
   .editorial-charity-brand .charity-brand-primary{gap:5px}
   .editorial-charity-brand .charity-brand-primary>img{flex-basis:34px;width:34px;height:22px}
   .editorial-charity-brand .charity-brand-name{font-size:clamp(12px,3.4vw,15px);line-height:1;letter-spacing:.04em}
-  .editorial-charity-brand .charity-brand-tagline{gap:4px;font-size:clamp(4.2px,1.1vw,5.3px);line-height:1.15;letter-spacing:.1em}
+  .editorial-charity-brand .charity-brand-tagline{gap:3px;font-size:clamp(3.3px,.9vw,4.2px);line-height:1.15;letter-spacing:.015em}
 }
