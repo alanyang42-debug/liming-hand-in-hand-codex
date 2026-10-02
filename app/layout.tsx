@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { headers } from "next/headers";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
@@ -28,7 +29,7 @@ const structuredData = {
       url: siteUrl,
       name: "黎明公益網 手牽手愛無限",
       description: "獨立第三方公益紀實網站，客觀、忠實整理台中黎明扶輪社參與的公益行動。",
-      inLanguage: "zh-Hant-TW",
+      inLanguage: ["zh-Hant-TW", "en"],
       publisher: { "@id": `${siteUrl}/#organization` },
       about: { "@id": `${siteUrl}/#taichung-dawn-rotary-club` },
     },
@@ -53,7 +54,10 @@ export const metadata: Metadata = {
   description: "黎明公益網記錄台中黎明扶輪社「手牽手愛無限」公益行動，包含中寮偏鄉關懷、雙龍國小教育支持、十年英語陪伴與社區照護成果。",
   keywords: ["台中黎明扶輪社", "黎明公益網", "手牽手愛無限", "足球築夢", "雙龍國小", "地區獎助金", "公益活動", "偏鄉關懷"],
   verification: { google: "49Kjbm2s-tx5ydR7bdH4jIwrbcSOpsHNOgIr8KmcUOI" },
-  alternates: { canonical: "/", languages: { "zh-Hant-TW": "/" } },
+  alternates: {
+    canonical: "/",
+    languages: { "zh-Hant": "/", en: "/en/", "x-default": "/" },
+  },
   openGraph: {
     type: "website",
     locale: "zh_TW",
@@ -71,4 +75,8 @@ export const metadata: Metadata = {
   },
   robots: { index: true, follow: true },
 };
-export default function RootLayout({children}:{children:React.ReactNode}) { return <html lang="zh-Hant-TW"><body className={`${geist.variable} ${mono.variable}`}><script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(structuredData)}} />{children}</body></html>; }
+export default async function RootLayout({children}:{children:React.ReactNode}) {
+  const requestHeaders = await headers();
+  const language = requestHeaders.get("x-dawn-language") === "en" ? "en" : "zh-Hant-TW";
+  return <html lang={language}><body className={`${geist.variable} ${mono.variable}`}><script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(structuredData)}} />{children}</body></html>;
+}

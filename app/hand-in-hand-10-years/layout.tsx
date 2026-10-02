@@ -2,7 +2,14 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "手牽手英語教學十年有成｜黎明公益網・台中黎明扶輪社",
   description: "台中黎明扶輪社在太平國小推動手牽手英語教育，持續陪伴弱勢學童十年。閱讀黎明公益網的教育支持成果與活動影像紀錄。",
-  alternates: { canonical: "/hand-in-hand-10-years/" },
+  alternates: {
+    canonical: "/hand-in-hand-10-years/",
+    languages: {
+      "zh-Hant": "/hand-in-hand-10-years/",
+      en: "/en/hand-in-hand-10-years/",
+      "x-default": "/hand-in-hand-10-years/",
+    },
+  },
   openGraph: {
     type: "article",
     locale: "zh_TW",
