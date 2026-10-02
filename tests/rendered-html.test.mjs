@@ -1,5 +1,6 @@
 import assert from "node:assert/strict";
 import test from "node:test";
+import { readFile } from "node:fs/promises";
 
 const workerUrl = new URL("../dist/server/index.js", import.meta.url);
 workerUrl.searchParams.set("test", `${process.pid}-${Date.now()}`);
@@ -100,4 +101,19 @@ test("sitemap lists only live Chinese and English canonical pages", async () => 
   ]) {
     assert.ok(xml.includes(`<loc>${url}</loc>`), url);
   }
+});
+
+test("Cloudflare Pages export contains every public HTML route", async () => {
+  for (const [file, canonical] of [
+    ["../dist/client/index.html", "https://dawn-7dq.pages.dev/"],
+    ["../dist/client/en/index.html", "https://dawn-7dq.pages.dev/en/"],
+    ["../dist/client/hand-in-hand-10-years/index.html", "https://dawn-7dq.pages.dev/hand-in-hand-10-years/"],
+    ["../dist/client/en/hand-in-hand-10-years/index.html", "https://dawn-7dq.pages.dev/en/hand-in-hand-10-years/"],
+  ]) {
+    const html = await readFile(new URL(file, import.meta.url), "utf8");
+    assert.equal((html.match(/<title(?:\s[^>]*)?>/gi) ?? []).length, 1, file);
+    assert.ok(html.includes(`rel="canonical" href="${canonical}"`), file);
+  }
+  const pagesWorker = await readFile(new URL("../dist/client/_worker.js", import.meta.url), "utf8");
+  assert.match(pagesWorker, /Response\.redirect\(url\.toString\(\), 308\)/);
 });
