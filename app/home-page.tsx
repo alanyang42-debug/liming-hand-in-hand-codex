@@ -326,7 +326,10 @@ export default function Home({ initialLang = "zh" }: { initialLang?: Lang }) {
     <div id="top"/>
     <header className="editorial-header">
       <div className="editorial-brand-lockup">
-        <a className="editorial-charity-brand" href="#top" aria-label={t("黎明公益網")}><Image src="/media/brand/hand-in-hand-white-wings-gold-heart.png" alt="" width={700} height={288} aria-hidden="true" unoptimized/><span className="charity-brand-copy"><b className="charity-brand-name">{t("黎明公益網")}</b><small className="charity-brand-tagline">Hand in Hand, Love without limit</small></span></a>
+        <a className="editorial-charity-brand" href="#top" aria-label={t("黎明公益網")}>
+          <span className="charity-brand-primary"><Image src="/media/brand/hand-in-hand-white-wings-gold-heart.png" alt="" width={700} height={288} aria-hidden="true" unoptimized/><b className="charity-brand-name">黎明公益網</b></span>
+          <small className="charity-brand-tagline">DAWN CHARITY NETWORK</small>
+        </a>
         <span className="editorial-brand-divider" aria-hidden="true"/>
         <a className="editorial-club-brand" href="https://dawnrotaryclub.tw/" target="_blank" rel="noreferrer"><Image src="/media/site/taichung-liming-rotary-logo-web.png" alt={t("台中黎明扶輪社 ROTARY CLUB OF TAICHUNG DAWN")} width={2048} height={682} priority unoptimized/></a>
       </div>
