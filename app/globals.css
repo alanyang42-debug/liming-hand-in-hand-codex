@@ -942,3 +942,14 @@ main .press-gratitude{font-size:15px!important;font-weight:400;line-height:1.8!i
   .editorial-charity-brand .charity-brand-name{font-size:clamp(12px,3.4vw,15px);line-height:1;letter-spacing:.04em}
   .editorial-charity-brand .charity-brand-tagline{gap:3px;font-size:clamp(3.3px,.9vw,4.2px);line-height:1.15;letter-spacing:.015em}
 }
+
+/* Acknowledgement cards for the reports supported by club members. */
+main .press-gratitude.press-gratitude--supporters{position:relative;margin:22px 0 4px!important;padding:20px 22px 20px 26px;border:1px solid rgba(180,147,82,.42);border-left:4px solid #d9a83c;border-radius:0 12px 12px 0;background:linear-gradient(135deg,#fffaf0 0%,#f1ead9 100%);box-shadow:0 10px 24px rgba(18,59,52,.08);color:#23473f!important}
+main .press-gratitude--supporters:after{content:"♥";position:absolute;top:14px;right:17px;color:rgba(190,145,52,.24);font:700 28px/1 Georgia,serif}
+main .press-gratitude--supporters small{display:block;margin:0 36px 11px 0;color:#9b742d;font:800 10px/1.4 Arial,"Microsoft JhengHei",sans-serif;letter-spacing:.16em}
+main .press-gratitude--supporters p{margin:0;color:#23473f;font:500 15px/1.85 Arial,"Microsoft JhengHei",sans-serif;letter-spacing:.015em}
+@media(max-width:700px){
+  main .press-gratitude.press-gratitude--supporters{margin-top:18px!important;padding:17px 17px 18px 20px;border-radius:0 10px 10px 0}
+  main .press-gratitude--supporters small{font-size:9px;letter-spacing:.12em}
+  main .press-gratitude--supporters p{font-size:14px;line-height:1.8}
+}
