@@ -1,5 +1,7 @@
 "use client";
 
+import SchoolActivities from "./components/SchoolActivities";
+
 import Image from "next/image";
 import OutreachVisit from "./components/OutreachVisit";
 import ShuanglongRecord from "./components/ShuanglongRecord";
@@ -555,6 +557,8 @@ export default function Home({ initialLang = "zh" }: { initialLang?: Lang }) {
         </footer>
       </div>
     </section>
+
+    <SchoolActivities />
 
     <section className="newsroom" id="media-stories" aria-labelledby="media-stories-title">
       <span className="anchor-alias" id="education-news" aria-hidden="true"/>

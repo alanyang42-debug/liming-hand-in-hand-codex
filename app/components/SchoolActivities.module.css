@@ -1,0 +1,24 @@
+.section{padding:clamp(56px,8vw,104px) 24px;background:linear-gradient(145deg,#fff8ef 0%,#fff 48%,#edf7f5 100%);color:#203e44;scroll-margin-top:100px}
+.inner{max-width:1160px;margin:auto;min-width:0}
+.intro{max-width:900px;margin-bottom:48px}
+.eyebrow{color:#a76237;font-size:.8rem;font-weight:800;letter-spacing:.12em;line-height:1.7}
+.section h2{font-size:clamp(1.9rem,3.7vw,3rem);line-height:1.42;margin:16px 0 22px;color:inherit}
+.intro>p:last-of-type{line-height:1.9}
+.links{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}
+.links a{display:block;color:#234d46;border:1px solid #b6c9c0;border-radius:30px;padding:10px 18px;line-height:1.6;text-decoration:none;font-size:.9rem}
+.links a:hover{background:#edf4ee}
+.section a:focus-visible{outline:3px solid #a76237;outline-offset:5px}
+.article{padding:44px 0;scroll-margin-top:100px;border-top:1px solid #d6ded6}
+.heading{display:grid;grid-template-columns:.8fr 1.2fr;gap:36px;align-items:start;margin-bottom:28px}
+.date{color:#a76237;font-weight:700;letter-spacing:.12em;font-size:.9rem}
+.section h3{font-size:clamp(1.5rem,2.8vw,2.2rem);line-height:1.5;margin:12px 0 0;color:inherit;overflow-wrap:anywhere}
+.copy p{font-size:1rem;line-height:1.95;margin:0 0 14px;overflow-wrap:anywhere}
+.gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;align-items:start}
+.gallery figure{min-width:0;margin:0}
+.cover{grid-column:1/-1}
+.gallery a{display:block;border-radius:16px}
+.gallery img{display:block;width:100%;height:auto;max-height:none;object-fit:contain;border-radius:16px;box-shadow:0 12px 32px #34423716}
+.gallery figcaption{position:static;inset:auto;display:block;background:none;color:#596d70;margin:10px 0 0;padding:0;font-size:.85rem;line-height:1.6}
+.gallery figcaption span{font-size:.75rem;color:#a76237;margin-right:6px}
+.source{color:#687976;font-size:.8rem;line-height:1.8;margin-top:28px}
+@media(max-width:720px){.section{padding:52px 20px}.heading,.gallery{grid-template-columns:1fr}.heading{gap:20px}.cover{grid-column:auto}.article{padding:32px 0}.links{display:grid;grid-template-columns:1fr}.links a{border-radius:14px}.intro{margin-bottom:32px}}
